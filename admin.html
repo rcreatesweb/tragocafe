@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F4EC">
+  <meta name="robots" content="noindex,nofollow">
+  <title>BTK Coffee | Superadmin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F7F4EC'/%3E%3Cpath d='M10 15h44M10 49h44' stroke='%23A89F79' stroke-width='2'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='23' fill='%23352F28'%3EBTK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body class="admin-body">
+  <main class="auth-screen" id="adminLoginRoot">
+    <a class="auth-brand" href="./index.html" aria-label="BTK Coffee home">
+      <span class="admin-monogram">BTK</span>
+      <span><strong>BTK Coffee</strong><small>Brewed to Brighten Your Day</small></span>
+    </a>
+    <section class="auth-panel" aria-labelledby="authTitle">
+      <p class="eyebrow">Private website tools</p>
+      <h1 id="authTitle">Superadmin login</h1>
+      <p class="auth-intro" id="authIntro">Sign in to manage the BTK Coffee website configuration.</p>
+      <div class="security-notice" role="note">
+        <strong>Browser-only prototype</strong>
+        <span>This static-site login is not secure authentication. Settings and the prototype credential belong only to this browser and can be inspected or changed by its user. Do not use a production password here.</span>
+      </div>
+      <form id="adminLoginForm" novalidate>
+        <div class="admin-field">
+          <label for="adminUsername">Username</label>
+          <input id="adminUsername" name="username" type="text" value="superadmin" readonly autocomplete="username">
+          <small>The username is fixed and cannot be changed.</small>
+        </div>
+        <div class="admin-field" id="loginPasswordField">
+          <label for="adminPassword" id="adminPasswordLabel">Password</label>
+          <div class="password-input-wrap">
+            <input id="adminPassword" name="password" type="password" autocomplete="current-password" maxlength="128" required>
+            <button class="password-toggle" type="button" data-password-toggle="adminPassword" aria-label="Show password">Show</button>
+          </div>
+        </div>
+        <div class="admin-field" id="setupConfirmField" hidden>
+          <label for="setupPasswordConfirm">Confirm prototype password</label>
+          <div class="password-input-wrap">
+            <input id="setupPasswordConfirm" type="password" autocomplete="new-password" maxlength="128">
+            <button class="password-toggle" type="button" data-password-toggle="setupPasswordConfirm" aria-label="Show password">Show</button>
+          </div>
+        </div>
+        <p class="password-policy" id="setupPasswordPolicy" hidden>Use at least 12 characters, including letters and numbers. A special character is encouraged. This creates a browser-local prototype password only.</p>
+        <p class="form-message" id="loginMessage" role="alert" aria-live="polite"></p>
+        <button class="admin-button admin-button-primary button-full" id="loginSubmitButton" type="submit">Log in</button>
+      </form>
+      <div class="auth-footer">
+        <a href="./index.html">Return to the BTK Coffee website</a>
+        <span id="cooldownMessage" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+    <p class="auth-bottom">No public admin link is displayed on the website. Direct access to this page does not provide server-side protection.</p>
+  </main>
+
+  <main class="dashboard-shell" id="adminDashboardRoot" hidden>
+    <div class="dashboard-scrim" id="dashboardScrim" hidden></div>
+    <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="Superadmin navigation">
+      <a class="dashboard-brand" href="./index.html">
+        <span class="admin-monogram">BTK</span>
+        <span><strong>BTK Coffee</strong><small>Superadmin tools</small></span>
+      </a>
+      <p class="sidebar-label">Manage website</p>
+      <nav class="dashboard-nav" id="dashboardNav">
+        <button type="button" class="dashboard-nav-button is-active" data-section-target="overview"><span class="nav-mark">01</span>Dashboard Overview</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="appearance"><span class="nav-mark">02</span>Website Appearance</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="images"><span class="nav-mark">03</span>Image Manager</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="menu"><span class="nav-mark">04</span>Menu Management</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="contact"><span class="nav-mark">05</span>Contact & Location</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="content"><span class="nav-mark">06</span>Website Content & Footer</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="store-status"><span class="nav-mark">07</span>Store Status</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="github-settings"><span class="nav-mark">08</span>GitHub Settings / Setup</button>
+        <button type="button" class="dashboard-nav-button" data-section-target="security"><span class="nav-mark">09</span>Account Security</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a class="sidebar-link" href="./index.html" target="_blank" rel="noopener noreferrer"><span class="nav-mark">↗</span>View Live Website</a>
+        <button class="sidebar-link" id="sidebarLogoutButton" type="button"><span class="nav-mark">↪</span>Logout</button>
+        <p class="sidebar-security">Prototype only. This dashboard is not protected by server authentication.</p>
+      </div>
+    </aside>
+
+    <div class="dashboard-main-column">
+      <header class="dashboard-topbar">
+        <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Open dashboard navigation" aria-expanded="false" aria-controls="dashboardSidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-copy">
+          <span class="topbar-kicker">BTK Coffee / Website control</span>
+          <h1>BTK Coffee — Superadmin Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <span class="session-indicator"><span class="session-dot"></span>Local admin session</span>
+          <button class="github-header-control" id="githubHeaderControl" type="button" data-section-target="github-settings" aria-label="Open GitHub repository settings"><span class="github-header-dot" id="githubHeaderDot"></span><span id="githubHeaderText">GitHub not connected</span><span class="github-header-manage">Settings</span></button>
+          <a class="admin-button admin-button-soft" href="./index.html" target="_blank" rel="noopener noreferrer">Preview live site</a>
+          <button class="admin-button admin-button-outline" id="topLogoutButton" type="button">Logout</button>
+        </div>
+      </header>
+
+      <div class="prototype-banner" role="note"><strong>GitHub publishing:</strong> Check the header connection status, then manage your repository in GitHub Settings / Setup. Every Save validates the complete draft and commits <code>data/site-config.json</code> to GitHub; GitHub Pages publishes it after redeployment. Browser-only login remains a prototype, not production security.</div>
+
+      <div class="dashboard-content">
+        <section class="dashboard-section is-visible" id="section-overview" data-dashboard-section="overview" aria-labelledby="overviewTitle">
+          <div class="section-title-row">
+            <div><p class="eyebrow">Your workspace</p><h2 id="overviewTitle">Dashboard overview</h2><p class="section-lead">A quick look at the current BTK Coffee website configuration.</p></div>
+          </div>
+          <div class="overview-metrics" id="overviewMetrics"></div>
+          <div class="overview-bottom-grid">
+            <section class="workspace-panel" aria-labelledby="quickActionsTitle">
+              <div class="panel-heading"><div><p class="eyebrow">Quick actions</p><h3 id="quickActionsTitle">What would you like to update?</h3></div></div>
+              <div class="quick-actions">
+                <button class="quick-action" type="button" data-section-target="appearance"><span class="quick-action-number">01</span><strong>Edit website colors</strong><span>Change the site's palette</span></button>
+                <button class="quick-action" type="button" data-section-target="menu"><span class="quick-action-number">02</span><strong>Manage menu</strong><span>Edit items and prices</span></button>
+                <button class="quick-action" type="button" data-section-target="images"><span class="quick-action-number">03</span><strong>Change images</strong><span>Update photos and logo</span></button>
+                <button class="quick-action" type="button" data-section-target="contact"><span class="quick-action-number">04</span><strong>Update contact details</strong><span>Review links and location</span></button>
+                <button class="quick-action" type="button" data-section-target="store-status"><span class="quick-action-number">05</span><strong>Set store status</strong><span>Mark the store Open or Closed</span></button>
+                <button class="quick-action" type="button" data-section-target="content"><span class="quick-action-number">06</span><strong>Edit website content & footer</strong><span>Update public copy and footer links</span></button>
+                <button class="quick-action" type="button" data-section-target="github-settings"><span class="quick-action-number">07</span><strong>GitHub Settings / Setup</strong><span>Check repository publishing connection</span></button>
+                <button class="quick-action" type="button" data-section-target="security"><span class="quick-action-number">08</span><strong>Change admin password</strong><span>Update this browser's prototype password</span></button>
+            <a class="quick-action" href="./index.html" target="_blank" rel="noopener noreferrer"><span class="quick-action-number">↗</span><strong>View live website</strong><span>Open the published public page</span></a>
+              </div>
+            </section>
+            <aside class="workspace-panel status-panel" aria-labelledby="configStatusTitle">
+              <div class="panel-heading"><div><p class="eyebrow">Configuration</p><h3 id="configStatusTitle">Current status</h3></div><span class="status-dot" id="configStatusDot"></span></div>
+              <p class="status-main" id="configStatusText"></p>
+              <dl class="status-details">
+                <div><dt>Last saved</dt><dd id="lastSavedText">No custom changes saved</dd></div>
+                <div><dt>Publishing</dt><dd id="overviewPublishingScope">Connect a GitHub repository to publish changes</dd></div>
+              </dl>
+              <a class="admin-text-link" href="./index.html" target="_blank" rel="noopener noreferrer">View public website →</a>
+            </aside>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="section-github-settings" data-dashboard-section="github-settings" aria-labelledby="githubSettingsTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Repository publishing</p><h2 id="githubSettingsTitle">GitHub Settings / Setup</h2><p class="section-lead">Connect the repository and branch used by the public BTK Coffee site. A connected repository is required before any dashboard Save action.</p></div></div>
+          <section class="github-repository-panel github-settings-panel" aria-labelledby="githubSettingsPanelTitle">
+            <div class="panel-heading"><div><p class="eyebrow">Repository connection</p><h3 id="githubSettingsPanelTitle">Website source repository</h3><p>Configuration commits are validated and written to <code>data/site-config.json</code>.</p></div><span class="github-status" id="githubConnectionStatus" role="status" aria-live="polite">Not connected</span></div>
+            <div class="github-connection-grid">
+              <div class="admin-field"><label for="githubOwner">Repository owner</label><input id="githubOwner" type="text" maxlength="100" autocomplete="off" placeholder="GitHub username or organization"></div>
+              <div class="admin-field"><label for="githubRepo">Repository name</label><input id="githubRepo" type="text" maxlength="100" autocomplete="off" placeholder="Repository name"></div>
+              <div class="admin-field"><label for="githubBranch">Branch <span>(blank uses default)</span></label><input id="githubBranch" type="text" maxlength="120" autocomplete="off" placeholder="Leave blank to use repository default"></div>
+              <div class="admin-field github-token-field"><label for="githubToken">Fine-grained personal access token</label><div class="password-input-wrap"><input id="githubToken" type="password" autocomplete="off" spellcheck="false" placeholder="Paste token for this session only"><button class="password-toggle" type="button" data-password-toggle="githubToken" aria-label="Show GitHub token">Show</button></div></div>
+            </div>
+            <div class="github-connect-actions"><button class="admin-button admin-button-primary" id="githubConnectButton" type="button">Connect Repository</button><button class="admin-button admin-button-outline" id="githubDisconnectButton" type="button" hidden>Disconnect</button><span id="githubCommitStatus" class="github-commit-status" role="status" aria-live="polite"></span></div>
+            <div class="github-publish-state"><strong>Published configuration</strong><span id="githubPublishedState">Connect a repository to load or create the website configuration.</span><span id="githubCommitSha" class="github-commit-sha"></span></div>
+            <p class="github-security-note"><strong>Token warning:</strong> this static admin runs in your browser, so a token entered here is exposed to that browser session and cannot be treated as a secret. Use a temporary fine-grained token limited to one repository with Contents: read and write, never save it in browser storage, revoke it after use, and do not use this direct-token flow for unattended production access. A small authenticated backend is safer.</p>
+          </section>
+        </section>
+
+        <section class="dashboard-section" id="section-store-status" data-dashboard-section="store-status" aria-labelledby="storeStatusTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Customer-facing store availability</p><h2 id="storeStatusTitle">Store Status</h2><p class="section-lead">Set the Open or Closed indicator shown in the public website header.</p></div></div>
+          <section class="workspace-panel store-status-admin-panel" aria-labelledby="storeStatusSettingTitle">
+            <div class="panel-heading"><div><p class="eyebrow">Manual daily setting</p><h3 id="storeStatusSettingTitle">Is the store open now?</h3><p>Update this status in Superadmin when the store opens or closes.</p></div></div>
+            <label class="store-status-schedule-toggle" for="storeFollowHours"><input id="storeFollowHours" type="checkbox" role="switch"> Follow operation hours automatically</label>
+            <div id="manualStoreStatusPanel">
+              <label class="store-status-switch-row" for="storeIsOpen">
+                <span class="store-status-switch-copy"><strong id="storeStatusChoiceLabel">Closed</strong><small id="storeStatusChoiceDescription">Customers will see Closed in the site header.</small></span>
+                <span class="store-status-switch"><input id="storeIsOpen" type="checkbox" role="switch" aria-describedby="storeStatusHelp"><span class="store-status-switch-track" aria-hidden="true"></span></span>
+              </label>
+            </div>
+              <section class="store-hours-panel" id="storeHoursPanel" aria-label="Weekly operation hours" hidden>
+                <div class="store-hours-intro"><strong>Weekly operation hours</strong><span>Times use Philippines time (Asia/Manila). The header badge will automatically show Closed outside the configured open hours.</span></div>
+                <div class="store-hours-editor" id="storeHoursEditor"></div>
+              </section>
+              <p class="section-hint" id="storeStatusHelp">Manual mode uses the Open/Closed switch above. Schedule mode follows the weekly hours and automatically closes at the configured closing time. Set your real hours before enabling it.</p>
+            <div class="section-actions"><button class="admin-button admin-button-primary" type="button" data-save-section="store-status">Validate & Publish to GitHub</button></div>
+          </section>
+        </section>
+
+        <section class="dashboard-section" id="section-appearance" data-dashboard-section="appearance" aria-labelledby="appearanceTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Brand controls</p><h2 id="appearanceTitle">Website appearance</h2><p class="section-lead">Edit the live site's central colors. Your changes remain a draft until saved.</p></div></div>
+          <div class="workspace-panel appearance-panel">
+            <div class="panel-heading"><div><h3>Color palette</h3><p>Choose a color or enter a six-digit HEX value such as #A89F79.</p></div></div>
+            <div class="palette-grid" id="paletteFields"></div>
+            <div class="palette-preview" id="palettePreview" aria-label="Color palette preview">
+              <div><span class="preview-label">BTK COFFEE</span><h3>Good Coffee. Better Moments.</h3><p>A preview of headings, body text, surfaces and primary actions.</p><button type="button" tabindex="-1" id="palettePreviewButton">Order your favorites</button></div>
+              <div class="preview-surface" id="palettePreviewSurface"><span>Warm, calm, welcoming.</span><strong>Surface and accent preview</strong></div>
+            </div>
+            <p class="palette-contrast-note" id="paletteContrastNote" role="status" aria-live="polite"></p>
+            <div class="section-actions"><button class="admin-button admin-button-primary" type="button" data-save-section="appearance">Validate & Publish to GitHub</button><button class="admin-button admin-button-quiet" type="button" id="restorePaletteButton">Restore Default Palette</button></div>
+            <p class="section-hint">The publish action validates and commits your dashboard draft. Default palette values are loaded into the draft and need to be published.</p>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="section-images" data-dashboard-section="images" aria-labelledby="imagesTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Photos and branding</p><h2 id="imagesTitle">Image manager</h2><p class="section-lead">Preview, replace, or restore images used on the public page. Uploads stay in this browser's configuration.</p></div></div>
+          <div class="image-storage-note"><strong>Product photos use local repository paths.</strong> Each menu item maps to a distinct image file directly under <code>assets/</code>. Use “Replace in GitHub” on a product image to commit the replacement file. Repository credentials and branch settings are managed on the separate GitHub Settings screen.</div>
+          <div class="image-manager-grid" id="imageManagerGrid"></div>
+          <div class="section-actions"><button class="admin-button admin-button-primary" type="button" data-save-section="images">Validate & Publish to GitHub</button><button class="admin-button admin-button-quiet" type="button" id="restoreImagesButton">Restore Default Images</button></div>
+        </section>
+
+        <section class="dashboard-section" id="section-menu" data-dashboard-section="menu" aria-labelledby="menuTitle" hidden>
+          <div class="section-title-row menu-title-row"><div><p class="eyebrow">Products and prices</p><h2 id="menuTitle">Menu management</h2><p class="section-lead">Changes update the same menu used by the public website, cart, and order summaries.</p></div><button class="admin-button admin-button-primary" id="addProductButton" type="button">+ Add New Product</button></div>
+          <div class="menu-management-layout">
+            <section class="workspace-panel category-panel" aria-labelledby="categoriesTitle">
+              <div class="panel-heading"><div><p class="eyebrow">Menu structure</p><h3 id="categoriesTitle">Categories</h3></div></div>
+              <form class="category-add-form" id="addCategoryForm"><label class="sr-only" for="newCategoryName">New category name</label><input id="newCategoryName" maxlength="50" placeholder="Add a category" required><button class="admin-button admin-button-outline" type="submit">Add category</button></form>
+              <div class="category-list" id="categoryList"></div>
+              <p class="section-hint">A category with menu items cannot be deleted. Move its products to another category first.</p>
+            </section>
+            <section class="workspace-panel menu-list-panel" aria-labelledby="productsTitle">
+              <div class="panel-heading products-panel-heading"><div><p class="eyebrow">Public catalog</p><h3 id="productsTitle">Products <span class="count-pill" id="productCount">0</span></h3></div><label class="filter-label" for="productCategoryFilter">Filter category<select id="productCategoryFilter"><option value="All">All categories</option></select></label></div>
+              <div class="table-wrap"><table class="admin-table"><thead><tr><th>Product</th><th>Category</th><th>Options / prices</th><th>Status</th><th>Actions</th></tr></thead><tbody id="productTable"></tbody></table></div>
+              <div class="mobile-product-list" id="mobileProductList"></div>
+            </section>
+          </div>
+          <section class="workspace-panel addon-management-panel" aria-labelledby="addonManagementTitle">
+            <div class="panel-heading"><div><p class="eyebrow">Optional additions</p><h3 id="addonManagementTitle">Extra choices & prices</h3><p>Set which category offers each group, and update the price of every optional extra.</p></div></div>
+            <div class="addon-group-manager" id="addonGroupManager"></div>
+            <p class="section-hint">Drink extras are offered on Coffee, Non-Coffee, and Frappe products. Food extras are offered on Ramyeon and Fries products by default. Customers only pay for extras they select.</p>
+          </section>
+          <div class="section-actions"><button class="admin-button admin-button-primary" type="button" data-save-section="menu">Validate & Publish to GitHub</button></div>
+        </section>
+
+        <section class="dashboard-section" id="section-contact" data-dashboard-section="contact" aria-labelledby="contactTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Customer-facing details</p><h2 id="contactTitle">Contact & location</h2><p class="section-lead">Update information shown in the contact section, website links, footer, and delivery guidance.</p></div></div>
+          <form class="workspace-panel contact-form" id="contactForm" novalidate>
+            <fieldset class="admin-form-section"><legend>Business identity</legend><div class="admin-form-grid">
+              <div class="admin-field"><label for="contactBusinessName">Business display name</label><input id="contactBusinessName" maxlength="120" required></div>
+              <div class="admin-field"><label for="contactTagline">Tagline</label><input id="contactTagline" maxlength="120" required></div>
+              <div class="admin-field field-full"><label for="contactHeading">Contact section heading</label><input id="contactHeading" maxlength="120" required></div>
+              <div class="admin-field field-full"><label for="contactDescription">Contact section description</label><textarea id="contactDescription" rows="3" maxlength="700" required></textarea></div>
+            </div></fieldset>
+            <fieldset class="admin-form-section"><legend>Links and contact details</legend><div class="admin-form-grid">
+              <div class="admin-field"><label for="contactMessenger">Messenger URL</label><input id="contactMessenger" type="url" inputmode="url" placeholder="https://m.me/..." required></div>
+              <div class="admin-field"><label for="contactFacebook">Facebook page URL <span>(optional)</span></label><input id="contactFacebook" type="url" inputmode="url" placeholder="https://www.facebook.com/..."></div>
+              <div class="admin-field field-full"><label for="contactMaps">Google Maps directions URL</label><input id="contactMaps" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/..." required></div>
+              <div class="admin-field"><label for="contactPhone">Displayed phone number <span>(optional)</span></label><input id="contactPhone" type="tel" maxlength="30"></div>
+              <div class="admin-field"><label for="contactEmail">Displayed email <span>(optional)</span></label><input id="contactEmail" type="email" maxlength="120"></div>
+              <div class="admin-field field-full"><label for="contactAddress">Displayed physical address <span>(optional)</span></label><input id="contactAddress" maxlength="700"></div>
+              <div class="admin-field field-full"><label for="contactInstructions">Additional customer instructions</label><textarea id="contactInstructions" rows="3" maxlength="700"></textarea></div>
+            </div></fieldset>
+            <fieldset class="admin-form-section"><legend>Delivery guidance</legend><div class="admin-form-grid">
+              <div class="admin-field"><label for="deliveryFreeArea">Free-delivery area</label><input id="deliveryFreeArea" maxlength="120" required></div>
+              <div class="admin-field"><label for="deliveryPinLocation">Courier pin location</label><input id="deliveryPinLocation" maxlength="120" required></div>
+              <div class="admin-field"><label for="deliveryContactNames">Courier contact name(s)</label><input id="deliveryContactNames" maxlength="120" required></div>
+              <div class="admin-field"><label for="deliveryContactNumber">Courier contact number</label><input id="deliveryContactNumber" type="tel" maxlength="30" required></div>
+            </div></fieldset>
+            <div class="section-actions"><button class="admin-button admin-button-primary" type="button" data-save-section="contact">Validate & Publish to GitHub</button><button class="admin-button admin-button-quiet" type="button" id="restoreContactButton">Restore Default Information</button></div>
+            <p class="section-hint">Leave optional phone, email, address, or Facebook fields blank if they are not configured. Secure delivery operations still need confirmation from BTK Coffee.</p>
+          </form>
+        </section>
+
+        <section class="dashboard-section" id="section-content" data-dashboard-section="content" aria-labelledby="contentTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Public-facing copy</p><h2 id="contentTitle">Website content & footer</h2><p class="section-lead">Edit live-page headings, messages, navigation labels, order steps, and footer links. Product details remain in Menu Management.</p></div></div>
+          <form class="workspace-panel content-manager-form" id="contentForm" novalidate>
+            <fieldset class="admin-form-section"><legend>Announcement & navigation</legend><div class="admin-form-grid">
+              <div class="admin-field field-full"><label for="contentAnnouncement">Announcement bar text</label><input id="contentAnnouncement" maxlength="180" required></div>
+              <div class="admin-field"><label for="navHome">Home link label</label><input id="navHome" maxlength="50" required></div>
+              <div class="admin-field"><label for="navMenu">Menu link label</label><input id="navMenu" maxlength="50" required></div>
+              <div class="admin-field"><label for="navStory">Our Story link label</label><input id="navStory" maxlength="50" required></div>
+              <div class="admin-field"><label for="navFindUs">Find Us link label</label><input id="navFindUs" maxlength="50" required></div>
+              <div class="admin-field"><label for="navContact">Contact link label</label><input id="navContact" maxlength="50" required></div>
+            </div></fieldset>
+            <fieldset class="admin-form-section"><legend>Hero & favorites</legend><div class="admin-form-grid">
+              <div class="admin-field field-full"><label for="contentHeroHeading">Hero headline <span>(use a new line for a line break)</span></label><textarea id="contentHeroHeading" rows="2" maxlength="160" required></textarea></div>
+              <div class="admin-field field-full"><label for="contentHeroDescription">Hero supporting text</label><textarea id="contentHeroDescription" rows="2" maxlength="500" required></textarea></div>
+              <div class="admin-field"><label for="contentHeroPrimaryCta">Primary hero button</label><input id="contentHeroPrimaryCta" maxlength="60" required></div>
+              <div class="admin-field"><label for="contentHeroSecondaryCta">Secondary hero button</label><input id="contentHeroSecondaryCta" maxlength="60" required></div>
+              <div class="admin-field"><label for="contentFeaturedEyebrow">Favorites eyebrow</label><input id="contentFeaturedEyebrow" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentFeaturedHeading">Favorites heading</label><input id="contentFeaturedHeading" maxlength="120" required></div>
+              <div class="admin-field field-full"><label for="contentFeaturedDescription">Favorites description</label><textarea id="contentFeaturedDescription" rows="2" maxlength="500" required></textarea></div>
+            </div></fieldset>
+            <fieldset class="admin-form-section"><legend>Menu & Our Story</legend><div class="admin-form-grid">
+              <div class="admin-field"><label for="contentMenuEyebrow">Menu eyebrow</label><input id="contentMenuEyebrow" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentMenuHeading">Menu heading</label><input id="contentMenuHeading" maxlength="120" required></div>
+              <div class="admin-field field-full"><label for="contentMenuDescription">Menu description</label><textarea id="contentMenuDescription" rows="2" maxlength="500" required></textarea></div>
+              <div class="admin-field"><label for="contentEmptyMenuHeading">Empty search heading</label><input id="contentEmptyMenuHeading" maxlength="120" required></div>
+              <div class="admin-field"><label for="contentEmptyMenuDescription">Empty search message</label><input id="contentEmptyMenuDescription" maxlength="300" required></div>
+              <div class="admin-field"><label for="contentStoryEyebrow">Our Story eyebrow</label><input id="contentStoryEyebrow" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentStoryHeading">Our Story heading</label><input id="contentStoryHeading" maxlength="180" required></div>
+              <div class="admin-field field-full"><label for="contentStoryParagraphOne">Our Story paragraph one</label><textarea id="contentStoryParagraphOne" rows="4" maxlength="1200" required></textarea></div>
+              <div class="admin-field field-full"><label for="contentStoryParagraphTwo">Our Story paragraph two</label><textarea id="contentStoryParagraphTwo" rows="4" maxlength="1200" required></textarea></div>
+            </div></fieldset>
+            <fieldset class="admin-form-section"><legend>Ordering instructions</legend><div class="admin-form-grid">
+              <div class="admin-field"><label for="contentOrderEyebrow">Ordering eyebrow</label><input id="contentOrderEyebrow" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentOrderHeading">Ordering heading</label><input id="contentOrderHeading" maxlength="120" required></div>
+              <div class="admin-field field-full"><label for="contentOrderDescription">Ordering introduction</label><textarea id="contentOrderDescription" rows="2" maxlength="500" required></textarea></div>
+              <div class="admin-field field-full"><label for="contentOrderNote">Ordering note <span>(use {freeArea} to insert the configured delivery area)</span></label><textarea id="contentOrderNote" rows="3" maxlength="900" required></textarea></div>
+              <div class="admin-field field-full"><div class="editable-list-heading"><span>Order steps</span><button class="admin-button admin-button-outline" id="addOrderStepButton" type="button">+ Add step</button></div><div class="editable-copy-list" id="orderStepsEditor"></div></div>
+            </div></fieldset>
+            <fieldset class="admin-form-section"><legend>Contact section & footer</legend><div class="admin-form-grid">
+              <div class="admin-field"><label for="contentContactEyebrow">Contact eyebrow</label><input id="contentContactEyebrow" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentContactMessageCta">Message button label</label><input id="contentContactMessageCta" maxlength="60" required></div>
+              <div class="admin-field"><label for="contentContactDirectionsCta">Directions button label</label><input id="contentContactDirectionsCta" maxlength="60" required></div>
+              <div class="admin-field"><label for="contentContactOrderCta">Start order button label</label><input id="contentContactOrderCta" maxlength="60" required></div>
+              <div class="admin-field"><label for="contentFooterExploreHeading">Footer navigation heading</label><input id="contentFooterExploreHeading" maxlength="60" required></div>
+              <div class="admin-field"><label for="contentFooterMenuHeading">Footer menu heading</label><input id="contentFooterMenuHeading" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentFooterMessengerLabel">Footer Messenger link text</label><input id="contentFooterMessengerLabel" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentFooterFacebookLabel">Footer Facebook link text</label><input id="contentFooterFacebookLabel" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentFooterMapsLabel">Footer Maps link text</label><input id="contentFooterMapsLabel" maxlength="80" required></div>
+              <div class="admin-field"><label for="contentFooterCopyrightText">Copyright suffix</label><input id="contentFooterCopyrightText" maxlength="120" required></div>
+              <div class="admin-field field-full"><label for="contentFooterBrandLine">Footer brand line <span>(supports {businessName} and {tagline})</span></label><input id="contentFooterBrandLine" maxlength="180" required></div>
+              <div class="admin-field field-full"><label for="contentFooterOrderNotice">Footer order notice <span>(supports {businessName})</span></label><input id="contentFooterOrderNotice" maxlength="180" required></div>
+              <div class="admin-field field-full"><div class="editable-list-heading"><span>Footer quick links</span><button class="admin-button admin-button-outline" id="addFooterLinkButton" type="button">+ Add link</button></div><div class="editable-copy-list" id="footerLinksEditor"></div></div>
+            </div></fieldset>
+            <div class="section-actions"><button class="admin-button admin-button-primary" type="button" data-save-section="content">Validate & Publish to GitHub</button></div>
+          </form>
+        </section>
+
+        <section class="dashboard-section" id="section-security" data-dashboard-section="security" aria-labelledby="securityTitle" hidden>
+          <div class="section-title-row"><div><p class="eyebrow">Account settings</p><h2 id="securityTitle">Account security</h2><p class="section-lead">The username is fixed. Update the prototype password for this browser below.</p></div></div>
+          <div class="security-notice wide-notice" role="note"><strong>Not production authentication</strong><span>This password check is client-side and can be bypassed through browser tools. It does not protect public configuration or customer data. Connect a server-side authentication service before production use.</span></div>
+          <form class="workspace-panel password-form" id="changePasswordForm" novalidate>
+            <div class="admin-field"><label for="fixedAdminUsername">Username</label><input id="fixedAdminUsername" value="superadmin" readonly><small>This value is fixed and cannot be renamed.</small></div>
+            <div class="admin-form-grid">
+              <div class="admin-field field-full"><label for="currentAdminPassword">Current password</label><div class="password-input-wrap"><input id="currentAdminPassword" type="password" autocomplete="current-password" maxlength="128" required><button class="password-toggle" type="button" data-password-toggle="currentAdminPassword" aria-label="Show password">Show</button></div></div>
+              <div class="admin-field"><label for="newAdminPassword">New password</label><div class="password-input-wrap"><input id="newAdminPassword" type="password" autocomplete="new-password" maxlength="128" required><button class="password-toggle" type="button" data-password-toggle="newAdminPassword" aria-label="Show password">Show</button></div></div>
+              <div class="admin-field"><label for="confirmAdminPassword">Confirm new password</label><div class="password-input-wrap"><input id="confirmAdminPassword" type="password" autocomplete="new-password" maxlength="128" required><button class="password-toggle" type="button" data-password-toggle="confirmAdminPassword" aria-label="Show password">Show</button></div></div>
+            </div>
+            <p class="password-policy">At least 12 characters with letters and numbers. A special character is encouraged. Do not reuse an important account password in this browser-only prototype.</p>
+            <p class="form-message" id="passwordChangeMessage" role="status" aria-live="polite"></p>
+            <button class="admin-button admin-button-primary" type="submit">Change Password</button>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <dialog class="admin-dialog" id="productDialog" aria-labelledby="productDialogTitle">
+      <form id="productForm" novalidate>
+        <div class="dialog-heading"><div><p class="eyebrow">Menu catalog</p><h2 id="productDialogTitle">Add new product</h2></div><button class="dialog-close" type="button" data-close-dialog="productDialog" aria-label="Close product editor">×</button></div>
+        <input id="editingProductId" type="hidden">
+        <div class="admin-form-grid">
+          <div class="admin-field"><label for="productName">Product name</label><input id="productName" maxlength="80" required></div>
+          <div class="admin-field"><label for="productCategory">Category</label><select id="productCategory" required></select></div>
+          <div class="admin-field field-full"><label for="productDescription">Description</label><textarea id="productDescription" rows="2" maxlength="500" placeholder="Short, accurate menu description"></textarea></div>
+          <div class="admin-field field-full"><label for="productImageUrl">Product image URL <span>(optional)</span></label><input id="productImageUrl" type="url" inputmode="url" placeholder="https://... or local assets/... path"><small>To replace the repository image file, use Image Manager. Blank uses this product's mapped image under assets/.</small><div class="editor-image-preview" id="productImagePreview"></div></div>
+          <fieldset class="option-fieldset field-full"><legend>Sizes, servings, and prices</legend><div class="option-editor-list" id="optionEditorList"></div><button class="admin-button admin-button-outline" id="addOptionButton" type="button">+ Add size or serving</button></fieldset>
+          <div class="admin-field"><label class="check-row"><input id="productAvailable" type="checkbox" checked> Available to order</label></div>
+          <div class="admin-field"><label class="check-row"><input id="productFeatured" type="checkbox"> Feature on homepage</label></div>
+        </div>
+        <p class="form-message" id="productFormMessage" role="alert" aria-live="polite"></p>
+        <div class="dialog-actions"><button class="admin-button admin-button-outline" type="button" data-close-dialog="productDialog">Cancel</button><button class="admin-button admin-button-primary" type="submit">Save Product</button></div>
+      </form>
+    </dialog>
+
+    <div class="toast-stack" id="adminToastStack" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <script src="./script.js"></script>
+  <script src="./btk-config.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>

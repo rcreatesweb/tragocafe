@@ -1,0 +1,2421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F4EC">
+  <meta name="description" content="Discover BTK Coffee's coffee, frappes, non-coffee drinks, waffles, and savory favorites. Browse the menu and prepare an order for Messenger.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BTK Coffee | Brewed to Brighten Your Day">
+  <meta property="og:description" content="Good coffee. Better moments. Browse the BTK Coffee menu and prepare your order for Messenger.">
+  <meta property="og:image" content="https://images.pexels.com/photos/18189024/pexels-photo-18189024.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200">
+  <title>BTK Coffee | Brewed to Brighten Your Day</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F7F4EC'/%3E%3Cpath d='M10 15h44M10 49h44' stroke='%23A89F79' stroke-width='2'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='23' fill='%23352F28'%3EBTK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --primary-color: #A89F79;
+      --secondary-color: #817653;
+      --background-color: #F7F4EC;
+      --surface-color: #FFFDF7;
+      --heading-color: #352F28;
+      --body-color: #352F28;
+      --muted-color: #777064;
+      --button-background: #817653;
+      --button-text: #FFFDF7;
+      --button-hover: #6F6548;
+      --border-color: #E6E0D4;
+      --accent-color: #B8B49A;
+      --khaki: var(--primary-color);
+      --khaki-deep: var(--secondary-color);
+      --khaki-soft: var(--accent-color);
+      --beige: #E8DFC9;
+      --cream: var(--background-color);
+      --ivory: var(--surface-color);
+      --white: var(--surface-color);
+      --coffee: var(--body-color);
+      --muted: var(--muted-color);
+      --border: var(--border-color);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Lato", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --page-width: 1320px;
+      --shadow-soft: 0 14px 34px rgba(53, 47, 40, 0.08);
+      --shadow-lift: 0 18px 42px rgba(53, 47, 40, 0.13);
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 98px; }
+
+    body {
+      margin: 0;
+      color: var(--coffee);
+      background: var(--cream);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { color: var(--heading-color); }
+    .hero h1, .hero h2, .footer-column h2 { color: inherit; }
+
+    body.panel-open { overflow: hidden; }
+    [hidden] { display: none !important; }
+    img { display: block; max-width: 100%; }
+    figure { margin: 0; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    button { color: inherit; }
+
+    :focus-visible {
+      outline: 3px solid #5C6A47;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      transform: translateY(-160%);
+      border-radius: 6px;
+      background: var(--ivory);
+      color: var(--coffee);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .announcement {
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 16px;
+      background: var(--khaki-deep);
+      color: var(--ivory);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 30;
+      top: 0;
+      border-bottom: 1px solid rgba(230, 224, 212, 0.8);
+      background: rgba(255, 253, 247, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-shell,
+    .page-shell {
+      width: min(calc(100% - 48px), var(--page-width));
+      margin-inline: auto;
+    }
+
+    .nav-shell {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+      color: var(--coffee);
+      text-decoration: none;
+    }
+
+    .brand-monogram {
+      position: relative;
+      display: grid;
+      width: 55px;
+      height: 44px;
+      place-items: center;
+      border-top: 1px solid var(--khaki);
+      border-bottom: 1px solid var(--khaki);
+      font-family: var(--serif);
+      font-size: 22px;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .brand-monogram::before,
+    .brand-monogram::after {
+      position: absolute;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--khaki);
+      border-radius: 50%;
+      background: var(--ivory);
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .brand-monogram::before { top: -3px; }
+    .brand-monogram::after { bottom: -3px; }
+
+    .brand-copy { display: grid; gap: 1px; }
+    .brand-copy strong { font-family: var(--serif); font-size: 19px; font-weight: 600; line-height: 1.1; }
+    .brand-copy small { color: var(--muted); font-size: 10px; letter-spacing: 0.035em; }
+
+    .primary-nav { display: flex; align-items: center; gap: clamp(17px, 2.4vw, 34px); }
+    .primary-nav a {
+      position: relative;
+      padding-block: 10px;
+      color: var(--coffee);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+    .primary-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      height: 1px;
+      background: var(--khaki-deep);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+    .primary-nav a:hover { color: var(--khaki-deep); }
+    .primary-nav a:hover::after { transform: scaleX(1); }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .store-status {
+      display: inline-flex;
+      min-height: 32px;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 7px;
+      padding: 0 10px;
+      border: 1px solid #dfe4d7;
+      border-radius: 3px;
+      background: #f3f5ee;
+      color: #4c6242;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .store-status-dot { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: #647c55; box-shadow: 0 0 0 3px rgba(100,124,85,.12); }
+    .store-status.is-closed { border-color: #e6d8cd; background: #f8f1eb; color: #80533f; }
+    .store-status.is-closed .store-status-dot { background: #a66b4d; box-shadow: 0 0 0 3px rgba(166,107,77,.12); }
+    .cart-trigger,
+    .menu-toggle,
+    .icon-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: transparent;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+    .cart-trigger {
+      min-height: 44px;
+      gap: 9px;
+      padding: 0 12px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+    .cart-trigger:hover,
+    .menu-toggle:hover,
+    .icon-button:hover { border-color: var(--khaki); background: var(--cream); }
+    .cart-badge {
+      display: inline-grid;
+      min-width: 22px;
+      height: 22px;
+      padding-inline: 5px;
+      place-items: center;
+      border-radius: 50px;
+      background: var(--khaki-deep);
+      color: var(--ivory);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .menu-toggle { display: none; width: 44px; height: 44px; border-radius: 3px; }
+
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: min(780px, calc(100svh - 114px));
+      min-height: clamp(610px, calc(100svh - 114px), 790px);
+      align-items: center;
+      overflow: hidden;
+      background: #4a3c2d;
+      color: var(--ivory);
+      isolation: isolate;
+    }
+    .hero-media,
+    .hero-media img,
+    .hero::after { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-media { z-index: -2; background: linear-gradient(125deg, #514432, #8d7a5d); }
+    .hero-media img { object-fit: cover; object-position: center 48%; }
+    .hero-media.image-failed img { display: none; }
+    .hero::after {
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(33, 29, 23, 0.86) 0%, rgba(39, 34, 27, 0.65) 43%, rgba(39, 34, 27, 0.1) 100%), linear-gradient(0deg, rgba(35, 29, 22, 0.17), transparent 34%);
+      content: "";
+    }
+    .hero-inner { width: min(calc(100% - 48px), var(--page-width)); margin-inline: auto; padding-block: 78px; }
+    .hero-copy { width: min(100%, 680px); animation: settle-in 780ms cubic-bezier(.2,.8,.2,1) both; }
+    .hero h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(4.6rem, 10vw, 8.7rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.98;
+    }
+    .hero-tagline {
+      display: block;
+      margin-top: 16px;
+      color: #e3d8bb;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .hero h2 {
+      margin: 30px 0 12px;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.2vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+    }
+    .hero-copy > p {
+      max-width: 490px;
+      margin: 0;
+      color: rgba(255, 253, 247, 0.85);
+      font-size: clamp(15px, 1.3vw, 17px);
+    }
+    .content-multiline { white-space: pre-line; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button:disabled { opacity: 0.52; cursor: not-allowed; transform: none; }
+    .button-primary { background: var(--button-background); color: var(--button-text); }
+    .button-primary:hover { background: var(--button-hover); box-shadow: 0 8px 18px rgba(53,47,40,.15); }
+    .button-light { border-color: rgba(255,253,247,.56); background: rgba(255,253,247,.08); color: var(--ivory); }
+    .button-light:hover { border-color: var(--ivory); background: rgba(255,253,247,.17); }
+    .button-outline { border-color: var(--khaki); background: transparent; color: var(--coffee); }
+    .button-outline:hover { border-color: var(--khaki-deep); background: var(--cream); }
+    .button-soft { background: var(--accent-color); color: var(--heading-color); }
+    .button-soft:hover { background: #ddd1b6; }
+    .button-full { width: 100%; }
+
+    .section { padding-block: clamp(76px, 9vw, 124px); }
+    .section-ivory { background: var(--ivory); }
+    .section-beige { background: #efe9dc; }
+    .section-heading { max-width: 720px; margin-bottom: 34px; }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 10px;
+      color: var(--khaki-deep);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+    .section-heading h2,
+    .story-copy h2,
+    .contact-copy h2,
+    .steps-heading h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.25rem, 4.6vw, 4.15rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+    .section-heading > p:last-child,
+    .steps-heading > p:last-child {
+      max-width: 600px;
+      margin: 13px 0 0;
+      color: var(--muted);
+    }
+
+    .featured-grid,
+    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .product-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(230, 224, 212, 0.9);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(53, 47, 40, 0.045);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      animation: card-rise 520ms both;
+    }
+    .product-card:hover { transform: translateY(-4px); border-color: #d4cbb6; box-shadow: var(--shadow-lift); }
+    .product-photo {
+      position: relative;
+      aspect-ratio: 1.72 / 1;
+      overflow: hidden;
+      background: linear-gradient(140deg, #e9e1d0, #c9bda2);
+    }
+    .product-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
+    .product-card:hover .product-photo img { transform: scale(1.045); }
+    .product-photo.image-failed { background: radial-gradient(circle at 75% 28%, rgba(255,253,247,.72), transparent 27%), linear-gradient(135deg, #d4cbb6, #8f866b); }
+    .product-photo.image-failed img { display: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .product-content { display: flex; flex: 1; flex-direction: column; padding: 18px 18px 17px; }
+    .product-kicker { margin-bottom: 4px; color: var(--khaki-deep); font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+    .product-content h3 { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 500; line-height: 1.23; }
+    .product-description { min-height: 42px; margin: 8px 0 13px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .product-price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+    .price-caption { color: var(--muted); font-size: 11px; }
+    .product-price { color: var(--coffee); font-size: 17px; font-weight: 700; white-space: nowrap; }
+    .product-box-note { min-height: 18px; margin: -6px 0 9px; color: var(--khaki-deep); font-size: 10px; line-height: 1.4; }
+    .cart-line-box-fee { margin-top: 5px; color: var(--khaki-deep); font-size: 11px; }
+    .cart-line-total-wrap { display: grid; align-content: start; justify-items: end; gap: 3px; padding-top: 18px; }
+    .cart-line-total-label { color: var(--muted); font-size: 9px; text-align: right; }
+    .review-item-box { display: block; margin-top: 3px; color: var(--khaki-deep); font-size: 10px; }
+    .cart-line-addons { margin-top: 5px; color: var(--khaki-deep); font-size: 11px; line-height: 1.45; }
+    .product-option-wrap { min-height: 55px; margin-bottom: 11px; }
+    .product-option-wrap label { display: grid; gap: 4px; color: var(--muted); font-size: 11px; }
+    .product-option-wrap select,
+    .product-fixed-option {
+      width: 100%;
+      min-height: 38px;
+      margin: 0;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background-color: var(--ivory);
+      color: var(--coffee);
+      font-size: 12px;
+    }
+    .product-option-wrap select { cursor: pointer; }
+    .product-fixed-option { display: flex; align-items: center; justify-content: space-between; }
+    .product-fixed-option span { color: var(--muted); font-size: 11px; }
+    .product-option-wrap .option-hint { display: inline-block; min-height: 15px; margin-top: 3px; color: #a13e32; font-size: 11px; }
+    .product-option-wrap [aria-invalid="true"] { border-color: #a13e32; }
+    .product-addons { min-width: 0; margin: 8px 0 11px; padding: 10px 10px 8px; border: 1px solid var(--border); border-radius: 3px; background: #fbfaf6; }
+    .product-addons legend { padding: 0 5px; color: var(--muted); font-size: 10px; font-weight: 700; }
+    .product-addon-list { display: grid; gap: 5px; }
+    .product-addon-choice { display: flex; min-height: 27px; align-items: center; justify-content: space-between; gap: 8px; color: var(--coffee); font-size: 11px; cursor: pointer; }
+    .product-addon-choice-main { display: inline-flex; min-width: 0; align-items: center; gap: 7px; }
+    .product-addon-choice input { width: 15px; height: 15px; flex: 0 0 auto; accent-color: var(--khaki-deep); }
+    .product-addon-choice-price { flex: 0 0 auto; color: var(--muted); font-size: 10px; }
+    .product-selection-estimate { min-height: 16px; margin: -3px 0 10px; color: var(--khaki-deep); font-size: 10px; line-height: 1.4; }
+    .product-purchase-row { display: flex; align-items: end; gap: 9px; margin-top: auto; }
+    .quantity-field { display: grid; flex: 0 0 74px; gap: 4px; color: var(--muted); font-size: 11px; }
+    .quantity-field input {
+      width: 100%;
+      min-height: 42px;
+      padding: 7px 8px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--ivory);
+      color: var(--coffee);
+      text-align: center;
+    }
+    .add-button { min-height: 42px; flex: 1; padding-inline: 10px; font-size: 12px; }
+    .featured-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .menu-tools { display: grid; gap: 20px; margin-bottom: 26px; }
+    .menu-search-wrap { position: relative; max-width: 480px; }
+    .menu-search-wrap svg { position: absolute; top: 50%; left: 15px; width: 18px; height: 18px; color: var(--muted); transform: translateY(-50%); pointer-events: none; }
+    .menu-search {
+      width: 100%;
+      min-height: 50px;
+      padding: 11px 14px 11px 44px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--white);
+      color: var(--coffee);
+    }
+    .menu-search::placeholder { color: #918a7e; }
+    .category-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .category-tab {
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--coffee);
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+    .category-tab:hover { border-color: var(--khaki); background: #f0ecdf; }
+    .category-tab[aria-selected="true"] { border-color: var(--khaki-deep); background: var(--khaki-deep); color: var(--ivory); }
+    .menu-results-line { min-height: 24px; margin: 0 0 15px; color: var(--muted); font-size: 12px; }
+    .empty-results { padding: 45px 22px; border: 1px dashed #cfc6b3; border-radius: 6px; color: var(--muted); text-align: center; }
+    .empty-results strong { display: block; margin-bottom: 5px; color: var(--coffee); font-family: var(--serif); font-size: 24px; font-weight: 500; }
+
+    .story-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.93fr); align-items: center; gap: clamp(40px, 7vw, 108px); }
+    .story-copy { max-width: 610px; }
+    .story-copy h2 { max-width: 620px; }
+    .story-copy p { margin: 17px 0 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
+    .story-image { position: relative; min-height: 475px; overflow: hidden; border-radius: 3px; background: linear-gradient(145deg, #d3c7aa, #675c47); }
+    .story-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .story-image.image-failed { background: linear-gradient(145deg, #d3c7aa, #675c47); }
+    .story-image.image-failed img { display: none; }
+
+    .steps-section { background: var(--ivory); }
+    .steps-heading { max-width: 700px; margin-bottom: 48px; }
+    .steps-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 38px; row-gap: 34px; margin: 0; padding: 0; list-style: none; counter-reset: order-steps; }
+    .steps-list li { position: relative; min-height: 118px; padding: 18px 14px 0 0; border-top: 1px solid var(--khaki-soft); counter-increment: order-steps; }
+    .steps-list li::before { display: block; margin-bottom: 14px; color: var(--khaki-deep); content: "0" counter(order-steps); font-family: var(--serif); font-size: 23px; }
+    .steps-list strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .steps-list span { display: block; color: var(--muted); font-size: 13px; }
+    .steps-note { margin: 36px 0 0; padding-top: 18px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+
+    .contact-section { overflow: hidden; background: var(--beige); }
+    .contact-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: stretch; gap: clamp(34px, 7vw, 96px); }
+    .contact-copy { align-self: center; padding-block: 25px; }
+    .contact-copy h2 { max-width: 620px; }
+    .contact-copy > p:not(.eyebrow) { max-width: 540px; margin: 16px 0 0; color: #615b50; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .contact-note { display: block; margin-top: 18px; color: #625d52; font-size: 12px; }
+    .contact-photo { position: relative; min-height: 420px; overflow: hidden; border-radius: 3px; background: linear-gradient(145deg, #d3c7aa, #675c47); }
+    .contact-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .contact-photo.image-failed img { display: none; }
+
+    .site-footer { padding: 54px 0 23px; background: #332f28; color: var(--ivory); }
+    .footer-layout { display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 44px; padding-bottom: 42px; }
+    .footer-brand .brand-lockup { color: var(--ivory); }
+    .footer-brand .brand-copy small { color: #c1b8a5; }
+    .footer-brand .brand-monogram { border-color: #b9ae90; }
+    .footer-brand .brand-monogram::before,
+    .footer-brand .brand-monogram::after { border-color: #b9ae90; background: #332f28; }
+    .footer-brand > p { max-width: 330px; margin: 16px 0 0; color: #c7c0b3; font-size: 13px; }
+    .footer-column h2 { margin: 4px 0 14px; color: #d5c9ad; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+    .footer-links { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .footer-links a { color: #eee9df; font-size: 13px; text-decoration: none; }
+    .footer-links a:hover { color: #d6c9a8; text-decoration: underline; text-underline-offset: 4px; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 19px; border-top: 1px solid rgba(255,253,247,.18); color: #c7c0b3; font-size: 11px; }
+
+    .panel-layer { position: fixed; z-index: 60; inset: 0; }
+    .panel-scrim { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: rgba(31, 28, 23, 0.53); cursor: default; animation: fade-in 180ms ease both; }
+    .order-drawer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      width: min(490px, 100%);
+      height: 100%;
+      height: 100dvh;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--ivory);
+      box-shadow: -18px 0 55px rgba(28, 25, 20, 0.18);
+      transform: translateX(104%);
+      transition: transform 280ms cubic-bezier(.2,.7,.2,1), width 220ms ease;
+    }
+    .panel-layer:not([hidden]) .order-drawer { transform: translateX(0); }
+    .order-drawer.is-wide { width: min(640px, 100%); }
+    .drawer-header { display: flex; flex-shrink: 0; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 26px; border-bottom: 1px solid var(--border); }
+    .drawer-header .eyebrow { margin-bottom: 2px; font-size: 9px; }
+    .drawer-header h2 { margin: 0; font-family: var(--serif); font-size: 29px; font-weight: 500; line-height: 1.2; }
+    .icon-button { width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; }
+    .drawer-view { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+    .drawer-padding { padding: 21px 26px 28px; }
+    .cart-empty-state { display: grid; min-height: 330px; place-content: center; justify-items: center; padding: 28px; color: var(--muted); text-align: center; }
+    .cart-empty-state svg { width: 45px; height: 45px; margin-bottom: 15px; color: var(--khaki-deep); }
+    .cart-empty-state h3 { margin: 0; color: var(--coffee); font-family: var(--serif); font-size: 27px; font-weight: 500; }
+    .cart-empty-state p { max-width: 250px; margin: 8px 0 20px; font-size: 13px; }
+    .cart-lines { display: grid; gap: 0; }
+    .cart-line { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 17px 0; border-bottom: 1px solid var(--border); }
+    .cart-line h3 { margin: 0; font-family: var(--serif); font-size: 18px; font-weight: 500; line-height: 1.25; }
+    .cart-line-category { display: block; margin-bottom: 4px; color: var(--khaki-deep); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .cart-line-option { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .cart-line-price { margin-top: 7px; color: var(--coffee); font-size: 12px; }
+    .cart-line-total { font-size: 13px; font-weight: 700; white-space: nowrap; }
+    .cart-line-actions { display: flex; align-items: center; gap: 7px; margin-top: 11px; }
+    .cart-qty-button { display: inline-grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--border); border-radius: 3px; background: transparent; cursor: pointer; }
+    .cart-qty-button:hover:not(:disabled) { border-color: var(--khaki); background: var(--cream); }
+    .cart-qty-button:disabled { opacity: .4; cursor: not-allowed; }
+    .cart-qty-value { min-width: 24px; text-align: center; font-size: 13px; font-weight: 700; }
+    .remove-line { margin-left: 6px; padding: 5px 2px; border: 0; background: transparent; color: #8e463d; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+    .cart-summary { margin-top: 20px; padding: 17px 0; border-top: 1px solid var(--border); }
+    .summary-row { display: flex; justify-content: space-between; gap: 15px; margin: 5px 0; color: var(--muted); font-size: 13px; }
+    .summary-row strong { color: var(--coffee); font-weight: 700; }
+    .summary-row.total-row { margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--coffee); font-size: 15px; font-weight: 700; }
+    .summary-row.total-row strong { font-size: 18px; }
+    .fee-disclaimer { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .cart-actions { display: grid; gap: 9px; margin-top: 17px; }
+    .text-button { justify-self: center; padding: 7px 10px; border: 0; background: transparent; color: var(--muted); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+    .pending-order-note { margin-top: 20px; padding: 14px; border-left: 2px solid var(--khaki); background: #f2eee3; }
+    #pendingOrderNote { margin: 0 26px 22px; }
+    .pending-order-note strong { display: block; font-size: 12px; }
+    .pending-order-note p { margin: 4px 0 8px; color: var(--muted); font-size: 11px; }
+    .pending-order-note button { padding: 0; border: 0; background: transparent; color: var(--khaki-deep); font-size: 11px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+    .checkout-intro { margin: 0 0 20px; color: var(--muted); font-size: 13px; }
+    .checkout-form { display: grid; gap: 24px; }
+    .form-section { display: grid; gap: 14px; margin: 0; padding: 0; border: 0; }
+    .form-section legend { width: 100%; margin-bottom: 2px; padding: 0 0 9px; border-bottom: 1px solid var(--border); font-family: var(--serif); font-size: 22px; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .field { display: grid; align-content: start; gap: 5px; }
+    .field-full { grid-column: 1 / -1; }
+    .field label { font-size: 12px; font-weight: 700; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 45px;
+      padding: 10px 11px;
+      border: 1px solid #d9d2c5;
+      border-radius: 3px;
+      background: var(--white);
+      color: var(--coffee);
+      font-size: 13px;
+    }
+    .field textarea { min-height: 88px; resize: vertical; }
+    .field input::placeholder,
+    .field textarea::placeholder { color: #999184; }
+    .field [aria-invalid="true"] { border-color: #a13e32; }
+    .field-error { min-height: 15px; margin: 0; color: #a13e32; font-size: 11px; }
+    .field-help { margin: -1px 0 0; color: var(--muted); font-size: 10px; }
+    .delivery-guidance {
+      margin-top: 3px;
+      padding: 15px 16px;
+      border-left: 2px solid var(--khaki-deep);
+      background: #f2eee3;
+      color: var(--coffee);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .delivery-guidance .eyebrow { margin-bottom: 4px; font-size: 9px; }
+    .delivery-guidance p { margin: 6px 0; }
+    .delivery-guidance dl { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 4px 10px; margin: 10px 0 0; }
+    .delivery-guidance dt { color: var(--muted); }
+    .delivery-guidance dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+    .delivery-guidance a { color: var(--khaki-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .delivery-guidance .delivery-fare-note { margin: 10px 0 0; color: var(--muted); font-size: 11px; }
+    .review-delivery-note { margin: 13px 0 0; padding: 10px 12px; border-left: 2px solid var(--khaki); background: #f2eee3; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .review-box { padding: 17px; border: 1px solid var(--border); border-radius: 4px; background: #faf8f2; }
+    .review-box h3 { margin: 0 0 12px; font-family: var(--serif); font-size: 21px; font-weight: 500; }
+    .review-items { display: grid; gap: 9px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .review-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; font-size: 12px; }
+    .review-item-name { display: block; font-weight: 700; }
+    .review-item-detail { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
+    .review-item-total { white-space: nowrap; }
+    .review-totals { padding-top: 9px; }
+    .review-details { display: grid; gap: 7px; margin: 17px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
+    .review-detail { display: grid; grid-template-columns: 102px minmax(0,1fr); gap: 10px; font-size: 11px; }
+    .review-detail dt { color: var(--muted); }
+    .review-detail dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+    .form-general-error { margin: -8px 0 0; padding: 10px 12px; border-left: 2px solid #a13e32; background: #fbefec; color: #86382e; font-size: 12px; }
+    .form-disclaimer { margin: -10px 0 0; color: var(--muted); font-size: 11px; }
+
+    .confirmation-panel { padding: 25px 26px 30px; }
+    .confirmation-mark { display: grid; width: 47px; height: 47px; margin-bottom: 15px; place-items: center; border: 1px solid var(--khaki); border-radius: 50%; color: var(--khaki-deep); }
+    .confirmation-mark svg { width: 22px; height: 22px; }
+    .confirmation-panel h3 { margin: 0; font-family: var(--serif); font-size: 31px; font-weight: 500; line-height: 1.2; }
+    .confirmation-panel > p { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+    .order-reference { display: inline-block; margin-top: 15px; padding: 8px 10px; background: #f0ecdf; color: var(--coffee); font-size: 13px; font-weight: 700; letter-spacing: .07em; }
+    .confirmation-warning { margin-top: 17px !important; padding: 12px 13px; border-left: 2px solid var(--khaki-deep); background: #f5f1e6; color: var(--coffee) !important; }
+    .local-record-note { font-size: 11px !important; }
+    .summary-pre {
+      max-height: 360px;
+      overflow: auto;
+      margin: 18px 0 0;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--white);
+      color: var(--coffee);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .copy-feedback { min-height: 20px; margin: 8px 0 0; color: var(--khaki-deep); font-size: 12px; }
+    .confirmation-actions { display: grid; gap: 10px; margin-top: 15px; }
+    .confirmation-actions .button { width: 100%; }
+    .messenger-help { margin: 12px 0 0 !important; color: var(--muted); font-size: 11px !important; text-align: center; }
+
+    .toast-region { position: fixed; z-index: 90; right: 20px; bottom: 20px; display: grid; width: min(360px, calc(100% - 40px)); gap: 9px; pointer-events: none; }
+    .toast {
+      padding: 13px 16px;
+      border: 1px solid rgba(255,253,247,.55);
+      border-radius: 4px;
+      background: var(--coffee);
+      box-shadow: var(--shadow-soft);
+      color: var(--ivory);
+      font-size: 13px;
+      animation: toast-in 220ms ease both;
+    }
+    .toast.toast-error { background: #743f37; }
+
+    @keyframes settle-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes card-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (min-width: 1120px) {
+      .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-shell, .page-shell, .hero-inner { width: min(calc(100% - 36px), var(--page-width)); }
+      .primary-nav { gap: 16px; }
+      .primary-nav a { font-size: 12px; }
+      .brand-copy small { max-width: 140px; font-size: 9px; }
+      .featured-grid, .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .story-layout { gap: 36px; }
+      .story-image { min-height: 420px; }
+      .steps-list { column-gap: 25px; }
+      .footer-layout { gap: 28px; }
+    }
+
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 82px; }
+      .nav-shell { min-height: 70px; gap: 10px; }
+      .brand-monogram { width: 47px; height: 39px; font-size: 19px; }
+      .brand-lockup { gap: 9px; }
+      .brand-copy strong { font-size: 17px; }
+      .brand-copy small { max-width: 132px; font-size: 8px; }
+      .nav-actions { gap: 7px; }
+      .store-status { min-height: 30px; gap: 5px; padding-inline: 7px; font-size: 9px; }
+      .cart-trigger { min-height: 42px; gap: 6px; padding-inline: 9px; font-size: 0; }
+      .cart-trigger svg { width: 19px; height: 19px; }
+      .cart-badge { font-size: 10px; }
+      .menu-toggle { display: inline-flex; }
+      .primary-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 18px 14px;
+        border-bottom: 1px solid var(--border);
+        background: var(--ivory);
+        box-shadow: 0 14px 20px rgba(53,47,40,.08);
+      }
+      .primary-nav.is-open { display: grid; }
+      .primary-nav a { padding: 12px 2px; border-bottom: 1px solid #eee9df; font-size: 14px; }
+      .primary-nav a::after { display: none; }
+      .hero { min-height: 660px; min-height: min(720px, calc(100svh - 102px)); }
+      .hero::after { background: linear-gradient(90deg, rgba(33,29,23,.84), rgba(39,34,27,.49) 72%, rgba(39,34,27,.2)), linear-gradient(0deg, rgba(35,29,22,.35), transparent 50%); }
+      .hero-inner { padding-block: 68px; }
+      .hero h1 { font-size: clamp(4.2rem, 18vw, 6.4rem); }
+      .hero-tagline { max-width: 260px; font-size: 9px; letter-spacing: .17em; line-height: 1.7; }
+      .hero h2 { margin-top: 27px; font-size: clamp(1.9rem, 8vw, 2.7rem); }
+      .hero-copy > p { max-width: 420px; font-size: 15px; }
+      .hero-actions { align-items: stretch; flex-direction: column; max-width: 290px; }
+      .hero-actions .button { width: 100%; }
+      .section { padding-block: 72px; }
+      .section-heading { margin-bottom: 26px; }
+      .section-heading h2, .story-copy h2, .contact-copy h2, .steps-heading h2 { font-size: clamp(2.1rem, 9vw, 3.25rem); }
+      .featured-grid, .product-grid { gap: 13px; }
+      .product-content { padding: 14px 13px 13px; }
+      .product-content h3 { font-size: 19px; }
+      .product-description { min-height: 55px; margin: 7px 0 10px; font-size: 12px; }
+      .product-price { font-size: 15px; }
+      .product-price-row { align-items: flex-start; flex-direction: column; gap: 2px; margin-bottom: 9px; }
+      .product-option-wrap { min-height: 55px; margin-bottom: 9px; }
+      .product-addons { margin: 6px 0 9px; padding: 8px; }
+      .product-addon-choice { min-height: 30px; }
+      .product-purchase-row { gap: 6px; }
+      .quantity-field { flex-basis: 56px; }
+      .quantity-field input { min-height: 40px; padding-inline: 3px; }
+      .add-button { min-height: 40px; font-size: 11px; }
+      .menu-tools { gap: 15px; }
+      .category-tabs { flex-wrap: nowrap; overflow-x: auto; padding: 2px 2px 7px; scrollbar-width: thin; }
+      .category-tab { flex: 0 0 auto; padding-inline: 13px; }
+      .story-layout, .contact-layout { grid-template-columns: 1fr; gap: 29px; }
+      .story-image { min-height: 360px; grid-row: 1; }
+      .story-copy p { font-size: 14px; }
+      .steps-heading { margin-bottom: 34px; }
+      .steps-list { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px 20px; }
+      .steps-list li { min-height: 132px; padding-top: 14px; }
+      .contact-photo { min-height: 350px; }
+      .footer-layout { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 34px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; gap: 5px; }
+      .drawer-header { padding: 17px 18px; }
+      .drawer-padding, .confirmation-panel { padding: 18px 18px 25px; }
+      #pendingOrderNote { margin-inline: 18px; }
+      .order-drawer.is-wide { width: 100%; }
+    }
+
+    @media (max-width: 420px) {
+      .announcement { min-height: 29px; font-size: 9px; }
+      .nav-shell, .page-shell, .hero-inner { width: calc(100% - 28px); }
+      .brand-copy small { max-width: 112px; letter-spacing: 0; }
+      .cart-trigger { gap: 4px; padding-inline: 7px; }
+      .store-status { min-height: 29px; gap: 5px; padding-inline: 6px; font-size: 8px; letter-spacing: .03em; }
+      .hero { min-height: 640px; }
+      .hero h1 { font-size: clamp(3.75rem, 17vw, 4.7rem); }
+      .hero-actions { max-width: none; }
+      .featured-grid, .product-grid { grid-template-columns: 1fr; }
+      .product-photo { aspect-ratio: 1.9 / 1; }
+      .product-content { padding: 16px; }
+      .product-description { min-height: 0; }
+      .product-price-row { align-items: baseline; flex-direction: row; }
+      .steps-list { grid-template-columns: 1fr; gap: 13px; }
+      .steps-list li { min-height: auto; padding: 12px 0 13px; }
+      .steps-list li::before { display: inline-block; margin: 0 10px 0 0; vertical-align: middle; }
+      .steps-list strong { display: inline; }
+      .steps-list span { margin-top: 5px; }
+      .field-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .review-detail { grid-template-columns: 86px minmax(0,1fr); }
+      .contact-actions { flex-direction: column; align-items: stretch; }
+      .contact-actions .button { width: 100%; }
+      .footer-layout { grid-template-columns: 1fr 1fr; gap: 30px 18px; }
+      .footer-column:last-child { grid-column: 1 / -1; }
+      .toast-region { right: 14px; bottom: 14px; width: calc(100% - 28px); }
+    }
+
+    .admin-preview-banner { position: relative; z-index: 31; padding: 9px 16px; background: #6e503d; color: #fffdf7; font-size: 12px; text-align: center; }
+    .admin-preview-banner a { margin-left: 6px; color: #f0e4c8; font-weight: 700; text-underline-offset: 3px; }
+    .brand-logo-image { width: 55px; height: 48px; flex: 0 0 auto; object-fit: contain; }
+    .footer-brand .brand-logo-image { max-height: 50px; }
+    .contact-facts { display: grid; gap: 3px; margin-top: 14px; color: #514b40; font-size: 12px; }
+    .contact-facts a { color: var(--khaki-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .product-card.is-unavailable { opacity: .78; }
+    .product-unavailable-note { margin: -5px 0 9px; color: #8e463d; font-size: 11px; font-weight: 700; }
+    .cart-price-alert { margin-top: 7px; padding: 8px 9px; border-left: 2px solid #9a633a; background: #f8efe2; color: #66472f; font-size: 11px; line-height: 1.45; }
+    .cart-price-alert button { display: block; margin-top: 6px; padding: 0; border: 0; background: transparent; color: #66472f; font-size: 11px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+    .cart-unavailable-alert { margin-top: 7px; color: #8e463d; font-size: 11px; line-height: 1.45; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+
+    @media print {
+      body * { visibility: hidden !important; }
+      .summary-pre, .summary-pre * { visibility: visible !important; }
+      .summary-pre { position: absolute; inset: 0; width: 100%; max-height: none; border: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="announcement" data-content="announcement">Your favorite coffee moments start here.</div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand-lockup" href="#home" aria-label="BTK Coffee home">
+        <span class="brand-monogram" aria-hidden="true">BTK</span>
+        <img class="brand-logo-image" data-brand-image alt="" hidden>
+        <span class="brand-copy"><strong data-business-name>BTK Coffee</strong><small data-tagline>Brewed to Brighten Your Day</small></span>
+      </a>
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a data-nav-link="home" href="#home">Home</a>
+        <a data-nav-link="menu" href="#menu">Menu</a>
+        <a data-nav-link="story" href="#story">Our Story</a>
+        <a data-nav-link="findUs" href="#find-us">Find Us</a>
+        <a data-nav-link="contact" data-messenger-link href="https://m.me/btkcoffeeeee" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="store-status is-closed" id="storeStatusBadge" role="status" aria-live="polite" aria-label="Store status: Closed">
+          <span class="store-status-dot" aria-hidden="true"></span>
+          <span id="storeStatusText">Closed</span>
+        </div>
+        <button class="cart-trigger" id="openCartButton" type="button" aria-label="Open cart, 0 items">
+          <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span class="cart-label">Cart</span><span class="cart-badge" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="primaryNav" aria-expanded="false">
+          <svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img id="heroImage" src="https://images.pexels.com/photos/18189024/pexels-photo-18189024.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1400&w=2200" alt="" fetchpriority="high">
+      </div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title"><span data-business-name>BTK Coffee</span></h1>
+          <span class="hero-tagline" data-tagline>Brewed to Brighten Your Day</span>
+          <h2 data-content="heroHeading">Good Coffee.<br>Better Moments.</h2>
+          <p class="content-multiline" data-content="heroDescription">Crafted with passion, inspired by late-night café adventures, and made to brighten your day.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" data-content="heroPrimaryCta" href="#menu">Order Your Favorites</a>
+            <a class="button button-light" data-content="heroSecondaryCta" href="#story">Discover Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-ivory" aria-labelledby="featured-title">
+      <div class="page-shell">
+        <div class="section-heading">
+          <p class="eyebrow" data-content="featuredEyebrow">A little something for your day</p>
+          <h2 id="featured-title" data-content="featuredHeading">A few BTK favorites</h2>
+          <p class="content-multiline" data-content="featuredDescription">Find a familiar pick, try a new flavor, and make a little room for a good coffee moment.</p>
+        </div>
+        <div class="featured-grid" id="featuredGrid" aria-label="Featured BTK Coffee menu items"></div>
+      </div>
+    </section>
+
+    <section class="section" id="menu" aria-labelledby="menu-title">
+      <div class="page-shell">
+        <div class="section-heading">
+          <p class="eyebrow" data-content="menuEyebrow">The BTK menu</p>
+          <h2 id="menu-title" data-content="menuHeading">Something for your kind of break</h2>
+          <p class="content-multiline" data-content="menuDescription">Browse the menu, choose an available size or serving, and add your picks to an order request.</p>
+        </div>
+        <div class="menu-tools">
+          <label class="menu-search-wrap" for="menuSearch" aria-label="Search menu items">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            <input class="menu-search" id="menuSearch" type="search" placeholder="Search the menu" autocomplete="off" aria-label="Search the menu">
+          </label>
+          <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Filter menu by category"></div>
+        </div>
+        <p class="menu-results-line" id="menuResults" aria-live="polite"></p>
+        <div class="product-grid" id="productGrid" role="tabpanel" aria-labelledby="categoryTabAll"></div>
+        <div class="empty-results" id="emptyResults" hidden>
+          <strong data-content="emptyMenuHeading">No menu items found</strong>
+          <span data-content="emptyMenuDescription">Try another name or choose a different category.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-ivory" id="story" aria-labelledby="story-title">
+      <div class="page-shell story-layout">
+        <div class="story-copy">
+          <p class="eyebrow" data-content="storyEyebrow">Our story</p>
+          <h2 id="story-title" data-content="storyHeading">From Late-Night Café Adventures to Your Favorite Cup</h2>
+          <p class="content-multiline" data-content="storyParagraphOne">BTK Coffee was born out of a shared passion for coffee between two people who simply loved exploring different cafés every night. What began as a nightly adventure to discover new flavors soon turned into a dream of crafting our own unique blend.</p>
+          <p class="content-multiline" data-content="storyParagraphTwo">With countless cups and late-night experiments, we finally created an iced coffee recipe that perfectly matched our palate. After sharing it with friends and receiving overwhelmingly positive feedback, BTK Coffee was officially established.</p>
+        </div>
+        <figure class="story-image">
+          <img id="storyImage" src="https://images.pexels.com/photos/33094652/pexels-photo-33094652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1100&w=1000" alt="Warm cafe setting with an espresso machine and coffee-making tools" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section steps-section" id="how-to-order" aria-labelledby="steps-title">
+      <div class="page-shell">
+        <div class="steps-heading">
+          <p class="eyebrow" data-content="orderEyebrow">Ordering, made easy</p>
+          <h2 id="steps-title" data-content="orderHeading">From menu to Messenger</h2>
+          <p class="content-multiline" data-content="orderDescription">A simple way to prepare your request. BTK Coffee will confirm availability and fulfillment details with you.</p>
+        </div>
+        <ol class="steps-list" id="orderStepsList"></ol>
+        <p class="steps-note content-multiline" data-content="orderNote">Free delivery is available around {freeArea} when BTK Coffee confirms that the address qualifies. Outside this area, customers need to self-book a delivery courier. Confirm availability, operating hours, and other fulfillment details with BTK Coffee in Messenger.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="find-us" aria-labelledby="contact-title">
+      <div class="page-shell contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow" data-content="contactEyebrow">Find us and say hello</p>
+          <h2 id="contact-title" data-contact-heading>Your Next Coffee Moment Is Waiting</h2>
+          <p class="content-multiline" data-contact-description>Questions about the menu, delivery, availability, or hours? Message BTK Coffee to confirm the details and send your prepared order request.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" data-messenger-link data-contact-message-cta href="https://m.me/btkcoffeeeee" target="_blank" rel="noopener noreferrer">Message BTK Coffee</a>
+            <a class="button button-outline" data-maps-link data-contact-directions-cta href="https://maps.app.goo.gl/x8PXrcovtmqqKweg9?g_st=ipc" target="_blank" rel="noopener noreferrer">Get Directions</a>
+            <a class="button button-soft" data-content="contactOrderCta" href="#menu">Start an Order</a>
+          </div>
+          <div id="contactFacts" class="contact-facts"></div>
+          <small class="contact-note" data-contact-instructions>Use Messenger to confirm delivery coverage, fees, operating hours, and current availability.</small>
+        </div>
+        <figure class="contact-photo">
+          <img id="contactImage" src="https://images.pexels.com/photos/4921567/pexels-photo-4921567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1100" alt="An iced coffee in a clear glass on a wooden cafe table" loading="lazy">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell">
+      <div class="footer-layout">
+        <div class="footer-brand">
+          <a class="brand-lockup" href="#home" aria-label="BTK Coffee home">
+            <span class="brand-monogram" aria-hidden="true">BTK</span>
+            <img class="brand-logo-image" data-brand-image alt="" hidden>
+            <span class="brand-copy"><strong data-business-name>BTK Coffee</strong><small data-tagline>Brewed to Brighten Your Day</small></span>
+          </a>
+          <p class="content-multiline" data-content="footerBrandLine">BTK Coffee — Brewed to Brighten Your Day.</p>
+        </div>
+        <div class="footer-column">
+          <h2 data-content="footerExploreHeading">Explore</h2>
+          <ul class="footer-links" id="footerQuickLinks"></ul>
+        </div>
+        <div class="footer-column">
+          <h2 data-content="footerMenuHeading">Menu & contact</h2>
+          <ul class="footer-links" id="footerMenuLinks"></ul>
+          <ul class="footer-links" id="footerContactLinks"></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="copyrightYear"></span> <span id="copyrightBusinessName">BTK Coffee</span>. <span data-content="footerCopyrightText">All rights reserved.</span></span>
+        <span data-content="footerOrderNotice">Orders are requests until confirmed by BTK Coffee.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="panel-layer" id="panelLayer" hidden>
+    <button class="panel-scrim" id="panelScrim" type="button" aria-label="Close ordering panel"></button>
+    <aside class="order-drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" tabindex="-1">
+      <header class="drawer-header">
+        <div>
+          <p class="eyebrow">BTK Coffee ordering</p>
+          <h2 id="drawerTitle">Your order</h2>
+        </div>
+        <button class="icon-button" id="closePanelButton" type="button" aria-label="Close ordering panel">
+          <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+
+      <section class="drawer-view" id="cartView" data-panel-view="cart" aria-label="Shopping cart">
+        <div class="cart-empty-state" id="cartEmptyState" hidden>
+          <svg aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11h4l4 22a3 3 0 0 0 3 2.4h18a3 3 0 0 0 3-2.4L44 18H14"/><circle cx="21" cy="41" r="2"/><circle cx="36" cy="41" r="2"/></svg>
+          <h3>Your cart is taking a break</h3>
+          <p>Choose a drink or a bite from the BTK menu to get started.</p>
+          <button class="button button-primary" type="button" data-continue-shopping>Browse the menu</button>
+        </div>
+        <div class="drawer-padding" id="cartContent" hidden>
+          <div class="cart-lines" id="cartLines"></div>
+          <div class="cart-summary">
+            <div class="summary-row"><span>Menu subtotal</span><strong id="cartSubtotal">₱0</strong></div>
+            <div class="summary-row"><span>Optional extras</span><strong id="cartAddOnFee">₱0</strong></div>
+            <div class="summary-row"><span>Take-out box fee</span><strong id="cartBoxFee">₱0</strong></div>
+            <div class="summary-row"><span>Delivery fee</span><span>Confirm with BTK</span></div>
+            <div class="summary-row total-row"><span>Estimated total</span><strong id="cartTotal">₱0</strong></div>
+          <p class="fee-disclaimer">The ₱5 take-out box charge applies per qualifying item for both pickup and delivery, and is included here. Free delivery may be available around Barangay 176-A and nearby barangays; confirm eligibility at checkout. Outside this area, self-book a courier. Courier and service fees are not included.</p>
+          </div>
+          <div class="cart-actions">
+            <button class="button button-primary button-full" id="checkoutButton" type="button">Proceed to Checkout</button>
+            <button class="button button-outline button-full" type="button" data-continue-shopping>Continue Shopping</button>
+            <button class="text-button" id="clearCartButton" type="button">Clear the entire cart</button>
+          </div>
+        </div>
+        <div class="pending-order-note" id="pendingOrderNote" hidden>
+          <strong>Latest prepared order</strong>
+          <p id="pendingOrderText"></p>
+          <button id="reviewPendingOrderButton" type="button">Review saved summary</button>
+        </div>
+      </section>
+
+      <section class="drawer-view" id="checkoutView" data-panel-view="checkout" aria-label="Checkout details" hidden>
+        <div class="drawer-padding">
+          <button class="text-button" id="backToCartButton" type="button" style="justify-self:start;margin:0 0 14px;padding:0">Back to cart</button>
+          <p class="checkout-intro">Add your details, then review the request before preparing it for Messenger.</p>
+          <form class="checkout-form" id="checkoutForm" novalidate>
+            <fieldset class="form-section">
+              <legend>Your details</legend>
+              <div class="field-grid">
+                <div class="field field-full">
+                  <label for="customerName">Full name <span aria-hidden="true">*</span></label>
+                  <input id="customerName" name="customerName" type="text" autocomplete="name" maxlength="80" aria-describedby="nameError" required>
+                  <p class="field-error" id="nameError" role="alert"></p>
+                </div>
+                <div class="field field-full">
+                  <label for="customerPhone">Philippine mobile number <span aria-hidden="true">*</span></label>
+                  <input id="customerPhone" name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX or +63 9XX XXX XXXX" maxlength="24" aria-describedby="phoneHint phoneError" required>
+                  <p class="field-help" id="phoneHint">Enter a Philippine mobile number starting with 09 or +639.</p>
+                  <p class="field-error" id="phoneError" role="alert"></p>
+                </div>
+                <div class="field field-full">
+                  <label for="orderType">Order type <span aria-hidden="true">*</span></label>
+                  <select id="orderType" name="orderType" required>
+                    <option value="pickup">Pickup</option>
+                    <option value="delivery">Delivery</option>
+                  </select>
+                  <p class="field-error" id="orderTypeError" role="alert"></p>
+                </div>
+                <div class="field field-full" id="addressField" hidden>
+                  <label for="deliveryAddress">Delivery address <span aria-hidden="true">*</span></label>
+                  <textarea id="deliveryAddress" name="deliveryAddress" autocomplete="street-address" maxlength="300" placeholder="House or unit, street, barangay, city" aria-describedby="addressError"></textarea>
+                  <p class="field-error" id="addressError" role="alert"></p>
+                </div>
+                <aside class="field-full delivery-guidance" id="deliveryGuidance" role="note" aria-labelledby="deliveryGuidanceTitle" hidden>
+                  <p class="eyebrow" id="deliveryGuidanceTitle">Delivery details</p>
+          <p><strong>Free delivery is available around <span data-delivery-area>Barangay 176-A and nearby barangays</span>.</strong> Please message BTK Coffee to confirm whether your address qualifies.</p>
+                  <p>If your address is outside this area, please self-book delivery through any delivery courier. Use these details for the courier booking:</p>
+                  <dl>
+                    <dt>Pin location</dt><dd data-delivery-pin>BTK Coffee or Haidross</dd>
+                    <dt>Contact name</dt><dd data-delivery-contact-name>Resty or Jezzel</dd>
+                    <dt>Contact number</dt><dd><a data-delivery-phone href="tel:09690431840">09690431840</a></dd>
+                  </dl>
+                  <p class="delivery-fare-note">A self-booked courier fare is set by the courier and is not included in this order estimate.</p>
+                </aside>
+                <div class="field field-full">
+                  <label for="fulfillmentTime" id="fulfillmentTimeLabel">Preferred pickup time <span>(optional)</span></label>
+                  <input id="fulfillmentTime" name="fulfillmentTime" type="text" maxlength="60" placeholder="e.g. 6:30 PM">
+                </div>
+                <div class="field field-full">
+                  <label for="orderNotes">Order notes <span>(optional)</span></label>
+                  <textarea id="orderNotes" name="orderNotes" maxlength="500" placeholder="Anything else BTK Coffee should know?"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <section class="review-box" aria-labelledby="review-title">
+              <h3 id="review-title">Review your order</h3>
+              <div class="review-items" id="reviewItems"></div>
+              <div class="review-totals">
+                <div class="summary-row"><span>Menu subtotal</span><strong id="reviewSubtotal">₱0</strong></div>
+                <div class="summary-row"><span>Optional extras</span><strong id="reviewAddOnFee">₱0</strong></div>
+                <div class="summary-row"><span>Take-out box fee</span><strong id="reviewBoxFee">₱0</strong></div>
+                <div class="summary-row"><span>Delivery fee</span><span id="reviewDeliveryFee">Not applicable</span></div>
+                <div class="summary-row"><span>Service fee</span><span>None configured</span></div>
+                <div class="summary-row total-row"><span>Estimated total</span><strong id="reviewTotal">₱0</strong></div>
+              </div>
+              <dl class="review-details">
+                <div class="review-detail"><dt>Customer</dt><dd id="reviewName">Not entered</dd></div>
+                <div class="review-detail"><dt>Mobile</dt><dd id="reviewPhone">Not entered</dd></div>
+                <div class="review-detail"><dt>Order type</dt><dd id="reviewOrderType">Pickup</dd></div>
+                <div class="review-detail" id="reviewAddressRow" hidden><dt>Address</dt><dd id="reviewAddress"></dd></div>
+                <div class="review-detail"><dt>Requested time</dt><dd id="reviewTime">Not specified</dd></div>
+                <div class="review-detail"><dt>Order notes</dt><dd id="reviewNotes">None</dd></div>
+              </dl>
+              <p class="review-delivery-note" id="reviewDeliveryGuidance" hidden></p>
+            </section>
+            <p class="form-general-error" id="checkoutGeneralError" role="alert" tabindex="-1" hidden></p>
+            <p class="form-disclaimer">This is an estimate. Ask BTK Coffee to confirm whether your address qualifies for free delivery; any self-booked courier fare is set by the courier and is not included.</p>
+            <button class="button button-primary button-full" type="submit">Prepare Order for Messenger</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="drawer-view" id="confirmationView" data-panel-view="confirmation" aria-label="Prepared order summary" hidden>
+        <div class="confirmation-panel">
+          <div class="confirmation-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19.5 7v5.2c0 4.1-2.7 7.2-7.5 8.8-4.8-1.6-7.5-4.7-7.5-8.8V7L12 3.5Z"/><path d="m8.8 12.1 2.1 2.1 4.4-4.5"/></svg>
+          </div>
+          <h3>Order request prepared</h3>
+          <p>Your order summary is ready for you to review and send.</p>
+          <span class="order-reference" id="orderReference"></span>
+          <p class="confirmation-warning">This is not a confirmed order. BTK Coffee has not received this request automatically. Your order is only submitted for confirmation after you send the summary in Messenger and the shop acknowledges it.</p>
+          <pre class="summary-pre" id="orderSummaryText"></pre>
+          <p class="local-record-note" id="localRecordNote"></p>
+          <div class="confirmation-actions">
+            <button class="button button-outline" id="copySummaryButton" type="button">Copy Order Summary</button>
+            <a class="button button-primary" data-messenger-link href="https://m.me/btkcoffeeeee" target="_blank" rel="noopener noreferrer" id="messengerOrderLink">Continue to Messenger</a>
+            <button class="button button-soft" id="continueFromConfirmation" type="button">Return to the website</button>
+          </div>
+          <p class="messenger-help" id="messengerHelpText">Copy the summary, open Messenger, and paste it into your conversation with BTK Coffee. Prefilled messages are not guaranteed.</p>
+          <p class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./script.js"></script>
+  <script src="./btk-config.js"></script>
+  <script>
+    (() => {
+      "use strict";
+
+      const configApi = window.BTKCoffeeConfig;
+      const dataDefaults = window.BTKCoffeeData;
+      const defaultMenuData = configApi.defaultConfig().menu;
+      const initialLoad = configApi.load({ preview: new URLSearchParams(window.location.search).has("admin-preview") });
+      let siteConfig = initialLoad.config;
+      let MENU_DATA = configApi.clone(siteConfig.menu);
+      const PRODUCT_IMAGE_PATHS = dataDefaults.productImages;
+      const CATEGORY_COPY = dataDefaults.categoryCopy;
+      const STORAGE_CART_KEY = "btk-coffee-cart-v1";
+      const STORAGE_ORDERS_KEY = "btk-coffee-pending-orders-v1";
+      const MAX_QUANTITY = 99;
+      let DELIVERY_DETAILS = Object.assign({}, siteConfig.delivery);
+      const MONEY = new Intl.NumberFormat("en-PH", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+
+      const state = {
+        cart: loadCart(),
+        category: "All",
+        query: "",
+        currentPreparedOrder: null,
+        latestPendingOrder: loadLatestPendingOrder(),
+        activeView: "cart",
+        returnFocus: null
+      };
+
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+      function formatMoney(cents) {
+        if (!Number.isSafeInteger(cents) || cents < 0) return "₱0";
+        const amount = cents / 100;
+        const display = cents % 100 === 0 ? MONEY.format(amount) : amount.toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return `₱${display}`;
+      }
+
+      function findProduct(productId) {
+        return MENU_DATA.find((product) => product.id === productId) || null;
+      }
+
+      function findOption(product, optionId) {
+        return product ? product.options.find((option) => option.id === optionId) || null : null;
+      }
+
+      function productImage(product) {
+        if (typeof product.image === "string") return product.image;
+        return siteConfig.images.products[product.id] || PRODUCT_IMAGE_PATHS[product.id] || "";
+      }
+
+      function getProductCardDescription(product) {
+        return product.description || CATEGORY_COPY[product.category] || "A BTK menu pick for your next cafe moment.";
+      }
+
+      function getTakeoutBoxNote(product, optionId = "") {
+        const boxedOptions = product.options.filter((option) => Number.isSafeInteger(option.takeoutBoxCents) && option.takeoutBoxCents > 0);
+        if (!boxedOptions.length) return "";
+        const allOptionsAreBoxed = boxedOptions.length === product.options.length;
+        if (allOptionsAreBoxed) {
+          return `Take-out box + ${formatMoney(boxedOptions[0].takeoutBoxCents)} per item for pickup or delivery.`;
+        }
+        const chosen = findOption(product, optionId);
+        if (chosen) {
+          return chosen.takeoutBoxCents ? `Take-out box + ${formatMoney(chosen.takeoutBoxCents)} per Double waffle.` : "No take-out box fee for Single.";
+        }
+        return `Double waffle includes a ${formatMoney(boxedOptions[0].takeoutBoxCents)} take-out box per item.`;
+      }
+
+      function optionPriceText(product) {
+        if (product.options.length > 1) {
+          return product.options.map((option) => formatMoney(option.priceCents)).join(" / ");
+        }
+        return formatMoney(product.options[0].priceCents);
+      }
+
+      function getProductAddOns(product) {
+        const groupId = siteConfig.addOns.categoryGroups[product.category];
+        const group = groupId && siteConfig.addOns.groups[groupId];
+        return group ? { id: groupId, label: group.label, items: group.items } : null;
+      }
+
+      function getSelectedCardAddOns(card) {
+        const product = findProduct(card.dataset.productId);
+        const group = product && getProductAddOns(product);
+        if (!group) return [];
+        const selected = new Set($$("[data-product-addon]:checked", card).map((input) => input.dataset.addonId));
+        return group.items.filter((item) => selected.has(item.id));
+      }
+
+      function renderProductAddOns(product, unavailable) {
+        const group = getProductAddOns(product);
+        if (!group || !group.items.length) return "";
+        const items = group.items.map((item) => `
+          <label class="product-addon-choice">
+            <span class="product-addon-choice-main"><input type="checkbox" data-product-addon data-addon-id="${escapeAttribute(item.id)}" aria-label="Add ${escapeAttribute(item.name)} to ${escapeAttribute(product.name)}"${unavailable ? " disabled" : ""}><span>${escapeAttribute(item.name)}</span></span>
+            <span class="product-addon-choice-price">+ ${formatMoney(item.priceCents)}</span>
+          </label>`).join("");
+        return `<fieldset class="product-addons" data-addon-group="${escapeAttribute(group.id)}"><legend>Optional additions</legend><div class="product-addon-list">${items}</div><p class="product-selection-estimate" data-product-estimate aria-live="polite"></p></fieldset>`;
+      }
+
+      function updateProductSelectionEstimate(card) {
+        const product = findProduct(card.dataset.productId);
+        const target = $(`[data-product-estimate]`, card);
+        if (!product || !target) return;
+        const selected = getSelectedCardAddOns(card);
+        const extrasCents = selected.reduce((sum, item) => sum + item.priceCents, 0);
+        const select = $(`[data-product-option]`, card);
+        const option = product.options.length === 1 ? product.options[0] : findOption(product, select && select.value);
+        if (!option) {
+          target.textContent = extrasCents ? `Extras selected: ${formatMoney(extrasCents)} per item. Choose a size or serving to see the estimated item total.` : "Choose a size or serving to see the estimated item total.";
+          return;
+        }
+        const boxFeeCents = option.takeoutBoxCents || 0;
+        const itemCents = option.priceCents + extrasCents + boxFeeCents;
+        const parts = [`Base ${formatMoney(option.priceCents)}`];
+        if (extrasCents) parts.push(`extras ${formatMoney(extrasCents)}`);
+        if (boxFeeCents) parts.push(`take-out box ${formatMoney(boxFeeCents)}`);
+        target.textContent = `${parts.join(" + ")} = ${formatMoney(itemCents)} per item`;
+      }
+
+      function escapeAttribute(value) {
+        return String(value).replace(/[&"<>']/g, (character) => ({ "&": "&amp;", "\"": "&quot;", "<": "&lt;", ">": "&gt;", "'": "&#39;" })[character]);
+      }
+
+      function renderProductCard(product, featured = false) {
+        const image = productImage(product);
+        const multiOption = product.options.length > 1;
+        let optionControl = "";
+        if (multiOption) {
+          const controlName = product.category === "Waffle" || product.options.some((option) => /^(single|double)$/i.test(option.label)) ? "serving" : "size";
+          const choices = product.options.map((option) => `<option value="${escapeAttribute(option.id)}">${escapeAttribute(option.label)} · ${formatMoney(option.priceCents)}</option>`).join("");
+          optionControl = `<div class="product-option-wrap"><label><span>Choose ${controlName}</span><select data-product-option aria-label="Choose ${controlName} for ${escapeAttribute(product.name)}"><option value="">Choose ${controlName === "size" ? "a size" : "a serving"}</option>${choices}</select></label><span class="option-hint" data-option-error hidden></span></div>`;
+        } else {
+          const option = product.options[0];
+          const available = option.label ? escapeAttribute(option.label) : "One listed price";
+          optionControl = `<div class="product-option-wrap"><p class="product-fixed-option"><span>${option.label ? "Available option" : "Price"}</span><strong>${available}</strong></p></div>`;
+        }
+        const label = featured ? "BTK selection" : product.category;
+        const boxNote = getTakeoutBoxNote(product);
+        const unavailable = product.available === false;
+        const addOnControl = renderProductAddOns(product, unavailable);
+        return `<article class="product-card${unavailable ? " is-unavailable" : ""}" data-product-card data-product-id="${escapeAttribute(product.id)}">
+          <figure class="product-photo${image ? "" : " image-failed"}">${image ? `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(product.name)}" loading="lazy" decoding="async">` : "<span class=\"product-image-fallback\" aria-hidden=\"true\">BTK Coffee</span>"}</figure>
+          <div class="product-content">
+            <span class="product-kicker">${escapeAttribute(label)}</span>
+            <h3>${escapeAttribute(product.name)}</h3>
+            <p class="product-description">${escapeAttribute(getProductCardDescription(product))}</p>
+            ${unavailable ? "<p class=\"product-unavailable-note\">Currently unavailable</p>" : ""}
+            <div class="product-price-row"><span class="price-caption">${multiOption ? "Available prices" : "Menu price"}</span><strong class="product-price" data-card-price>${optionPriceText(product)}</strong></div>
+            ${boxNote ? `<p class="product-box-note" data-box-fee-note>${escapeAttribute(boxNote)}</p>` : ""}
+            ${optionControl}
+            ${addOnControl}
+            <div class="product-purchase-row">
+              <label class="quantity-field"><span>Qty</span><input type="number" min="1" max="${MAX_QUANTITY}" step="1" value="1" inputmode="numeric" data-product-quantity aria-label="Quantity for ${escapeAttribute(product.name)}"${unavailable ? " disabled" : ""}></label>
+              <button class="button button-primary add-button" type="button" data-add-product aria-label="${unavailable ? "Unavailable: " : "Add "}${escapeAttribute(product.name)}${unavailable ? "" : " to order"}"${unavailable ? " disabled" : ""}>${unavailable ? "Unavailable" : "Add to Order"}</button>
+            </div>
+          </div>
+        </article>`;
+      }
+
+      function renderFeatured() {
+        const featuredProducts = MENU_DATA.filter((product) => product.featured && product.available);
+        $("#featuredGrid").innerHTML = featuredProducts.map((product, index) => {
+          const card = renderProductCard(product, true).replace("class=\"product-card\"", `class="product-card" style="animation-delay:${index * 55}ms"`);
+          return card;
+        }).join("");
+      }
+
+      function renderMenu() {
+        renderCategoryTabs();
+        const filtered = MENU_DATA.filter((product) => {
+          const matchesCategory = state.category === "All" || product.category === state.category;
+          const matchesQuery = `${product.name} ${product.category}`.toLowerCase().includes(state.query.trim().toLowerCase());
+          return matchesCategory && matchesQuery;
+        });
+        $("#productGrid").innerHTML = filtered.map((product, index) => {
+          const card = renderProductCard(product).replace("class=\"product-card\"", `class="product-card" style="animation-delay:${Math.min(index % 8, 7) * 35}ms"`);
+          return card;
+        }).join("");
+        $("#menuResults").textContent = `Showing ${filtered.length} ${filtered.length === 1 ? "menu item" : "menu items"}`;
+        $("#emptyResults").hidden = filtered.length > 0;
+        $("#productGrid").hidden = filtered.length === 0;
+        $$(".category-tab").forEach((tab) => {
+          const selected = tab.dataset.category === state.category;
+          tab.setAttribute("aria-selected", String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          if (selected) $("#productGrid").setAttribute("aria-labelledby", tab.id);
+        });
+      }
+
+      function renderCategoryTabs() {
+        const categories = ["All", ...siteConfig.categories];
+        if (!categories.includes(state.category)) state.category = "All";
+        $("#categoryTabs").innerHTML = categories.map((category, index) => {
+          const id = `categoryTab${index}`;
+          const selected = category === state.category;
+          return `<button class="category-tab" id="${id}" type="button" role="tab" data-category="${escapeAttribute(category)}" aria-controls="productGrid" aria-selected="${selected}" tabindex="${selected ? "0" : "-1"}">${escapeAttribute(category)}</button>`;
+        }).join("");
+      }
+
+      function renderFooterLinks() {
+        const content = siteConfig.content;
+        const targets = { home: "#home", menu: "#menu", story: "#story", ordering: "#how-to-order", findUs: "#find-us" };
+        $("#footerQuickLinks").innerHTML = content.footerQuickLinks.map((link) =>
+          `<li><a href="${targets[link.target]}">${escapeAttribute(link.label)}</a></li>`
+        ).join("");
+        $("#footerMenuLinks").innerHTML = siteConfig.categories.map((category) =>
+          `<li><a href="#menu" data-category-link="${escapeAttribute(category)}">${escapeAttribute(category)}</a></li>`
+        ).join("");
+        const contact = siteConfig.contact;
+        const links = [`<li><a data-messenger-link href="${escapeAttribute(contact.messengerUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerMessengerLabel)}</a></li>`];
+        if (contact.facebookUrl) links.push(`<li><a data-facebook-link href="${escapeAttribute(contact.facebookUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerFacebookLabel)}</a></li>`);
+        if (contact.mapsUrl) links.push(`<li><a data-maps-link href="${escapeAttribute(contact.mapsUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerMapsLabel)}</a></li>`);
+        $("#footerContactLinks").innerHTML = links.join("");
+      }
+
+      function applyPublicContent(config) {
+        const content = config.content;
+        $$("[data-content]").forEach((element) => {
+          const key = element.dataset.content;
+          let value = content[key];
+          if (key === "footerBrandLine") value = value.replaceAll("{businessName}", config.contact.businessName).replaceAll("{tagline}", config.contact.tagline);
+          if (key === "footerOrderNotice") value = value.replaceAll("{businessName}", config.contact.businessName);
+          if (key === "orderNote") value = value.replaceAll("{freeArea}", config.delivery.freeArea).replaceAll("{businessName}", config.contact.businessName);
+          if (typeof value !== "string") return;
+          if (key === "heroHeading") {
+            element.replaceChildren();
+            value.split("\n").forEach((line, index) => {
+              if (index) element.appendChild(document.createElement("br"));
+              element.appendChild(document.createTextNode(line));
+            });
+          } else {
+            element.textContent = value;
+          }
+        });
+        const nav = config.content.navigation;
+        $$("[data-nav-link]").forEach((link) => {
+          const key = link.dataset.navLink;
+          if (nav[key]) link.textContent = nav[key];
+        });
+        $("#orderStepsList").innerHTML = content.orderSteps.map((step) =>
+          `<li><strong>${escapeAttribute(step.title)}</strong><span>${escapeAttribute(step.description)}</span></li>`
+        ).join("");
+      }
+
+      function applyStoreStatus(storeStatus) {
+        const isOpen = Boolean(storeStatus && storeStatus.isOpen);
+        const badge = $("#storeStatusBadge");
+        const label = isOpen ? "Open" : "Closed";
+        badge.classList.toggle("is-closed", !isOpen);
+        badge.setAttribute("aria-label", `Store status: ${label}`);
+        $("#storeStatusText").textContent = label;
+      }
+
+      function getLineKey(line) {
+        const addOnIds = Array.isArray(line.selectedAddOnIds) ? line.selectedAddOnIds.slice().sort() : [];
+        return `${line.productId}::${line.optionId}::${addOnIds.join(",")}`;
+      }
+
+      function getAddOnSum(items) {
+        return items.reduce((sum, item) => sum + (Number.isSafeInteger(item.priceCents) && item.priceCents >= 0 ? item.priceCents : 0), 0);
+      }
+
+      function getCartDetails() {
+        const details = [];
+        for (const line of state.cart) {
+          const product = findProduct(line.productId);
+          const option = findOption(product, line.optionId);
+          if (!Number.isInteger(line.quantity) || line.quantity < 1 || line.quantity > MAX_QUANTITY) continue;
+          const savedPrice = Number.isSafeInteger(line.lastKnownPriceCents) && line.lastKnownPriceCents >= 0 ? line.lastKnownPriceCents : 0;
+          const unitPriceCents = option && Number.isSafeInteger(option.priceCents) && option.priceCents >= 0 ? option.priceCents : savedPrice;
+          const savedBoxFee = Number.isSafeInteger(line.lastKnownBoxFeeCents) && line.lastKnownBoxFeeCents >= 0 ? line.lastKnownBoxFeeCents : 0;
+          const takeoutBoxUnitCents = option ? (option.takeoutBoxCents || 0) : savedBoxFee;
+          if (!Number.isSafeInteger(takeoutBoxUnitCents) || takeoutBoxUnitCents < 0) continue;
+          const menuLineTotalCents = unitPriceCents * line.quantity;
+          const takeoutBoxTotalCents = takeoutBoxUnitCents * line.quantity;
+          if (!Number.isSafeInteger(menuLineTotalCents) || !Number.isSafeInteger(takeoutBoxTotalCents)) continue;
+          const displayProduct = product || {
+            id: line.productId,
+            name: line.lastKnownName || "Unavailable menu item",
+            category: line.lastKnownCategory || "Menu",
+            options: []
+          };
+          const selectedAddOnIds = Array.isArray(line.selectedAddOnIds)
+            ? Array.from(new Set(line.selectedAddOnIds.filter((id) => typeof id === "string" && /^[a-z0-9][a-z0-9-]{0,59}$/.test(id)))).sort()
+            : [];
+          const currentGroup = product && getProductAddOns(product);
+          const currentAddOns = currentGroup
+            ? currentGroup.items.filter((item) => selectedAddOnIds.includes(item.id))
+            : [];
+          const savedAddOns = Array.isArray(line.lastKnownAddOns)
+            ? line.lastKnownAddOns.filter((item) => item && typeof item.id === "string" && typeof item.name === "string" && Number.isSafeInteger(item.priceCents) && item.priceCents >= 0).map((item) => ({ id: item.id, name: item.name, priceCents: item.priceCents }))
+            : [];
+          const addOnsValid = currentAddOns.length === selectedAddOnIds.length;
+          const displayedAddOns = addOnsValid ? currentAddOns : savedAddOns;
+          const addOnUnitCents = getAddOnSum(displayedAddOns);
+          const addOnTotalCents = addOnUnitCents * line.quantity;
+          const previousAddOnUnitCents = getAddOnSum(savedAddOns);
+          const addOnPriceChanged = addOnsValid && savedAddOns.length === currentAddOns.length && savedAddOns.some((saved) => {
+            const current = currentAddOns.find((item) => item.id === saved.id);
+            return !current || current.priceCents !== saved.priceCents || current.name !== saved.name;
+          });
+          const lineTotalCents = menuLineTotalCents + takeoutBoxTotalCents + addOnTotalCents;
+          if (!Number.isSafeInteger(addOnTotalCents) || !Number.isSafeInteger(lineTotalCents)) continue;
+          const priceChanged = Boolean(line.priceChanged) || Boolean(option && (
+            (Number.isSafeInteger(line.lastKnownPriceCents) && line.lastKnownPriceCents !== unitPriceCents) ||
+            (Number.isSafeInteger(line.lastKnownBoxFeeCents) && line.lastKnownBoxFeeCents !== takeoutBoxUnitCents)
+          )) || Boolean(addOnPriceChanged);
+          if (priceChanged) line.priceChanged = true;
+          if (!addOnsValid) line.addOnsValid = false;
+          details.push({
+            product: displayProduct,
+            optionId: line.optionId,
+            option,
+            optionLabel: option ? option.label : (line.lastKnownOptionLabel || ""),
+            selectedAddOnIds,
+            addOns: displayedAddOns,
+            addOnsValid,
+            addOnUnitCents,
+            addOnTotalCents,
+            previousAddOnUnitCents,
+            validSelection: Boolean(product && option),
+            available: Boolean(product && option && product.available !== false),
+            priceChanged,
+            previousUnitPriceCents: savedPrice,
+            previousBoxFeeCents: savedBoxFee,
+            quantity: line.quantity,
+            unitPriceCents,
+            menuLineTotalCents,
+            takeoutBoxUnitCents,
+            takeoutBoxTotalCents,
+            lineTotalCents
+          });
+        }
+        return details;
+      }
+
+      function cartSubtotalCents() {
+        return getCartDetails().reduce((sum, line) => sum + line.menuLineTotalCents, 0);
+      }
+
+      function cartTakeoutBoxCents() {
+        return getCartDetails().reduce((sum, line) => sum + line.takeoutBoxTotalCents, 0);
+      }
+
+      function cartAddOnCents() {
+        return getCartDetails().reduce((sum, line) => sum + line.addOnTotalCents, 0);
+      }
+
+      function cartEstimatedTotalCents() {
+        return cartSubtotalCents() + cartTakeoutBoxCents() + cartAddOnCents();
+      }
+
+      function cartQuantity() {
+        return state.cart.reduce((sum, line) => sum + (Number.isInteger(line.quantity) && line.quantity > 0 ? line.quantity : 0), 0);
+      }
+
+      function persistCart() {
+        try {
+          if (state.cart.length) {
+            const savedCart = state.cart.map((line) => {
+              const product = findProduct(line.productId);
+              const option = findOption(product, line.optionId);
+              const changed = Boolean(line.priceChanged);
+              return {
+                productId: line.productId,
+                optionId: line.optionId,
+                quantity: line.quantity,
+                lastKnownName: product ? product.name : (line.lastKnownName || "Unavailable menu item"),
+                lastKnownCategory: product ? product.category : (line.lastKnownCategory || "Menu"),
+                lastKnownOptionLabel: option ? option.label : (line.lastKnownOptionLabel || ""),
+                lastKnownPriceCents: changed && Number.isSafeInteger(line.lastKnownPriceCents) ? line.lastKnownPriceCents : (option ? option.priceCents : line.lastKnownPriceCents),
+                lastKnownBoxFeeCents: changed && Number.isSafeInteger(line.lastKnownBoxFeeCents) ? line.lastKnownBoxFeeCents : (option ? (option.takeoutBoxCents || 0) : line.lastKnownBoxFeeCents),
+                selectedAddOnIds: Array.isArray(line.selectedAddOnIds) ? line.selectedAddOnIds.slice().sort() : [],
+                lastKnownAddOns: changed && Array.isArray(line.lastKnownAddOns)
+                  ? line.lastKnownAddOns
+                  : (product ? ((getProductAddOns(product)?.items || []).filter((item) => (line.selectedAddOnIds || []).includes(item.id)).map((item) => ({ id: item.id, name: item.name, priceCents: item.priceCents }))) : (line.lastKnownAddOns || [])),
+                priceChanged: changed
+              };
+            });
+            localStorage.setItem(STORAGE_CART_KEY, JSON.stringify(savedCart));
+          } else {
+            localStorage.removeItem(STORAGE_CART_KEY);
+          }
+        } catch (_error) {
+          showToast("Your cart is available for this visit, but this browser could not save it.", "error");
+        }
+      }
+
+      function loadCart() {
+        try {
+          const stored = JSON.parse(localStorage.getItem(STORAGE_CART_KEY) || "[]");
+          if (!Array.isArray(stored)) return [];
+          const restored = [];
+          stored.forEach((candidate) => {
+            if (!candidate || typeof candidate.productId !== "string" || typeof candidate.optionId !== "string") return;
+            if (!Number.isInteger(candidate.quantity) || candidate.quantity < 1 || candidate.quantity > MAX_QUANTITY) return;
+            const product = findProduct(candidate.productId);
+            const option = findOption(product, candidate.optionId);
+            const defaultProduct = defaultMenuData.find((item) => item.id === candidate.productId);
+            const defaultOption = defaultProduct && defaultProduct.options.find((item) => item.id === candidate.optionId);
+            const previousPrice = Number.isSafeInteger(candidate.lastKnownPriceCents) ? candidate.lastKnownPriceCents : (defaultOption ? defaultOption.priceCents : undefined);
+            const previousBoxFee = Number.isSafeInteger(candidate.lastKnownBoxFeeCents) ? candidate.lastKnownBoxFeeCents : (defaultOption ? (defaultOption.takeoutBoxCents || 0) : undefined);
+            const selectedAddOnIds = Array.isArray(candidate.selectedAddOnIds)
+              ? Array.from(new Set(candidate.selectedAddOnIds.filter((id) => typeof id === "string" && /^[a-z0-9][a-z0-9-]{0,59}$/.test(id)))).sort()
+              : [];
+            const currentGroup = product && getProductAddOns(product);
+            const currentAddOns = currentGroup ? currentGroup.items.filter((item) => selectedAddOnIds.includes(item.id)) : [];
+            const previousAddOns = Array.isArray(candidate.lastKnownAddOns)
+              ? candidate.lastKnownAddOns.filter((item) => item && typeof item.id === "string" && typeof item.name === "string" && Number.isSafeInteger(item.priceCents) && item.priceCents >= 0).map((item) => ({ id: item.id, name: item.name.slice(0, 60), priceCents: item.priceCents }))
+              : (currentAddOns.map((item) => ({ id: item.id, name: item.name, priceCents: item.priceCents })));
+            const addOnsValid = currentAddOns.length === selectedAddOnIds.length;
+            const priceChanged = Boolean(candidate.priceChanged) || Boolean(option && (
+              (previousPrice !== undefined && previousPrice !== option.priceCents) ||
+              (previousBoxFee !== undefined && previousBoxFee !== (option.takeoutBoxCents || 0))
+            )) || (addOnsValid && previousAddOns.some((saved) => {
+              const current = currentAddOns.find((item) => item.id === saved.id);
+              return !current || current.priceCents !== saved.priceCents || current.name !== saved.name;
+            }));
+            const selectionKey = `${candidate.productId}::${candidate.optionId}::${selectedAddOnIds.join(",")}`;
+            const existing = restored.find((line) => getLineKey(line) === selectionKey);
+            if (existing) existing.quantity = Math.min(MAX_QUANTITY, existing.quantity + candidate.quantity);
+            else restored.push({
+              productId: candidate.productId,
+              optionId: candidate.optionId,
+              quantity: candidate.quantity,
+              selectedAddOnIds,
+              lastKnownAddOns: previousAddOns,
+              addOnsValid,
+              lastKnownName: typeof candidate.lastKnownName === "string" ? candidate.lastKnownName.slice(0, 80) : (product ? product.name : "Unavailable menu item"),
+              lastKnownCategory: typeof candidate.lastKnownCategory === "string" ? candidate.lastKnownCategory.slice(0, 50) : (product ? product.category : "Menu"),
+              lastKnownOptionLabel: typeof candidate.lastKnownOptionLabel === "string" ? candidate.lastKnownOptionLabel.slice(0, 40) : (option ? option.label : ""),
+              lastKnownPriceCents: previousPrice === undefined && option ? option.priceCents : previousPrice,
+              lastKnownBoxFeeCents: previousBoxFee === undefined && option ? (option.takeoutBoxCents || 0) : previousBoxFee,
+              priceChanged
+            });
+          });
+          return restored;
+        } catch (_error) {
+          return [];
+        }
+      }
+
+      function readPendingOrders() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_ORDERS_KEY) || "[]");
+          if (!Array.isArray(saved)) return [];
+          return saved.filter((order) => order && typeof order.reference === "string" && /^BTK-\d{8}-[A-Z0-9]{4}$/.test(order.reference) && typeof order.summary === "string").slice(0, 10);
+        } catch (_error) {
+          return [];
+        }
+      }
+
+      function loadLatestPendingOrder() {
+        return readPendingOrders()[0] || null;
+      }
+
+      function savePendingOrder(order) {
+        try {
+          const previous = readPendingOrders().filter((saved) => saved.reference !== order.reference);
+          const record = { reference: order.reference, summary: order.summary, createdAt: order.createdAt };
+          localStorage.setItem(STORAGE_ORDERS_KEY, JSON.stringify([record, ...previous].slice(0, 10)));
+          state.latestPendingOrder = record;
+          return true;
+        } catch (_error) {
+          return false;
+        }
+      }
+
+      function showToast(message, type = "success") {
+        const region = $("#toastRegion");
+        const toast = document.createElement("div");
+        toast.className = `toast${type === "error" ? " toast-error" : ""}`;
+        toast.setAttribute("role", type === "error" ? "alert" : "status");
+        toast.textContent = message;
+        region.appendChild(toast);
+        window.setTimeout(() => toast.remove(), 4200);
+      }
+
+      function updateCartBadge() {
+        const count = cartQuantity();
+        $("#cartCount").textContent = count > 99 ? "99+" : String(count);
+        $("#openCartButton").setAttribute("aria-label", `Open cart, ${count} ${count === 1 ? "item" : "items"}`);
+      }
+
+      function renderCart() {
+        const lines = getCartDetails();
+        const isEmpty = lines.length === 0;
+        $("#cartEmptyState").hidden = !isEmpty;
+        $("#cartContent").hidden = isEmpty;
+        updateCartBadge();
+        renderPendingOrderNote();
+        if (isEmpty) {
+          $("#cartLines").innerHTML = "";
+          return;
+        }
+        $("#cartLines").innerHTML = lines.map(({ product, optionId, optionLabel, addOns, addOnsValid, addOnUnitCents, addOnTotalCents, validSelection, available, priceChanged, previousUnitPriceCents, previousBoxFeeCents, previousAddOnUnitCents, quantity, unitPriceCents, takeoutBoxUnitCents, takeoutBoxTotalCents, lineTotalCents }) => {
+          const optionLine = optionLabel ? `<span class="cart-line-option">${escapeAttribute(optionLabel)}</span>` : "";
+          const boxLine = takeoutBoxTotalCents
+            ? `<div class="cart-line-box-fee">Take-out box: ${quantity} x ${formatMoney(takeoutBoxUnitCents)} = ${formatMoney(takeoutBoxTotalCents)}</div>`
+            : "";
+          const addOnNames = addOns.map((item) => item.name).join(", ");
+          const addOnLine = addOnNames
+            ? `<div class="cart-line-addons">Extras: ${escapeAttribute(addOnNames)} · ${quantity} x ${formatMoney(addOnUnitCents)} = ${formatMoney(addOnTotalCents)}</div>`
+            : "";
+          const invalidLine = !validSelection || !available || !addOnsValid;
+          const priceAlert = priceChanged
+            ? `<div class="cart-price-alert" role="status">The current item or extra price changed. Previous menu price: ${formatMoney(previousUnitPriceCents)}${previousBoxFeeCents ? `; previous box fee: ${formatMoney(previousBoxFeeCents)}` : ""}${previousAddOnUnitCents ? `; previous extras: ${formatMoney(previousAddOnUnitCents)} per item` : ""}. The updated amount below is being used.<button type="button" data-cart-action="accept-price">Accept updated price</button></div>`
+            : "";
+          const unavailableAlert = invalidLine
+            ? `<div class="cart-unavailable-alert" role="status">${!validSelection ? "This product or option is no longer on the menu." : (!available ? "This item is currently unavailable." : "One or more selected extras are no longer available.")} Remove the item and add it again to continue checkout.</div>`
+            : "";
+          const cartKey = escapeAttribute(`${product.id}::${optionId}`);
+          return `<article class="cart-line" data-cart-key="${cartKey}">
+            <div>
+              <span class="cart-line-category">${escapeAttribute(product.category)}</span>
+              <h3>${escapeAttribute(product.name)}</h3>
+              ${optionLine}
+              <div class="cart-line-price">Menu price: ${formatMoney(unitPriceCents)} each</div>
+              ${addOnLine}
+              ${boxLine}
+              ${priceAlert}${unavailableAlert}
+              <div class="cart-line-actions">
+                <button class="cart-qty-button" type="button" data-cart-action="decrease" aria-label="Decrease ${escapeAttribute(product.name)} quantity" ${quantity <= 1 ? "disabled" : ""}>-</button>
+                <span class="cart-qty-value" aria-label="Quantity ${quantity}">${quantity}</span>
+                <button class="cart-qty-button" type="button" data-cart-action="increase" aria-label="Increase ${escapeAttribute(product.name)} quantity" ${quantity >= MAX_QUANTITY ? "disabled" : ""}>+</button>
+                <button class="remove-line" type="button" data-cart-action="remove" aria-label="Remove ${escapeAttribute(product.name)} from cart">Remove</button>
+              </div>
+            </div>
+            <div class="cart-line-total-wrap"><span class="cart-line-total-label">${takeoutBoxTotalCents ? "Line total incl. box" : "Line total"}</span><strong class="cart-line-total">${formatMoney(lineTotalCents)}</strong></div>
+          </article>`;
+        }).join("");
+        const subtotal = cartSubtotalCents();
+        const addOnFee = cartAddOnCents();
+        const boxFee = cartTakeoutBoxCents();
+        $("#cartSubtotal").textContent = formatMoney(subtotal);
+        $("#cartAddOnFee").textContent = formatMoney(addOnFee);
+        $("#cartBoxFee").textContent = formatMoney(boxFee);
+        $("#cartTotal").textContent = formatMoney(cartEstimatedTotalCents());
+      }
+
+      function renderPendingOrderNote() {
+        const note = $("#pendingOrderNote");
+        const order = state.latestPendingOrder;
+        note.hidden = !order;
+        if (order) {
+          $("#pendingOrderText").textContent = `${order.reference} is saved in this browser only. It is not confirmed until BTK Coffee acknowledges it.`;
+        }
+      }
+
+      function updateProductCardPrice(card) {
+        const product = findProduct(card.dataset.productId);
+        const select = $(`[data-product-option]`, card);
+        if (!product) return;
+        const note = $(`[data-box-fee-note]`, card);
+        if (note) note.textContent = getTakeoutBoxNote(product, select ? select.value : "");
+        if (select) {
+          if (!select.value) resetProductCardPrice(card);
+          else {
+            const option = findOption(product, select.value);
+            if (option) $("[data-card-price]", card).textContent = formatMoney(option.priceCents);
+          }
+        }
+        updateProductSelectionEstimate(card);
+      }
+
+      function resetProductCardPrice(card) {
+        const product = findProduct(card.dataset.productId);
+        if (product) $("[data-card-price]", card).textContent = optionPriceText(product);
+        if (product) updateProductSelectionEstimate(card);
+      }
+
+      function addProductFromCard(card) {
+        const product = findProduct(card.dataset.productId);
+        if (!product || product.available === false) return;
+        const select = $(`[data-product-option]`, card);
+        const error = $(`[data-option-error]`, card);
+        let option = product.options[0];
+        if (product.options.length > 1) {
+          if (!select || !select.value) {
+            if (error) {
+              error.textContent = product.category === "Waffle" ? "Choose a serving before adding." : "Choose a size before adding.";
+              error.hidden = false;
+            }
+            if (select) {
+              select.setAttribute("aria-invalid", "true");
+              select.focus();
+            }
+            showToast("Choose an available size or serving before adding this item.", "error");
+            return;
+          }
+          option = findOption(product, select.value);
+        }
+        const quantityInput = $(`[data-product-quantity]`, card);
+        const quantity = quantityInput ? Number(quantityInput.value) : 1;
+        if (!option || !Number.isInteger(quantity) || quantity < 1 || quantity > MAX_QUANTITY) {
+          if (quantityInput) {
+            quantityInput.setAttribute("aria-invalid", "true");
+            quantityInput.focus();
+          }
+          showToast(`Enter a quantity from 1 to ${MAX_QUANTITY}.`, "error");
+          return;
+        }
+        const addOns = getSelectedCardAddOns(card);
+        const selectedAddOnIds = addOns.map((item) => item.id).sort();
+        const newLineKey = `${product.id}::${option.id}::${selectedAddOnIds.join(",")}`;
+        const existing = state.cart.find((line) => getLineKey(line) === newLineKey);
+        if (existing && existing.quantity + quantity > MAX_QUANTITY) {
+          showToast(`A maximum of ${MAX_QUANTITY} per selection can be added.`, "error");
+          return;
+        }
+        if (existing) {
+          existing.quantity += quantity;
+          existing.priceChanged = false;
+        } else {
+          state.cart.push({
+            productId: product.id,
+            optionId: option.id,
+            selectedAddOnIds,
+            lastKnownAddOns: addOns.map(({ id, name, priceCents }) => ({ id, name, priceCents })),
+            addOnsValid: true,
+            quantity,
+            lastKnownName: product.name,
+            lastKnownCategory: product.category,
+            lastKnownOptionLabel: option.label,
+            lastKnownPriceCents: option.priceCents,
+            lastKnownBoxFeeCents: option.takeoutBoxCents || 0,
+            priceChanged: false
+          });
+        }
+        existing && Object.assign(existing, {
+          lastKnownName: product.name,
+          lastKnownCategory: product.category,
+          lastKnownOptionLabel: option.label,
+          lastKnownPriceCents: option.priceCents,
+          lastKnownBoxFeeCents: option.takeoutBoxCents || 0,
+          selectedAddOnIds,
+          lastKnownAddOns: addOns.map(({ id, name, priceCents }) => ({ id, name, priceCents })),
+          addOnsValid: true
+        });
+        if (quantityInput) {
+          quantityInput.value = "1";
+          quantityInput.removeAttribute("aria-invalid");
+        }
+        if (error) { error.textContent = ""; error.hidden = true; }
+        if (select) select.removeAttribute("aria-invalid");
+        persistCart();
+        renderCart();
+        showToast(`${product.name}${option.label ? ` (${option.label})` : ""}${addOns.length ? ` with ${addOns.length} extra${addOns.length === 1 ? "" : "s"}` : ""} added to your order.`);
+      }
+
+      function changeCartLine(button) {
+        const row = button.closest("[data-cart-key]");
+        if (!row) return;
+        const line = state.cart.find((item) => getLineKey(item) === row.dataset.cartKey);
+        if (!line) return;
+        const action = button.dataset.cartAction;
+        if (action === "accept-price") {
+          const product = findProduct(line.productId);
+          const option = findOption(product, line.optionId);
+          if (!product || !option || product.available === false) return;
+          line.lastKnownName = product.name;
+          line.lastKnownCategory = product.category;
+          line.lastKnownOptionLabel = option.label;
+          line.lastKnownPriceCents = option.priceCents;
+          line.lastKnownBoxFeeCents = option.takeoutBoxCents || 0;
+          const addOnGroup = getProductAddOns(product);
+          line.lastKnownAddOns = addOnGroup
+            ? addOnGroup.items.filter((item) => (line.selectedAddOnIds || []).includes(item.id)).map((item) => ({ id: item.id, name: item.name, priceCents: item.priceCents }))
+            : [];
+          line.addOnsValid = line.lastKnownAddOns.length === (line.selectedAddOnIds || []).length;
+          line.priceChanged = false;
+          showToast("Updated menu pricing accepted.");
+        }
+        if (action === "increase" && line.quantity < MAX_QUANTITY) line.quantity += 1;
+        if (action === "decrease" && line.quantity > 1) line.quantity -= 1;
+        if (action === "remove") {
+          state.cart = state.cart.filter((item) => item !== line);
+          showToast("Item removed from your cart.");
+        }
+        persistCart();
+        renderCart();
+        renderCheckoutReview();
+      }
+
+      function setPanelView(view) {
+        state.activeView = view;
+        const viewTitles = { cart: "Your order", checkout: "Checkout and review", confirmation: "Order request" };
+        $("#drawerTitle").textContent = viewTitles[view] || viewTitles.cart;
+        $$("[data-panel-view]").forEach((section) => { section.hidden = section.dataset.panelView !== view; });
+        $("#orderDrawer").classList.toggle("is-wide", view !== "cart");
+        if (view === "cart") renderCart();
+        if (view === "checkout") {
+          updateDeliveryFields();
+          renderCheckoutReview();
+        }
+        if (view === "confirmation") renderPendingOrderNote();
+        $("#orderDrawer").scrollTop = 0;
+      }
+
+      function openPanel(view = "cart") {
+        if ($("#panelLayer").hidden) state.returnFocus = document.activeElement;
+        $("#panelLayer").hidden = false;
+        document.body.classList.add("panel-open");
+        setPanelView(view);
+        window.requestAnimationFrame(() => {
+          if (view === "checkout") $("#customerName").focus();
+          else $("#closePanelButton").focus();
+        });
+      }
+
+      function closePanel(restoreFocus = true) {
+        $("#panelLayer").hidden = true;
+        document.body.classList.remove("panel-open");
+        setPanelView("cart");
+        if (restoreFocus && state.returnFocus && typeof state.returnFocus.focus === "function") state.returnFocus.focus();
+      }
+
+      function continueShopping() {
+        closePanel(false);
+        const menu = $("#menu");
+        menu.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.setTimeout(() => $("#menu-title").focus({ preventScroll: true }), 350);
+      }
+
+      function toggleMobileNavigation(forceClose = false) {
+        const nav = $("#primaryNav");
+        const toggle = $("#menuToggle");
+        const open = forceClose ? false : !nav.classList.contains("is-open");
+        nav.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      }
+
+      function updateDeliveryFields() {
+        const delivery = $("#orderType").value === "delivery";
+        $("#addressField").hidden = !delivery;
+        $("#deliveryGuidance").hidden = !delivery;
+        $("#deliveryAddress").required = delivery;
+        if (!delivery) {
+          $("#deliveryAddress").removeAttribute("aria-invalid");
+          $("#addressError").textContent = "";
+        }
+        $("#fulfillmentTimeLabel").innerHTML = `${delivery ? "Requested delivery time" : "Preferred pickup time"} <span>(optional)</span>`;
+        $("#fulfillmentTime").placeholder = delivery ? "e.g. Today around 6:30 PM" : "e.g. 6:30 PM";
+      }
+
+      function setText(selector, text) {
+        $(selector).textContent = text;
+      }
+
+      function setImage(selector, src, fallback) {
+        const image = $(selector);
+        const frame = image.closest(".product-photo, .story-image, .contact-photo, .hero-media");
+        image.onload = () => frame && frame.classList.remove("image-failed");
+        image.src = src || fallback || "";
+      }
+
+      function renderContactFacts() {
+        const contact = siteConfig.contact;
+        const facts = [];
+        if (contact.phone) facts.push(`<span>Phone: <a href="tel:${escapeAttribute(contact.phone.replace(/[^+0-9]/g, ""))}">${escapeAttribute(contact.phone)}</a></span>`);
+        if (contact.email) facts.push(`<span>Email: <a href="mailto:${escapeAttribute(contact.email)}">${escapeAttribute(contact.email)}</a></span>`);
+        if (contact.address) facts.push(`<span>Address: ${escapeAttribute(contact.address)}</span>`);
+        $("#contactFacts").innerHTML = facts.join("");
+      }
+
+      function applySiteConfig(config = siteConfig) {
+        siteConfig = config;
+        MENU_DATA = configApi.clone(config.menu);
+        DELIVERY_DETAILS = Object.assign({}, config.delivery);
+        applyStoreStatus(config.storeStatus);
+        const root = document.documentElement.style;
+        const themeMap = {
+          primary: "--primary-color",
+          secondary: "--secondary-color",
+          background: "--background-color",
+          surface: "--surface-color",
+          heading: "--heading-color",
+          text: "--body-color",
+          muted: "--muted-color",
+          buttonBg: "--button-background",
+          buttonText: "--button-text",
+          buttonHover: "--button-hover",
+          border: "--border-color",
+          accent: "--accent-color"
+        };
+        Object.entries(themeMap).forEach(([key, property]) => root.setProperty(property, config.theme[key]));
+
+        $$("[data-business-name]").forEach((element) => { element.textContent = config.contact.businessName; });
+        $$("[data-tagline]").forEach((element) => { element.textContent = config.contact.tagline; });
+        $$("[data-contact-heading]").forEach((element) => { element.textContent = config.contact.heading; });
+        $$("[data-contact-description]").forEach((element) => { element.textContent = config.contact.description; });
+        $$("[data-contact-instructions]").forEach((element) => { element.textContent = config.contact.instructions; });
+        $("#copyrightBusinessName").textContent = config.contact.businessName;
+        document.title = `${config.contact.businessName} | ${config.contact.tagline}`;
+        const descriptionMeta = $("meta[name='description']");
+        if (descriptionMeta) descriptionMeta.content = `${config.contact.businessName}. ${config.contact.tagline}. Browse the menu and prepare an order for Messenger.`;
+        const ogTitle = $("meta[property='og:title']");
+        if (ogTitle) ogTitle.content = document.title;
+        const directions = $("[data-maps-link]");
+        $$("[data-maps-link]").forEach((link) => {
+          link.href = config.contact.mapsUrl || "#find-us";
+          link.hidden = !config.contact.mapsUrl;
+        });
+        $$("[data-messenger-link]").forEach((link) => {
+          link.href = config.contact.messengerUrl;
+          link.hidden = !config.contact.messengerUrl;
+        });
+        $$("[data-facebook-link]").forEach((link) => {
+          link.href = config.contact.facebookUrl || "#find-us";
+          link.hidden = !config.contact.facebookUrl;
+        });
+        if (directions) directions.href = config.contact.mapsUrl || "#find-us";
+        $(".contact-actions [data-messenger-link]").textContent = config.content.contactMessageCta.replaceAll("{businessName}", config.contact.businessName);
+        $(".contact-actions [data-maps-link]").textContent = config.content.contactDirectionsCta;
+        $(".contact-actions [data-maps-link]").hidden = !config.contact.mapsUrl;
+        $("#messengerHelpText").textContent = `Copy the summary, open Messenger, and paste it into your conversation with ${config.contact.businessName}. Prefilled messages are not guaranteed.`;
+
+        $$("[data-delivery-area]").forEach((element) => { element.textContent = config.delivery.freeArea; });
+        $$("[data-delivery-pin]").forEach((element) => { element.textContent = config.delivery.pinLocation; });
+        $$("[data-delivery-contact-name]").forEach((element) => { element.textContent = config.delivery.contactNames; });
+        $$("[data-delivery-phone]").forEach((element) => {
+          element.textContent = config.delivery.contactNumber;
+          element.href = `tel:${config.delivery.contactNumber.replace(/[^+0-9]/g, "")}`;
+        });
+
+        $$("[data-brand-image]").forEach((image) => {
+          const hasLogo = Boolean(config.images.logo);
+          image.hidden = !hasLogo;
+          const monogram = image.parentElement.querySelector(".brand-monogram");
+          if (monogram) monogram.hidden = hasLogo;
+          if (hasLogo) {
+            image.onerror = () => {
+              image.hidden = true;
+              if (monogram) monogram.hidden = false;
+            };
+            image.src = config.images.logo;
+          } else {
+            image.removeAttribute("src");
+          }
+        });
+        setImage("#heroImage", config.images.hero, configApi.defaultConfig().images.hero);
+        setImage("#storyImage", config.images.story, configApi.defaultConfig().images.story);
+        setImage("#contactImage", config.images.contact, configApi.defaultConfig().images.contact);
+        applyPublicContent(config);
+        renderContactFacts();
+        renderFooterLinks();
+        renderFeatured();
+        renderMenu();
+        renderCart();
+        renderCheckoutReview();
+      }
+
+      function renderCheckoutReview() {
+        const lines = getCartDetails();
+        $("#reviewItems").innerHTML = lines.map(({ product, optionLabel, validSelection, available, priceChanged, addOns, addOnsValid, addOnUnitCents, addOnTotalCents, option, quantity, unitPriceCents, menuLineTotalCents, takeoutBoxUnitCents, takeoutBoxTotalCents, lineTotalCents }) => {
+          const detail = [optionLabel, `${quantity} x ${formatMoney(unitPriceCents)}`].filter(Boolean).join(" / ");
+          const addOnLine = addOns.length
+            ? `<span class="review-item-box">Extras: ${escapeAttribute(addOns.map((item) => item.name).join(", "))} · ${quantity} x ${formatMoney(addOnUnitCents)} = ${formatMoney(addOnTotalCents)}</span>`
+            : "";
+          const boxLine = takeoutBoxTotalCents
+            ? `<span class="review-item-box">Take-out box: ${quantity} x ${formatMoney(takeoutBoxUnitCents)} = ${formatMoney(takeoutBoxTotalCents)}</span>`
+            : "";
+          const menuLine = `<span class="review-item-detail">${escapeAttribute(product.category)}${detail ? ` · ${escapeAttribute(detail)}` : ""} · Menu ${formatMoney(menuLineTotalCents)}</span>`;
+          const status = !validSelection || !available
+            ? `<span class="review-item-box">${validSelection ? "Currently unavailable" : "No longer on the menu"}</span>`
+            : (!addOnsValid ? "<span class=\"review-item-box\">One or more selected extras are no longer available.</span>" : (priceChanged ? "<span class=\"review-item-box\">Price updated; review and accept in your cart before checkout.</span>" : ""));
+          return `<div class="review-item"><div><span class="review-item-name">${escapeHTML(product.name)}</span>${menuLine}${addOnLine}${boxLine}${status}</div><strong class="review-item-total">${formatMoney(lineTotalCents)}</strong></div>`;
+        }).join("");
+        const subtotal = cartSubtotalCents();
+        const addOnFee = cartAddOnCents();
+        const boxFee = cartTakeoutBoxCents();
+        setText("#reviewSubtotal", formatMoney(subtotal));
+        setText("#reviewAddOnFee", formatMoney(addOnFee));
+        setText("#reviewBoxFee", formatMoney(boxFee));
+        setText("#reviewTotal", formatMoney(cartEstimatedTotalCents()));
+        const delivery = $("#orderType").value === "delivery";
+        setText("#reviewDeliveryFee", delivery
+          ? `Free if eligible around ${DELIVERY_DETAILS.freeArea}; otherwise self-book (courier fare not included)`
+          : "Not applicable (pickup)");
+        setText("#reviewName", $("#customerName").value.trim() || "Not entered");
+        setText("#reviewPhone", $("#customerPhone").value.trim() || "Not entered");
+        setText("#reviewOrderType", delivery ? "Delivery" : "Pickup");
+        $("#reviewAddressRow").hidden = !delivery;
+        $("#reviewDeliveryGuidance").hidden = !delivery;
+        if (delivery) {
+          setText("#reviewDeliveryGuidance", `Free delivery is available around ${DELIVERY_DETAILS.freeArea}; please confirm your address with BTK Coffee. If outside this area, self-book a courier using pin location ${DELIVERY_DETAILS.pinLocation}, contact name ${DELIVERY_DETAILS.contactNames}, and number ${DELIVERY_DETAILS.contactNumber}. Courier fare is not included.`);
+        }
+        setText("#reviewAddress", $("#deliveryAddress").value.trim() || "Not entered");
+        setText("#reviewTime", $("#fulfillmentTime").value.trim() || "Not specified");
+        setText("#reviewNotes", $("#orderNotes").value.trim() || "None");
+      }
+
+      function setFieldError(input, errorId, message) {
+        const error = $(`#${errorId}`);
+        error.textContent = message;
+        input.setAttribute("aria-invalid", message ? "true" : "false");
+      }
+
+      function normalizedPhone(value) {
+        return value.trim().replace(/[\s().-]/g, "");
+      }
+
+      function isValidPhilippineMobile(value) {
+        const phone = normalizedPhone(value);
+        return /^(?:09\d{9}|\+639\d{9}|639\d{9})$/.test(phone);
+      }
+
+      function validateCheckout() {
+        let firstInvalid = null;
+        const name = $("#customerName");
+        const phone = $("#customerPhone");
+        const address = $("#deliveryAddress");
+        const orderType = $("#orderType");
+        const delivery = orderType.value === "delivery";
+        const trimmedName = name.value.trim();
+        const trimmedPhone = phone.value.trim();
+        const trimmedAddress = address.value.trim();
+
+        setFieldError(name, "nameError", trimmedName ? "" : "Please enter your full name.");
+        if (!trimmedName) firstInvalid = name;
+        setFieldError(phone, "phoneError", !trimmedPhone ? "Please enter your mobile number." : (!isValidPhilippineMobile(trimmedPhone) ? "Enter a valid Philippine mobile number, such as 0917 123 4567." : ""));
+        if (!isValidPhilippineMobile(trimmedPhone) && !firstInvalid) firstInvalid = phone;
+        setFieldError(orderType, "orderTypeError", ["pickup", "delivery"].includes(orderType.value) ? "" : "Choose pickup or delivery.");
+        if (!["pickup", "delivery"].includes(orderType.value) && !firstInvalid) firstInvalid = orderType;
+        setFieldError(address, "addressError", delivery && !trimmedAddress ? "Please enter a delivery address." : "");
+        if (delivery && !trimmedAddress && !firstInvalid) firstInvalid = address;
+
+        const validLines = getCartDetails();
+        const allLinesValid = validLines.length > 0 && validLines.length === state.cart.length && validLines.every((line) => line.quantity > 0 && line.validSelection && line.available && line.addOnsValid && !line.priceChanged && Number.isSafeInteger(line.lineTotalCents));
+        const generalError = $("#checkoutGeneralError");
+        if (!allLinesValid) {
+          const invalidItems = validLines.filter((line) => !line.validSelection || !line.available || !line.addOnsValid);
+          const changedPrices = validLines.filter((line) => line.priceChanged);
+          generalError.textContent = !validLines.length
+            ? "Your cart is empty. Add at least one menu item before preparing an order."
+            : (invalidItems.length
+              ? "One or more items or options are no longer available. Return to your cart and remove them before continuing."
+              : (changedPrices.length ? "A menu price has changed. Review the updated total in your cart and accept the change before continuing." : "One or more cart selections are invalid. Return to the cart and check the available options."));
+          generalError.hidden = false;
+          if (!firstInvalid) firstInvalid = generalError;
+        } else {
+          generalError.textContent = "";
+          generalError.hidden = true;
+        }
+        if (firstInvalid) {
+          firstInvalid.focus();
+          return false;
+        }
+        return true;
+      }
+
+      function localDateStamp(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}${month}${day}`;
+      }
+
+      function createOrderReference(date) {
+        const existing = new Set(readPendingOrders().map((order) => order.reference));
+        const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+        for (let attempt = 0; attempt < 8; attempt += 1) {
+          let suffix = "";
+          try {
+            const random = new Uint8Array(4);
+            if (window.crypto && window.crypto.getRandomValues) window.crypto.getRandomValues(random);
+            else for (let i = 0; i < random.length; i += 1) random[i] = Math.floor(Math.random() * 256);
+            suffix = Array.from(random, (byte) => alphabet[byte % alphabet.length]).join("");
+          } catch (_error) {
+            suffix = Array.from({ length: 4 }, () => alphabet[Math.floor(Math.random() * alphabet.length)]).join("");
+          }
+          const reference = `BTK-${localDateStamp(date)}-${suffix}`;
+          if (!existing.has(reference)) return reference;
+        }
+        return `BTK-${localDateStamp(date)}-${Math.random().toString(36).slice(2, 6).toUpperCase().padEnd(4, "0")}`;
+      }
+
+      function createOrderSummary(reference, createdAt) {
+        const details = getCartDetails();
+        const subtotal = details.reduce((sum, line) => sum + line.menuLineTotalCents, 0);
+        const addOnFee = details.reduce((sum, line) => sum + line.addOnTotalCents, 0);
+        const takeoutBoxFee = details.reduce((sum, line) => sum + line.takeoutBoxTotalCents, 0);
+        const estimatedTotal = subtotal + addOnFee + takeoutBoxFee;
+        const delivery = $("#orderType").value === "delivery";
+        const customerName = $("#customerName").value.trim();
+        const customerPhone = $("#customerPhone").value.trim();
+        const address = $("#deliveryAddress").value.trim();
+        const requestedTime = $("#fulfillmentTime").value.trim();
+        const notes = $("#orderNotes").value.trim();
+        const lines = [
+          "BTK COFFEE - ORDER REQUEST",
+          `Reference: ${reference}`,
+          `Prepared: ${createdAt.toLocaleString("en-PH")}`,
+          "Status: Prepared for confirmation; not confirmed by BTK Coffee.",
+          "",
+          `Customer: ${customerName}`,
+          `Mobile: ${customerPhone}`,
+          `Order type: ${delivery ? "Delivery" : "Pickup"}`
+        ];
+        if (delivery) {
+          lines.push(
+            `Delivery address: ${address}`,
+            "",
+            "DELIVERY GUIDANCE:",
+            `Free delivery is available around ${DELIVERY_DETAILS.freeArea}; please confirm with BTK Coffee whether this address qualifies.`,
+            `If outside this area, please self-book through any delivery courier. Pin location: ${DELIVERY_DETAILS.pinLocation}.`,
+            `Courier contact name: ${DELIVERY_DETAILS.contactNames}.`,
+            `Courier contact number: ${DELIVERY_DETAILS.contactNumber}.`,
+            "Any self-booked courier fare is set by the courier and is not included in this estimate."
+          );
+        }
+        lines.push(`${delivery ? "Requested delivery time" : "Preferred pickup time"}: ${requestedTime || "Not specified"}`);
+        lines.push(`Order notes: ${notes || "None"}`, "", "ITEMS:");
+        details.forEach(({ product, optionLabel, quantity, unitPriceCents, menuLineTotalCents, addOns, addOnUnitCents, addOnTotalCents, takeoutBoxUnitCents, takeoutBoxTotalCents, lineTotalCents }, index) => {
+          const optionText = optionLabel ? ` (${optionLabel})` : "";
+          lines.push(`${index + 1}. ${product.name}${optionText} x ${quantity} @ ${formatMoney(unitPriceCents)} = ${formatMoney(menuLineTotalCents)}`);
+          if (addOns.length) {
+            lines.push(`   Optional extras: ${addOns.map((item) => item.name).join(", ")}`);
+            lines.push(`   Extras: ${quantity} x ${formatMoney(addOnUnitCents)} = ${formatMoney(addOnTotalCents)}`);
+          }
+          if (takeoutBoxTotalCents) {
+            lines.push(`   Take-out box: ${quantity} x ${formatMoney(takeoutBoxUnitCents)} = ${formatMoney(takeoutBoxTotalCents)}`);
+          }
+          if (addOnTotalCents || takeoutBoxTotalCents) lines.push(`   Item total including extras and box: ${formatMoney(lineTotalCents)}`);
+        });
+        lines.push(
+          "",
+          `Menu subtotal: ${formatMoney(subtotal)}`,
+          `Optional extras: ${formatMoney(addOnFee)}`,
+          `Take-out box fee: ${formatMoney(takeoutBoxFee)}`,
+          "Take-out box charges apply per qualifying item for both pickup and delivery.",
+          `Delivery fee: ${delivery ? `Free if the address qualifies around ${DELIVERY_DETAILS.freeArea}; otherwise customer self-books a courier (fare not included)` : "Not applicable (pickup)"}`,
+          "Service fee: None configured.",
+          `Estimated total (extras and take-out boxes included): ${formatMoney(estimatedTotal)}${delivery ? " (self-booked courier fare not included, if applicable)" : ""}`,
+          "",
+          "Please confirm item availability, the final total, and fulfillment details. This request is not confirmed until BTK Coffee acknowledges it."
+        );
+        return lines.join("\n");
+      }
+
+      function prepareOrder() {
+        if (!validateCheckout()) return;
+        const createdAt = new Date();
+        const reference = createOrderReference(createdAt);
+        const summary = createOrderSummary(reference, createdAt);
+        const saved = savePendingOrder({ reference, summary, createdAt: createdAt.toISOString() });
+        state.currentPreparedOrder = { reference, summary, createdAt: createdAt.toISOString(), saved };
+        $("#orderReference").textContent = reference;
+        $("#orderSummaryText").textContent = summary;
+        $("#copyFeedback").textContent = "";
+        $("#localRecordNote").textContent = saved
+          ? "A copy of this prepared order is stored locally in this browser for your reference. It is not a business-side order record."
+          : "This browser could not save a local copy. The summary is still available above for you to copy.";
+        setPanelView("confirmation");
+        $("#copySummaryButton").focus();
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch (_error) {
+            // A blocked clipboard permission falls through to the browser copy fallback.
+          }
+        }
+        const helper = document.createElement("textarea");
+        helper.value = text;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "fixed";
+        helper.style.left = "-9999px";
+        helper.style.top = "0";
+        document.body.appendChild(helper);
+        helper.focus();
+        helper.select();
+        helper.setSelectionRange(0, helper.value.length);
+        let copied = false;
+        try { copied = document.execCommand("copy"); } catch (_error) { copied = false; }
+        helper.remove();
+        return copied;
+      }
+
+      async function handleCopyOrder() {
+        const order = state.currentPreparedOrder;
+        if (!order || !order.summary) return;
+        const copied = await copyText(order.summary);
+        $("#copyFeedback").textContent = copied
+          ? "Order summary copied. Paste it into your BTK Coffee Messenger conversation."
+          : "Copy was blocked by this browser. Select the summary above and copy it manually before opening Messenger.";
+        if (copied) showToast("Order summary copied to your clipboard.");
+        else showToast("Clipboard access was unavailable. You can copy the visible summary manually.", "error");
+      }
+
+      function reviewSavedOrder() {
+        const order = state.latestPendingOrder;
+        if (!order) return;
+        state.currentPreparedOrder = { reference: order.reference, summary: order.summary, createdAt: order.createdAt, saved: true };
+        $("#orderReference").textContent = order.reference;
+        $("#orderSummaryText").textContent = order.summary;
+        $("#localRecordNote").textContent = "This prepared order summary was retrieved from this browser's local storage. It is not a business-side order record or a confirmation.";
+        $("#copyFeedback").textContent = "";
+        setPanelView("confirmation");
+        $("#copySummaryButton").focus();
+      }
+
+      function handleTabKey(event) {
+        if (event.key === "Escape") {
+          if (!$("#panelLayer").hidden) {
+            closePanel();
+            event.preventDefault();
+          } else if ($("#primaryNav").classList.contains("is-open")) {
+            toggleMobileNavigation(true);
+            $("#menuToggle").focus();
+            event.preventDefault();
+          }
+          return;
+        }
+        if (event.key !== "Tab" || $("#panelLayer").hidden) return;
+        const focusable = $$("a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])", $("#orderDrawer")).filter((element) => !element.closest("[hidden]") && element.getClientRects().length > 0);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          last.focus();
+          event.preventDefault();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          first.focus();
+          event.preventDefault();
+        }
+      }
+
+      function setupInteractions() {
+        $("#featuredGrid").addEventListener("click", (event) => {
+          const button = event.target.closest("[data-add-product]");
+          if (button) addProductFromCard(button.closest("[data-product-card]"));
+        });
+        $("#productGrid").addEventListener("click", (event) => {
+          const button = event.target.closest("[data-add-product]");
+          if (button) addProductFromCard(button.closest("[data-product-card]"));
+        });
+        [$("#featuredGrid"), $("#productGrid")].forEach((grid) => {
+          grid.addEventListener("change", (event) => {
+            const card = event.target.closest("[data-product-card]");
+            if (!card) return;
+            if (event.target.matches("[data-product-option]")) {
+              const error = $(`[data-option-error]`, card);
+              event.target.removeAttribute("aria-invalid");
+              if (error) { error.textContent = ""; error.hidden = true; }
+              updateProductCardPrice(card);
+            }
+            if (event.target.matches("[data-product-addon]")) updateProductSelectionEstimate(card);
+            if (event.target.matches("[data-product-quantity]")) event.target.removeAttribute("aria-invalid");
+          });
+          grid.addEventListener("input", (event) => {
+            if (event.target.matches("[data-product-quantity]")) event.target.removeAttribute("aria-invalid");
+          });
+        });
+
+        $("#categoryTabs").addEventListener("click", (event) => {
+          const tab = event.target.closest("[data-category]");
+          if (!tab) return;
+          state.category = tab.dataset.category;
+          renderMenu();
+        });
+        $("#categoryTabs").addEventListener("keydown", (event) => {
+          const tabs = $$("[role='tab']", $("#categoryTabs"));
+          const index = tabs.indexOf(document.activeElement);
+          if (index < 0 || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+          event.preventDefault();
+          let next = index;
+          if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+          if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
+          if (event.key === "Home") next = 0;
+          if (event.key === "End") next = tabs.length - 1;
+          tabs[next].focus();
+          tabs[next].click();
+        });
+        $("#menuSearch").addEventListener("input", (event) => {
+          state.query = event.target.value;
+          renderMenu();
+        });
+        document.addEventListener("click", (event) => {
+          const link = event.target.closest("[data-category-link]");
+          if (!link) return;
+          state.category = link.dataset.categoryLink;
+          $("#menuSearch").value = "";
+          state.query = "";
+          renderMenu();
+        });
+
+        $("#openCartButton").addEventListener("click", () => openPanel("cart"));
+        $("#closePanelButton").addEventListener("click", () => closePanel());
+        $("#panelScrim").addEventListener("click", () => closePanel());
+        $("#panelLayer").addEventListener("click", (event) => {
+          const continueButton = event.target.closest("[data-continue-shopping]");
+          if (continueButton) continueShopping();
+        });
+        $("#cartLines").addEventListener("click", (event) => {
+          const button = event.target.closest("[data-cart-action]");
+          if (button) changeCartLine(button);
+        });
+        $("#clearCartButton").addEventListener("click", () => {
+          if (!state.cart.length) return;
+          if (!window.confirm("Clear every item from your BTK Coffee cart?")) return;
+          state.cart = [];
+          persistCart();
+          renderCart();
+          renderCheckoutReview();
+          showToast("Your cart has been cleared.");
+        });
+        $("#checkoutButton").addEventListener("click", () => {
+          if (!getCartDetails().length) {
+            showToast("Add at least one menu item before checkout.", "error");
+            return;
+          }
+          $("#checkoutGeneralError").hidden = true;
+          openPanel("checkout");
+        });
+        $("#backToCartButton").addEventListener("click", () => setPanelView("cart"));
+        $("#checkoutForm").addEventListener("submit", (event) => {
+          event.preventDefault();
+          prepareOrder();
+        });
+        $("#checkoutForm").addEventListener("input", renderCheckoutReview);
+        $("#orderType").addEventListener("change", () => {
+          updateDeliveryFields();
+          renderCheckoutReview();
+        });
+        $("#copySummaryButton").addEventListener("click", handleCopyOrder);
+        $("#reviewPendingOrderButton").addEventListener("click", reviewSavedOrder);
+        $("#continueFromConfirmation").addEventListener("click", continueShopping);
+
+        $("#menuToggle").addEventListener("click", () => toggleMobileNavigation());
+        $$("#primaryNav a").forEach((link) => link.addEventListener("click", () => toggleMobileNavigation(true)));
+        document.addEventListener("keydown", handleTabKey);
+        document.addEventListener("error", (event) => {
+          const image = event.target;
+          if (image instanceof HTMLImageElement) {
+            const frame = image.closest(".product-photo, .story-image, .contact-photo, .hero-media");
+            if (frame) frame.classList.add("image-failed");
+          }
+        }, true);
+        window.addEventListener("storage", (event) => {
+          if (event.key === configApi.storageKey) {
+            const loaded = configApi.load();
+            applySiteConfig(loaded.config);
+            if (loaded.warning) showToast(loaded.warning, "error");
+            else if (state.cart.some((line) => line.priceChanged)) showToast("The menu changed in another tab. Review updated cart prices before checkout.", "error");
+            else showToast("BTK Coffee website settings were refreshed from this browser's saved configuration.");
+          }
+          if (event.key === STORAGE_CART_KEY) {
+            state.cart = loadCart();
+            renderCart();
+            renderCheckoutReview();
+          }
+        });
+      }
+
+      function initialize() {
+        $("#copyrightYear").textContent = String(new Date().getFullYear());
+        $("#menu-title").setAttribute("tabindex", "-1");
+        setupInteractions();
+        applySiteConfig(siteConfig);
+        configApi.loadPublished().then((published) => {
+          if (published.config) applySiteConfig(published.config);
+          if (published.warning) showToast(published.warning, "error");
+        }).catch(() => showToast("Published website settings could not be loaded. Built-in defaults are still available.", "error"));
+        if (state.cart.length) showToast("Your saved BTK cart was restored on this device.");
+      }
+
+      initialize();
+    })();
+  </script>
+</body>
+</html>
