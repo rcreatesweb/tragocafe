@@ -1,11 +1,11 @@
 (function () {
   "use strict";
 
-  const Config = window.BTKCoffeeConfig;
-  const Data = window.BTKCoffeeData;
-  const AUTH_CREDENTIAL_KEY = "btk-coffee-admin-prototype-credential-v1";
-  const AUTH_SESSION_KEY = "btk-coffee-admin-prototype-session-v1";
-  const LOGIN_ATTEMPT_KEY = "btk-coffee-admin-prototype-attempts-v1";
+  const Config = window.TragoCafeConfig;
+  const Data = window.TragoCafeData;
+  const AUTH_CREDENTIAL_KEY = "trago-cafe-admin-prototype-credential-v1";
+  const AUTH_SESSION_KEY = "trago-cafe-admin-prototype-session-v1";
+  const LOGIN_ATTEMPT_KEY = "trago-cafe-admin-prototype-attempts-v1";
   const USERNAME = "superadmin";
   const ITERATIONS = 210000;
   const SESSION_LENGTH_MS = 30 * 60 * 1000;
@@ -241,7 +241,7 @@
     } else {
       form.dataset.mode = "login";
       title.textContent = "Superadmin login";
-      intro.textContent = "Sign in to manage the BTK Coffee website configuration.";
+      intro.textContent = "Sign in to manage the Trago Cafe website configuration.";
       confirmField.hidden = true;
       policy.hidden = true;
       passwordLabel.textContent = "Password";
@@ -252,13 +252,19 @@
     updateCooldown();
   }
 
+  function reloadAdminPage(showDashboard) {
+    const nextHash = showDashboard ? "dashboard" : "";
+    if (window.location.hash !== `#${nextHash}`) window.location.hash = nextHash;
+    window.location.reload();
+  }
+
   function redirectToDashboard() {
     if (!makeSession()) {
       updateMessage($("#loginMessage"), "This browser could not start a local session. Check that session storage is enabled and try again.", false);
       return;
     }
     clearFailedAttempts();
-    window.location.replace("./admin.html#dashboard");
+    reloadAdminPage(true);
   }
 
   async function handleLoginSubmit(event) {
@@ -397,8 +403,8 @@
     $("#overviewMetrics").innerHTML = `
       <article class="metric"><span class="metric-label">Menu items</span><strong class="metric-value">${count}</strong><span class="metric-sub">${state.draft.menu.filter((product) => product.available).length} currently available</span></article>
       <article class="metric"><span class="metric-label">Menu categories</span><strong class="metric-value">${categoryCount}</strong><span class="metric-sub">Calculated from saved catalog draft</span></article>
-      <article class="metric"><span class="metric-label">Current palette</span><strong class="metric-value" style="font-family:Lato,sans-serif;font-size:16px">${swatches}<span>${escapeHTML(state.draft.theme.primary)}</span></strong><span class="metric-sub">Primary brand color</span></article>
-      <article class="metric"><span class="metric-label">Configuration</span><strong class="metric-value" style="font-family:Lato,sans-serif;font-size:16px">${state.github.configExists ? "Published" : "Defaults"}</strong><span class="metric-sub">${state.github.configExists ? "GitHub website settings" : "Built-in BTK defaults"}</span></article>`;
+      <article class="metric"><span class="metric-label">Current palette</span><strong class="metric-value" style="font-family:Manrope,sans-serif;font-size:16px">${swatches}<span>${escapeHTML(state.draft.theme.primary)}</span></strong><span class="metric-sub">Primary brand color</span></article>
+      <article class="metric"><span class="metric-label">Configuration</span><strong class="metric-value" style="font-family:Manrope,sans-serif;font-size:16px">${state.github.configExists ? "Published" : "Defaults"}</strong><span class="metric-sub">${state.github.configExists ? "GitHub website settings" : "Built-in Trago defaults"}</span></article>`;
 
     const hasStoredConfig = Boolean(state.github.configExists);
     const dirty = isDirty();
@@ -470,7 +476,7 @@
     $("#paletteFields").innerHTML = PALETTE_FIELDS.map(([key, label]) => `
       <div class="palette-field" data-palette-field="${key}">
         <input class="palette-color" type="color" value="${escapeHTML(state.draft.theme[key])}" data-theme-picker="${key}" aria-label="${escapeHTML(label)} color picker">
-        <div class="palette-field-copy"><label for="paletteHex-${key}">${escapeHTML(label)}</label><input class="palette-hex" id="paletteHex-${key}" type="text" value="${escapeHTML(state.draft.theme[key])}" maxlength="7" spellcheck="false" data-theme-hex="${key}" aria-label="${escapeHTML(label)} HEX value"><small data-color-error hidden>Enter a HEX value such as #A89F79.</small></div>
+        <div class="palette-field-copy"><label for="paletteHex-${key}">${escapeHTML(label)}</label><input class="palette-hex" id="paletteHex-${key}" type="text" value="${escapeHTML(state.draft.theme[key])}" maxlength="7" spellcheck="false" data-theme-hex="${key}" aria-label="${escapeHTML(label)} HEX value"><small data-color-error hidden>Enter a HEX value such as #B47A4A.</small></div>
       </div>`).join("");
     updatePalettePreview();
   }
@@ -538,7 +544,7 @@
   }
 
   function imageCardMarkup({ title, subtitle, src, scope, key, assetPath, wide }) {
-    const preview = src ? `<img src="${escapeHTML(src)}" alt="${escapeHTML(title)} image preview" loading="lazy">` : `<span class="image-empty-label">${scope === "logo" ? "BTK monogram fallback" : "No custom image"}</span>`;
+    const preview = src ? `<img src="${escapeHTML(src)}" alt="${escapeHTML(title)} image preview" loading="lazy">` : `<span class="image-empty-label">${scope === "logo" ? "Trago monogram fallback" : "No custom image"}</span>`;
     const repoTools = scope === "product" ? `
       <small class="image-repo-path">Repository file: <code data-image-repository-path>${escapeHTML(assetPath)}</code></small>
       <button class="github-image-commit" type="button" data-github-commit disabled>Replace in GitHub</button>` : "";
@@ -701,209 +707,6 @@
       "#deliveryContactNumber": state.draft.delivery.contactNumber
     };
     Object.entries(fields).forEach(([selector, value]) => { $(selector).value = value || ""; });
-  }
-
-  const CONTENT_INPUTS = {
-    announcement: "#contentAnnouncement",
-    heroHeading: "#contentHeroHeading",
-    heroDescription: "#contentHeroDescription",
-    heroPrimaryCta: "#contentHeroPrimaryCta",
-    heroSecondaryCta: "#contentHeroSecondaryCta",
-    featuredEyebrow: "#contentFeaturedEyebrow",
-    featuredHeading: "#contentFeaturedHeading",
-    featuredDescription: "#contentFeaturedDescription",
-    menuEyebrow: "#contentMenuEyebrow",
-    menuHeading: "#contentMenuHeading",
-    menuDescription: "#contentMenuDescription",
-    emptyMenuHeading: "#contentEmptyMenuHeading",
-    emptyMenuDescription: "#contentEmptyMenuDescription",
-    storyEyebrow: "#contentStoryEyebrow",
-    storyHeading: "#contentStoryHeading",
-    storyParagraphOne: "#contentStoryParagraphOne",
-    storyParagraphTwo: "#contentStoryParagraphTwo",
-    orderEyebrow: "#contentOrderEyebrow",
-    orderHeading: "#contentOrderHeading",
-    orderDescription: "#contentOrderDescription",
-    orderNote: "#contentOrderNote",
-    contactEyebrow: "#contentContactEyebrow",
-    contactMessageCta: "#contentContactMessageCta",
-    contactDirectionsCta: "#contentContactDirectionsCta",
-    contactOrderCta: "#contentContactOrderCta",
-    footerExploreHeading: "#contentFooterExploreHeading",
-    footerMenuHeading: "#contentFooterMenuHeading",
-    footerMessengerLabel: "#contentFooterMessengerLabel",
-    footerFacebookLabel: "#contentFooterFacebookLabel",
-    footerMapsLabel: "#contentFooterMapsLabel",
-    footerBrandLine: "#contentFooterBrandLine",
-    footerCopyrightText: "#contentFooterCopyrightText",
-    footerOrderNotice: "#contentFooterOrderNotice"
-  };
-  const CONTENT_NAV_INPUTS = {
-    home: "#navHome", menu: "#navMenu", story: "#navStory", findUs: "#navFindUs", contact: "#navContact"
-  };
-  const FOOTER_DESTINATIONS = [["home", "Home"], ["menu", "Menu"], ["story", "Our Story"], ["ordering", "How to Order"], ["findUs", "Find Us"]];
-  const STORE_DAYS = [["mon", "Monday"], ["tue", "Tuesday"], ["wed", "Wednesday"], ["thu", "Thursday"], ["fri", "Friday"], ["sat", "Saturday"], ["sun", "Sunday"]];
-
-  function renderOrderStepsEditor(steps) {
-    $("#orderStepsEditor").innerHTML = steps.map((step, index) => `
-      <article class="editable-copy-row" data-order-step-row>
-        <span class="editable-row-index">${String(index + 1).padStart(2, "0")}</span>
-        <div class="editable-row-fields">
-          <label>Step title<textarea data-order-step-title rows="2" maxlength="140" required>${escapeHTML(step.title)}</textarea></label>
-          <label>Step description<textarea data-order-step-description rows="3" maxlength="500" required>${escapeHTML(step.description)}</textarea></label>
-        </div>
-        <button class="remove-option-button" type="button" data-order-step-remove>Remove step</button>
-      </article>`).join("");
-  }
-
-  function renderFooterLinksEditor(links) {
-    $("#footerLinksEditor").innerHTML = links.map((link) => `
-      <article class="editable-footer-link" data-footer-link-row>
-        <input type="hidden" data-footer-link-id value="${escapeHTML(link.id)}">
-        <label>Link label<textarea data-footer-link-label rows="2" maxlength="60" required>${escapeHTML(link.label)}</textarea></label>
-        <label>Destination<select data-footer-link-target>${FOOTER_DESTINATIONS.map(([value, label]) => `<option value="${value}"${link.target === value ? " selected" : ""}>${label}</option>`).join("")}</select></label>
-        <button class="remove-option-button" type="button" data-footer-link-remove>Remove link</button>
-      </article>`).join("");
-  }
-
-  function renderContentForm() {
-    const content = state.draft.content;
-    Object.entries(CONTENT_INPUTS).forEach(([key, selector]) => { $(selector).value = content[key] || ""; });
-    Object.entries(CONTENT_NAV_INPUTS).forEach(([key, selector]) => { $(selector).value = content.navigation[key] || ""; });
-    renderOrderStepsEditor(content.orderSteps);
-    renderFooterLinksEditor(content.footerQuickLinks);
-    updateMessage($("#contentFormMessage"), "", false);
-  }
-
-  function renderStoreStatusForm() {
-    const status = state.draft.storeStatus;
-    $("#storeIsOpen").checked = status.isOpen;
-    $("#storeFollowHours").checked = status.followHours;
-    $("#storeHoursEditor").innerHTML = STORE_DAYS.map(([key, label]) => {
-      const day = status.days[key];
-      return `<div class="store-hour-row" data-store-day="${key}">
-        <strong>${label}</strong>
-        <label class="store-day-closed"><input type="checkbox" data-store-day-closed${day.closed ? " checked" : ""}> Closed</label>
-        <label>Opens<input type="time" data-store-open value="${escapeHTML(day.openTime)}"${day.closed ? " disabled" : ""}></label>
-        <label>Closes<input type="time" data-store-close value="${escapeHTML(day.closeTime)}"${day.closed ? " disabled" : ""}></label>
-      </div>`;
-    }).join("");
-    updateStoreStatusEditorMode();
-  }
-
-  function updateStoreStatusEditorMode() {
-    const followsHours = $("#storeFollowHours").checked;
-    $("#storeHoursPanel").hidden = !followsHours;
-    $("#manualStoreStatusPanel").hidden = followsHours;
-    const isOpen = $("#storeIsOpen").checked;
-    $("#storeStatusChoiceLabel").textContent = isOpen ? "Open" : "Closed";
-    $("#storeStatusChoiceDescription").textContent = isOpen ? "Customers will see Open in the site header." : "Customers will see Closed in the site header.";
-  }
-
-  function collectStoreStatusDraft() {
-    const days = {};
-    $$("[data-store-day]").forEach((row) => {
-      days[row.dataset.storeDay] = {
-        closed: $(`[data-store-day-closed]`, row).checked,
-        openTime: $(`[data-store-open]`, row).value,
-        closeTime: $(`[data-store-close]`, row).value
-      };
-    });
-    state.draft.storeStatus = {
-      isOpen: $("#storeIsOpen").checked,
-      followHours: $("#storeFollowHours").checked,
-      timezone: "Asia/Manila",
-      days
-    };
-  }
-
-  function collectContentFormDraft() {
-    const content = Config.clone(state.draft.content);
-    for (const [key, selector] of Object.entries(CONTENT_INPUTS)) {
-      const input = $(selector);
-      const value = input.value.trim();
-      if (!value) return { ok: false, error: "Fill in the required website text fields before publishing.", input };
-      content[key] = value;
-    }
-    content.navigation = {};
-    for (const [key, selector] of Object.entries(CONTENT_NAV_INPUTS)) {
-      const input = $(selector);
-      const value = input.value.trim();
-      if (!value) return { ok: false, error: "Fill in all public navigation labels before publishing.", input };
-      content.navigation[key] = value;
-    }
-    const steps = $$("[data-order-step-row]", $("#orderStepsEditor"));
-    if (!steps.length || steps.length > 12) return { ok: false, error: "Ordering instructions must contain between 1 and 12 steps." };
-    content.orderSteps = [];
-    for (const [index, row] of steps.entries()) {
-      const titleInput = $(`[data-order-step-title]`, row);
-      const descriptionInput = $(`[data-order-step-description]`, row);
-      const title = titleInput.value.trim();
-      const description = descriptionInput.value.trim();
-      if (!title || !description) return { ok: false, error: `Complete both fields in order step ${index + 1}.`, input: title ? descriptionInput : titleInput };
-      content.orderSteps.push({ title, description });
-    }
-    const footerRows = $$("[data-footer-link-row]", $("#footerLinksEditor"));
-    if (!footerRows.length || footerRows.length > 10) return { ok: false, error: "Footer quick links must contain between 1 and 10 links." };
-    content.footerQuickLinks = [];
-    for (const [index, row] of footerRows.entries()) {
-      const labelInput = $(`[data-footer-link-label]`, row);
-      const label = labelInput.value.trim();
-      if (!label) return { ok: false, error: `Enter a label for footer link ${index + 1}.`, input: labelInput };
-      let id = $(`[data-footer-link-id]`, row).value || generateSlug(label);
-      let suffix = 2;
-      while (content.footerQuickLinks.some((item) => item.id === id)) { id = `${generateSlug(label)}-${suffix}`; suffix += 1; }
-      content.footerQuickLinks.push({ id, label, target: $(`[data-footer-link-target]`, row).value });
-    }
-    state.draft.content = content;
-    return { ok: true, content };
-  }
-
-  function updateContentDraft() {
-    const result = collectContentFormDraft();
-    state.contentFormInvalid = !result.ok;
-    updateMessage($("#contentFormMessage"), result.ok ? "" : result.error, false);
-    renderOverview();
-    return result;
-  }
-
-  function renderStoreStatusForm() {
-    const status = state.draft.storeStatus;
-    $("#storeIsOpen").checked = status.isOpen;
-    $("#storeFollowHours").checked = status.followHours;
-    const dayLabels = [["mon", "Monday"], ["tue", "Tuesday"], ["wed", "Wednesday"], ["thu", "Thursday"], ["fri", "Friday"], ["sat", "Saturday"], ["sun", "Sunday"]];
-    $("#storeHoursEditor").innerHTML = dayLabels.map(([day, label]) => {
-      const hours = status.days[day];
-      return `<div class="store-hour-row" data-store-day="${day}">
-        <strong>${label}</strong>
-        <label class="store-day-closed"><input type="checkbox" data-store-day-closed${hours.closed ? " checked" : ""}> Closed</label>
-        <label>Opens<input type="time" data-store-open value="${escapeHTML(hours.openTime)}"${hours.closed ? " disabled" : ""}></label>
-        <label>Closes<input type="time" data-store-close value="${escapeHTML(hours.closeTime)}"${hours.closed ? " disabled" : ""}></label>
-      </div>`;
-    }).join("");
-    updateStoreStatusEditorMode();
-  }
-
-  function updateStoreStatusEditorMode() {
-    const followsHours = $("#storeFollowHours").checked;
-    $("#storeHoursPanel").hidden = !followsHours;
-    $("#manualStoreStatusPanel").hidden = followsHours;
-    const isOpen = $("#storeIsOpen").checked;
-    $("#storeStatusChoiceLabel").textContent = isOpen ? "Open" : "Closed";
-    $("#storeStatusChoiceDescription").textContent = isOpen ? "Customers will see Open in the site header." : "Customers will see Closed in the site header.";
-  }
-
-  function collectStoreStatusDraft() {
-    const days = {};
-    $$("[data-store-day]").forEach((row) => {
-      days[row.dataset.storeDay] = {
-        closed: $(`[data-store-day-closed]`, row).checked,
-        openTime: $(`[data-store-open]`, row).value,
-        closeTime: $(`[data-store-close]`, row).value
-      };
-    });
-    state.draft.storeStatus = { isOpen: $("#storeIsOpen").checked, followHours: $("#storeFollowHours").checked, timezone: "Asia/Manila", days };
-    return state.draft.storeStatus;
   }
 
   const CONTENT_INPUTS = {
@@ -1143,7 +946,7 @@
 
   async function saveSection(section) {
     if (!readValidSession()) {
-      window.location.replace("./admin.html");
+      reloadAdminPage(false);
       return;
     }
     if (!state.github.token || !state.github.configLoaded) {
@@ -1228,17 +1031,17 @@
 
   function restoreDefaults(section) {
     if (section === "appearance") {
-      if (!window.confirm("Restore the BTK default color palette in your draft? Save Changes to publish it to this browser's public page.")) return;
+      if (!window.confirm("Restore the Trago default color palette in your draft? Save Changes to publish it to this browser's public page.")) return;
       state.draft.theme = Config.defaultConfig().theme;
     }
     if (section === "images") {
-      if (!window.confirm("Restore the default BTK website images in your draft? This will clear custom logo and product image overrides.")) return;
+      if (!window.confirm("Restore the default Trago website images in your draft? This will clear custom logo and product image overrides.")) return;
       const defaults = Config.defaultConfig();
       state.draft.images = Config.clone(defaults.images);
       state.draft.menu.forEach((product) => { product.image = Data.productImages[product.id] || ""; });
     }
     if (section === "contact") {
-      if (!window.confirm("Restore the default BTK contact, map, and delivery details in your draft?")) return;
+      if (!window.confirm("Restore the default Trago contact, map, and delivery details in your draft?")) return;
       const defaults = Config.defaultConfig();
       state.draft.contact = Config.clone(defaults.contact);
       state.draft.delivery = Config.clone(defaults.delivery);
@@ -1258,7 +1061,7 @@
 
   function previewDraft() {
     if (!readValidSession()) {
-      window.location.replace("./admin.html");
+      reloadAdminPage(false);
       return;
     }
     const checked = Config.validate(state.draft);
@@ -1306,7 +1109,7 @@
     if (!preview) return;
     if (!src) {
       preview.classList.add("image-empty");
-      preview.innerHTML = `<span class="image-empty-label">${card.dataset.imageScope === "global" && card.dataset.imageKey === "logo" ? "BTK monogram fallback" : "No custom image"}</span>`;
+      preview.innerHTML = `<span class="image-empty-label">${card.dataset.imageScope === "global" && card.dataset.imageKey === "logo" ? "Trago monogram fallback" : "No custom image"}</span>`;
       return;
     }
     preview.classList.remove("image-empty");
@@ -1507,7 +1310,7 @@
         return { ok: false, errors: ["A configuration file was created in GitHub after you connected. Reconnect and load the latest settings before saving."] };
       }
       const request = {
-        message: `Update BTK Coffee website settings (${new Date().toISOString().slice(0, 10)})`,
+        message: `Update Trago Cafe website settings (${new Date().toISOString().slice(0, 10)})`,
         content: encodeBase64Text(JSON.stringify(finalCheck.config, null, 2)),
         branch: state.github.branch
       };
@@ -1631,7 +1434,7 @@
       bitmap.close();
       throw new Error("This browser could not prepare the image for GitHub.");
     }
-    context.fillStyle = "#FFFDF7";
+    context.fillStyle = "#FFFBF5";
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
     bitmap.close();
@@ -1686,7 +1489,7 @@
       }
       button.textContent = "Committing...";
       const body = {
-        message: `Update BTK Coffee product image: ${product.name}`,
+        message: `Update Trago Cafe product image: ${product.name}`,
         content: await blobBase64(jpeg),
         branch: state.github.branch
       };
@@ -2219,7 +2022,7 @@
       if (!readValidSession()) {
         safeStorageRemove("sessionStorage", AUTH_SESSION_KEY);
         toast("Your local dashboard session expired. Sign in again.", "error");
-        window.setTimeout(() => window.location.replace("./admin.html"), 900);
+        window.setTimeout(() => reloadAdminPage(false), 900);
       }
     }, 15000);
     window.addEventListener("beforeunload", (event) => {
@@ -2288,13 +2091,13 @@
     state.github.token = "";
     clearGithubImagePreviews();
     closeMobileNav();
-    window.location.replace("./admin.html");
+    reloadAdminPage(false);
   }
 
   function initializeDashboard() {
     if (!$("#adminDashboardRoot")) return false;
     if (!readValidSession()) {
-      window.location.replace("./admin.html");
+      reloadAdminPage(false);
       return true;
     }
     const loaded = Config.load();

@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------
-   BTK Coffee product image helpers
+   Trago Cafe product image helpers
    Product photography lives in the repository directly under assets/.
    Every product has its own local image path; category cards never
    borrow or rotate another product's image.
@@ -84,8 +84,8 @@
   const imagePaths = Object.values(PRODUCT_IMAGES);
   const uniquePaths = new Set(imagePaths);
   if (uniquePaths.size !== imagePaths.length) {
-    throw new Error("BTK product image paths must be unique. Each menu item needs its own image file.");
+    throw new Error("Trago product image paths must be unique. Each menu item needs its own image file.");
   }
 
-  window.BTKCoffeeProductImages = Object.freeze({ px, IMG, byProductId: PRODUCT_IMAGES });
+  window.TragoCafeProductImages = Object.freeze({ px, IMG, byProductId: PRODUCT_IMAGES });
 })();

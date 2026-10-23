@@ -3,47 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F7F4EC">
-  <meta name="description" content="Discover BTK Coffee's coffee, frappes, non-coffee drinks, waffles, and savory favorites. Browse the menu and prepare an order for Messenger.">
+  <meta name="theme-color" content="#2E1D17">
+  <meta name="description" content="Discover Trago Cafe's coffee, frappes, non-coffee drinks, waffles, and savory favorites. Browse the menu and prepare your order summary.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="BTK Coffee | Brewed to Brighten Your Day">
-  <meta property="og:description" content="Good coffee. Better moments. Browse the BTK Coffee menu and prepare your order for Messenger.">
-  <meta property="og:image" content="https://images.pexels.com/photos/18189024/pexels-photo-18189024.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200">
-  <title>BTK Coffee | Brewed to Brighten Your Day</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F7F4EC'/%3E%3Cpath d='M10 15h44M10 49h44' stroke='%23A89F79' stroke-width='2'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='23' fill='%23352F28'%3EBTK%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta property="og:title" content="Trago Cafe | Your Everyday Coffee Ritual">
+  <meta property="og:description" content="Sip slowly. Stay awhile. Browse the Trago Cafe menu and prepare your order summary.">
+  <meta property="og:image" content="./assets/trago-hero.webp">
+  <title>Trago Cafe | Your Everyday Coffee Ritual</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232E1D17'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23B47A4A' stroke-width='1.5'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='23' fill='%23FFF9F0'%3ETC%3C/text%3E%3C/svg%3E">
   <style>
+    @font-face { font-family: "Cormorant Garamond"; src: url("./assets/cormorant-garamond-latin.woff2") format("woff2"); font-style: normal; font-weight: 500 700; font-display: swap; }
+    @font-face { font-family: "Manrope"; src: url("./assets/manrope-latin.woff2") format("woff2"); font-style: normal; font-weight: 400 800; font-display: swap; unicode-range: U+0000-00FF, U+2000-206F; }
+    @font-face { font-family: "Manrope"; src: url("./assets/manrope-latin-ext.woff2") format("woff2"); font-style: normal; font-weight: 400 800; font-display: swap; unicode-range: U+0100-024F, U+20A0-20CF; }
+
     :root {
-      --primary-color: #A89F79;
-      --secondary-color: #817653;
-      --background-color: #F7F4EC;
-      --surface-color: #FFFDF7;
-      --heading-color: #352F28;
-      --body-color: #352F28;
-      --muted-color: #777064;
-      --button-background: #817653;
-      --button-text: #FFFDF7;
-      --button-hover: #6F6548;
-      --border-color: #E6E0D4;
-      --accent-color: #B8B49A;
+      --primary-color: #B47A4A;
+      --secondary-color: #7A4B32;
+      --background-color: #F6F0E7;
+      --surface-color: #FFFBF5;
+      --heading-color: #2E1D17;
+      --body-color: #382820;
+      --muted-color: #74665C;
+      --button-background: #6B3E2B;
+      --button-text: #FFF9F0;
+      --button-hover: #4E2C1F;
+      --border-color: #E2D3C3;
+      --accent-color: #E7D1B6;
       --khaki: var(--primary-color);
       --khaki-deep: var(--secondary-color);
       --khaki-soft: var(--accent-color);
-      --beige: #E8DFC9;
+      --espresso: #2E1D17;
+      --caramel: #C88B56;
+      --latte: #D9BE9C;
+      --beige: #E9DCCB;
       --cream: var(--background-color);
       --ivory: var(--surface-color);
       --white: var(--surface-color);
       --coffee: var(--body-color);
       --muted: var(--muted-color);
       --border: var(--border-color);
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "Lato", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --page-width: 1320px;
-      --shadow-soft: 0 14px 34px rgba(53, 47, 40, 0.08);
-      --shadow-lift: 0 18px 42px rgba(53, 47, 40, 0.13);
+      --shadow-soft: 0 14px 34px rgba(46, 29, 23, 0.08);
+      --shadow-lift: 0 22px 50px rgba(46, 29, 23, 0.14);
     }
 
     *,
@@ -686,6 +689,150 @@
     @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
     @keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* Trago Cafe art direction: warm editorial details over the original storefront. */
+    ::selection { background: #D9BE9C; color: #2E1D17; }
+    :focus-visible { outline-color: #8A4F30; }
+    .announcement { background: var(--espresso); color: #E8C9A7; font-size: 10px; font-weight: 600; letter-spacing: .18em; }
+    .site-header { border-bottom-color: rgba(122,75,50,.14); background: rgba(255,251,245,.93); }
+    .nav-shell { min-height: 88px; }
+    .brand-lockup { gap: 13px; }
+    .brand-monogram {
+      width: 47px;
+      height: 47px;
+      border: 1px solid var(--primary-color);
+      border-radius: 50%;
+      background: #F3E4D1;
+      color: var(--espresso);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -.05em;
+    }
+    .brand-monogram::before, .brand-monogram::after { display: none; }
+    .brand-copy strong { font-size: 23px; font-weight: 600; letter-spacing: -.025em; }
+    .brand-copy small { color: var(--secondary-color); font-size: 8px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .primary-nav a { font-size: 11px; font-weight: 600; letter-spacing: .04em; }
+    .primary-nav a::after { background: var(--primary-color); }
+    .cart-trigger { border-color: var(--espresso); border-radius: 999px; background: var(--espresso); color: #FFF9F0; }
+    .cart-trigger:hover { border-color: var(--button-hover); background: var(--button-hover); }
+    .cart-badge { background: var(--caramel); color: var(--espresso); }
+    .menu-toggle { border-radius: 50%; }
+
+    .hero { background: var(--espresso); }
+    .hero::before {
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      right: -7vw;
+      width: min(52vw, 740px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(232,201,167,.18);
+      border-radius: 50%;
+      content: "";
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .hero-media img { filter: saturate(.72) sepia(.1) brightness(.82); object-position: center 52%; }
+    .hero::after {
+      background:
+        linear-gradient(90deg, rgba(35,19,14,.94) 0%, rgba(43,25,18,.78) 40%, rgba(43,25,18,.18) 82%),
+        linear-gradient(0deg, rgba(35,19,14,.52), transparent 48%);
+    }
+    .hero-inner { position: relative; z-index: 1; padding-block: 86px 108px; }
+    .hero-copy { width: min(100%, 790px); }
+    .hero h1 { max-width: 850px; font-size: clamp(5.6rem, 11vw, 10.2rem); font-weight: 600; letter-spacing: -.07em; line-height: .79; }
+    .hero-tagline { margin-top: 27px; color: #E8C9A7; font-size: 10px; font-weight: 600; letter-spacing: .25em; }
+    .hero h2 { margin-top: 34px; color: #FFF9F0; font-size: clamp(2.3rem, 4.2vw, 3.8rem); font-weight: 500; line-height: .98; }
+    .hero-copy > p { max-width: 475px; color: rgba(255,249,240,.78); line-height: 1.8; }
+    .hero-actions { margin-top: 35px; }
+    .hero-ritual { position: absolute; bottom: 31px; left: 0; display: flex; align-items: center; gap: 13px; color: rgba(255,249,240,.58); font-size: 8px; font-weight: 700; letter-spacing: .19em; }
+    .hero-ritual i { width: 3px; height: 3px; border-radius: 50%; background: var(--caramel); }
+
+    .button { min-height: 50px; border-radius: 999px; padding-inline: 23px; font-size: 11px; font-weight: 700; letter-spacing: .035em; }
+    .button-primary { box-shadow: 0 8px 22px rgba(46,29,23,.1); }
+    .button-primary:hover { box-shadow: 0 11px 25px rgba(46,29,23,.18); }
+    .button-light { border-color: rgba(255,249,240,.42); background: rgba(255,249,240,.06); backdrop-filter: blur(5px); }
+    .button-outline { border-color: #C9A98C; }
+    .button-soft { background: var(--accent-color); }
+    .hero-actions .button::after { width: 6px; height: 6px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; content: ""; transform: rotate(-45deg); }
+    .hero-actions .button-primary::after { content: ""; transform: rotate(45deg); }
+
+    .section { padding-block: clamp(88px, 10vw, 138px); }
+    .section-heading { max-width: 790px; margin-bottom: 43px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--secondary-color); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ""; opacity: .65; }
+    .section-heading h2, .story-copy h2, .contact-copy h2, .steps-heading h2 { font-weight: 600; letter-spacing: -.045em; line-height: .98; }
+    .section-heading > p:last-child, .steps-heading > p:last-child { line-height: 1.8; }
+
+    .product-grid { gap: 25px; }
+    .product-card { border-color: rgba(180,122,74,.19); border-radius: 13px; box-shadow: 0 8px 28px rgba(46,29,23,.045); }
+    .product-card:hover { border-color: rgba(180,122,74,.5); box-shadow: var(--shadow-lift); transform: translateY(-6px); }
+    .product-photo { aspect-ratio: 1.5 / 1; background: #E7D1B6; }
+    .product-photo img { position: absolute; z-index: 1; inset: 0; }
+    .product-photo.image-failed { background: #E7D1B6; }
+    .product-image-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 7px;
+      padding: 24px;
+      background: radial-gradient(circle at 78% 16%, rgba(255,251,245,.7), transparent 32%), linear-gradient(145deg, #F0E2CF, #D4B18C);
+      color: var(--espresso);
+      text-align: center;
+    }
+    .fallback-monogram { display: grid; width: 51px; height: 51px; place-items: center; border: 1px solid rgba(46,29,23,.35); border-radius: 50%; font-family: var(--serif); font-size: 24px; font-weight: 700; }
+    .fallback-product-name { max-width: 210px; font-family: var(--serif); font-size: 25px; font-weight: 600; line-height: 1; }
+    .fallback-brand { font-size: 7px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    .product-content { padding: 22px 21px 20px; }
+    .product-kicker { color: var(--secondary-color); font-size: 8px; letter-spacing: .16em; }
+    .product-content h3 { font-size: 27px; font-weight: 600; letter-spacing: -.025em; line-height: 1.05; }
+    .product-description { margin-top: 10px; line-height: 1.6; }
+    .product-price-row { padding-top: 12px; border-top: 1px solid rgba(226,211,195,.75); }
+    .product-price { color: var(--secondary-color); }
+    .product-option-wrap select, .product-fixed-option, .quantity-field input { border-radius: 7px; background-color: #FFFBF5; }
+    .product-addons { border-color: #E8D9C6; border-radius: 8px; background: #FBF5EC; }
+    .product-addon-choice input { accent-color: var(--button-background); }
+    .add-button { min-height: 43px; padding-inline: 13px; }
+    .menu-search { border-radius: 999px; background: var(--ivory); }
+    .category-tab { border-radius: 999px; padding-inline: 18px; font-size: 10px; font-weight: 700; letter-spacing: .025em; }
+    .category-tab:hover { border-color: var(--primary-color); background: #F0E2D2; }
+    .category-tab[aria-selected="true"] { border-color: var(--espresso); background: var(--espresso); color: #FFF9F0; }
+    .empty-results { border-color: #C9A98C; border-radius: 13px; }
+
+    #story { background: var(--espresso); color: #FFF9F0; }
+    #story .eyebrow { color: #D9AE83; }
+    #story .story-copy h2 { color: #FFF9F0; }
+    #story .story-copy p { color: #D8C7B8; line-height: 1.9; }
+    .story-image { min-height: 540px; border: 1px solid rgba(232,201,167,.22); border-radius: 250px 250px 14px 14px; background: linear-gradient(145deg, #D9BE9C, #6B3E2B); }
+    .story-image::after { position: absolute; inset: 13px; border: 1px solid rgba(255,249,240,.25); border-radius: 237px 237px 8px 8px; content: ""; pointer-events: none; }
+    .story-image img { filter: saturate(.72) sepia(.08); }
+    .steps-section { background: #FFFBF5; }
+    .steps-list li { border-top-color: #D5B894; }
+    .steps-list li::before { color: var(--secondary-color); font-size: 31px; font-weight: 600; line-height: 1; }
+    .steps-list strong { font-size: 13px; line-height: 1.55; }
+    .steps-list span { line-height: 1.7; }
+    .contact-section { background: var(--beige); }
+    .contact-photo { border-radius: 14px 130px 14px 14px; background: linear-gradient(145deg, #D9BE9C, #6B3E2B); }
+    .contact-photo img { filter: saturate(.76) sepia(.06); }
+    .contact-note { line-height: 1.7; }
+    .site-footer { background: #241712; }
+    .footer-brand .brand-monogram { border-color: #B47A4A; background: #34221B; }
+    .footer-brand .brand-copy small { color: #D9AE83; }
+    .footer-column h2 { color: #D9AE83; }
+    .footer-links a:hover { color: #E8C9A7; }
+
+    .order-drawer { border-left: 1px solid rgba(180,122,74,.25); }
+    .drawer-header { padding-block: 24px; }
+    .drawer-header h2 { font-size: 33px; font-weight: 600; }
+    .icon-button { border-radius: 50%; }
+    .form-section legend, .review-box h3 { font-weight: 600; }
+    .field input, .field select, .field textarea { border-radius: 7px; }
+    .review-box { border-color: #E2D3C3; border-radius: 10px; background: #FBF5EC; }
+    .summary-pre { border-radius: 8px; background: #FBF5EC; }
+    .confirmation-mark { border-color: var(--primary-color); color: var(--secondary-color); }
+    .toast { border-radius: 9px; background: var(--espresso); }
+
     @media (min-width: 1120px) {
       .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
     }
@@ -804,6 +951,13 @@
       .toast-region { right: 14px; bottom: 14px; width: calc(100% - 28px); }
     }
 
+    @media (max-width: 360px) {
+      .site-header .brand-copy { display: none; }
+      .site-header .brand-lockup { gap: 0; }
+      .site-header .brand-monogram { width: 43px; height: 43px; }
+      .nav-actions { gap: 6px; }
+    }
+
     .admin-preview-banner { position: relative; z-index: 31; padding: 9px 16px; background: #6e503d; color: #fffdf7; font-size: 12px; text-align: center; }
     .admin-preview-banner a { margin-left: 6px; color: #f0e4c8; font-weight: 700; text-underline-offset: 3px; }
     .brand-logo-image { width: 55px; height: 48px; flex: 0 0 auto; object-fit: contain; }
@@ -829,21 +983,21 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="announcement" data-content="announcement">Your favorite coffee moments start here.</div>
+  <div class="announcement" data-content="announcement">A warm cup. A sweet pause. Your Trago moment.</div>
 
   <header class="site-header">
     <div class="nav-shell">
-      <a class="brand-lockup" href="#home" aria-label="BTK Coffee home">
-        <span class="brand-monogram" aria-hidden="true">BTK</span>
+      <a class="brand-lockup" href="#home" aria-label="Trago Cafe home">
+        <span class="brand-monogram" aria-hidden="true">TC</span>
         <img class="brand-logo-image" data-brand-image alt="" hidden>
-        <span class="brand-copy"><strong data-business-name>BTK Coffee</strong><small data-tagline>Brewed to Brighten Your Day</small></span>
+        <span class="brand-copy"><strong data-business-name>Trago Cafe</strong><small data-tagline>Your Everyday Coffee Ritual</small></span>
       </a>
       <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
         <a data-nav-link="home" href="#home">Home</a>
         <a data-nav-link="menu" href="#menu">Menu</a>
         <a data-nav-link="story" href="#story">Our Story</a>
         <a data-nav-link="findUs" href="#find-us">Find Us</a>
-        <a data-nav-link="contact" data-messenger-link href="https://m.me/btkcoffeeeee" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a data-nav-link="contact" href="#find-us">Contact</a>
       </nav>
       <div class="nav-actions">
         <div class="store-status is-closed" id="storeStatusBadge" role="status" aria-live="polite" aria-label="Store status: Closed">
@@ -864,38 +1018,39 @@
   <main id="main-content">
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <img id="heroImage" src="https://images.pexels.com/photos/18189024/pexels-photo-18189024.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1400&w=2200" alt="" fetchpriority="high">
+        <img id="heroImage" src="./assets/trago-hero.webp" alt="" fetchpriority="high">
       </div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <h1 id="hero-title"><span data-business-name>BTK Coffee</span></h1>
-          <span class="hero-tagline" data-tagline>Brewed to Brighten Your Day</span>
-          <h2 data-content="heroHeading">Good Coffee.<br>Better Moments.</h2>
-          <p class="content-multiline" data-content="heroDescription">Crafted with passion, inspired by late-night café adventures, and made to brighten your day.</p>
+          <h1 id="hero-title"><span data-business-name>Trago Cafe</span></h1>
+          <span class="hero-tagline" data-tagline>Your Everyday Coffee Ritual</span>
+          <h2 data-content="heroHeading">Sip slowly.<br>Stay awhile.</h2>
+          <p class="content-multiline" data-content="heroDescription">Familiar café favorites, considered little details, and an order made just the way you like it.</p>
           <div class="hero-actions">
-            <a class="button button-primary" data-content="heroPrimaryCta" href="#menu">Order Your Favorites</a>
-            <a class="button button-light" data-content="heroSecondaryCta" href="#story">Discover Our Story</a>
+            <a class="button button-primary" data-content="heroPrimaryCta" href="#menu">Explore the Menu</a>
+            <a class="button button-light" data-content="heroSecondaryCta" href="#story">The Trago Feeling</a>
           </div>
         </div>
+        <div class="hero-ritual" aria-hidden="true"><span>COFFEE</span><i></i><span>FRAPPES</span><i></i><span>CAFÉ BITES</span></div>
       </div>
     </section>
 
     <section class="section section-ivory" aria-labelledby="featured-title">
       <div class="page-shell">
         <div class="section-heading">
-          <p class="eyebrow" data-content="featuredEyebrow">A little something for your day</p>
-          <h2 id="featured-title" data-content="featuredHeading">A few BTK favorites</h2>
-          <p class="content-multiline" data-content="featuredDescription">Find a familiar pick, try a new flavor, and make a little room for a good coffee moment.</p>
+          <p class="eyebrow" data-content="featuredEyebrow">The Trago edit</p>
+          <h2 id="featured-title" data-content="featuredHeading">A few favorites for your next pause</h2>
+          <p class="content-multiline" data-content="featuredDescription">Find a familiar pick, try a different flavor, and make a little room for a good café moment.</p>
         </div>
-        <div class="featured-grid" id="featuredGrid" aria-label="Featured BTK Coffee menu items"></div>
+        <div class="featured-grid" id="featuredGrid" aria-label="Featured Trago Cafe menu items"></div>
       </div>
     </section>
 
     <section class="section" id="menu" aria-labelledby="menu-title">
       <div class="page-shell">
         <div class="section-heading">
-          <p class="eyebrow" data-content="menuEyebrow">The BTK menu</p>
-          <h2 id="menu-title" data-content="menuHeading">Something for your kind of break</h2>
+          <p class="eyebrow" data-content="menuEyebrow">The Trago menu</p>
+          <h2 id="menu-title" data-content="menuHeading">Something for every kind of break</h2>
           <p class="content-multiline" data-content="menuDescription">Browse the menu, choose an available size or serving, and add your picks to an order request.</p>
         </div>
         <div class="menu-tools">
@@ -917,13 +1072,13 @@
     <section class="section section-ivory" id="story" aria-labelledby="story-title">
       <div class="page-shell story-layout">
         <div class="story-copy">
-          <p class="eyebrow" data-content="storyEyebrow">Our story</p>
-          <h2 id="story-title" data-content="storyHeading">From Late-Night Café Adventures to Your Favorite Cup</h2>
-          <p class="content-multiline" data-content="storyParagraphOne">BTK Coffee was born out of a shared passion for coffee between two people who simply loved exploring different cafés every night. What began as a nightly adventure to discover new flavors soon turned into a dream of crafting our own unique blend.</p>
-          <p class="content-multiline" data-content="storyParagraphTwo">With countless cups and late-night experiments, we finally created an iced coffee recipe that perfectly matched our palate. After sharing it with friends and receiving overwhelmingly positive feedback, BTK Coffee was officially established.</p>
+          <p class="eyebrow" data-content="storyEyebrow">The Trago feeling</p>
+          <h2 id="story-title" data-content="storyHeading">A café pause, made entirely yours</h2>
+          <p class="content-multiline" data-content="storyParagraphOne">Trago Cafe brings together the drinks and bites that make an ordinary break feel a little more considered—from familiar coffee to creamy frappes, waffles, and savory favorites.</p>
+          <p class="content-multiline" data-content="storyParagraphTwo">Choose your listed size or serving, add the extras you love, and prepare an order request in a few simple steps. Every request is reviewed and confirmed directly by Trago Cafe.</p>
         </div>
         <figure class="story-image">
-          <img id="storyImage" src="https://images.pexels.com/photos/33094652/pexels-photo-33094652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1100&w=1000" alt="Warm cafe setting with an espresso machine and coffee-making tools" loading="lazy">
+          <img id="storyImage" src="./assets/trago-story.webp" alt="Iced coffee on a wooden café tray" loading="lazy">
         </figure>
       </div>
     </section>
@@ -932,11 +1087,11 @@
       <div class="page-shell">
         <div class="steps-heading">
           <p class="eyebrow" data-content="orderEyebrow">Ordering, made easy</p>
-          <h2 id="steps-title" data-content="orderHeading">From menu to Messenger</h2>
-          <p class="content-multiline" data-content="orderDescription">A simple way to prepare your request. BTK Coffee will confirm availability and fulfillment details with you.</p>
+          <h2 id="steps-title" data-content="orderHeading">From your cart to confirmation</h2>
+          <p class="content-multiline" data-content="orderDescription">Build your request, review the details, and copy your summary. Trago Cafe will confirm availability and fulfillment details with you.</p>
         </div>
         <ol class="steps-list" id="orderStepsList"></ol>
-        <p class="steps-note content-multiline" data-content="orderNote">Free delivery is available around {freeArea} when BTK Coffee confirms that the address qualifies. Outside this area, customers need to self-book a delivery courier. Confirm availability, operating hours, and other fulfillment details with BTK Coffee in Messenger.</p>
+        <p class="steps-note content-multiline" data-content="orderNote">Free delivery is available around {freeArea} when Trago Cafe confirms that the address qualifies. Outside this area, customers need to self-book a delivery courier. Confirm availability, operating hours, and other fulfillment details through an available Trago Cafe contact channel.</p>
       </div>
     </section>
 
@@ -945,17 +1100,18 @@
         <div class="contact-copy">
           <p class="eyebrow" data-content="contactEyebrow">Find us and say hello</p>
           <h2 id="contact-title" data-contact-heading>Your Next Coffee Moment Is Waiting</h2>
-          <p class="content-multiline" data-contact-description>Questions about the menu, delivery, availability, or hours? Message BTK Coffee to confirm the details and send your prepared order request.</p>
+          <p class="content-multiline" data-contact-description>Questions about the menu, delivery, availability, or hours? Get in touch with Trago Cafe to confirm the details and send your prepared order request.</p>
           <div class="contact-actions">
-            <a class="button button-primary" data-messenger-link data-contact-message-cta href="https://m.me/btkcoffeeeee" target="_blank" rel="noopener noreferrer">Message BTK Coffee</a>
-            <a class="button button-outline" data-maps-link data-contact-directions-cta href="https://maps.app.goo.gl/x8PXrcovtmqqKweg9?g_st=ipc" target="_blank" rel="noopener noreferrer">Get Directions</a>
+            <a class="button button-primary" data-messenger-link data-contact-message-cta href="#find-us" target="_blank" rel="noopener noreferrer" hidden>Message Trago Cafe</a>
+            <a class="button button-primary" data-facebook-link href="https://www.facebook.com/profile.php?id=61594437308252" target="_blank" rel="noopener noreferrer">Visit Trago Cafe on Facebook</a>
+            <a class="button button-outline" data-maps-link data-contact-directions-cta href="https://maps.app.goo.gl/CHBrBKNfoLFi73PT9" target="_blank" rel="noopener noreferrer">Get Directions</a>
             <a class="button button-soft" data-content="contactOrderCta" href="#menu">Start an Order</a>
           </div>
           <div id="contactFacts" class="contact-facts"></div>
-          <small class="contact-note" data-contact-instructions>Use Messenger to confirm delivery coverage, fees, operating hours, and current availability.</small>
+          <small class="contact-note" data-contact-instructions>Use the available Trago Cafe contact links to confirm delivery coverage, fees, operating hours, and current availability.</small>
         </div>
         <figure class="contact-photo">
-          <img id="contactImage" src="https://images.pexels.com/photos/4921567/pexels-photo-4921567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1100" alt="An iced coffee in a clear glass on a wooden cafe table" loading="lazy">
+          <img id="contactImage" src="./assets/trago-contact.webp" alt="An iced drink served on a café table" loading="lazy">
         </figure>
       </div>
     </section>
@@ -965,12 +1121,12 @@
     <div class="page-shell">
       <div class="footer-layout">
         <div class="footer-brand">
-          <a class="brand-lockup" href="#home" aria-label="BTK Coffee home">
-            <span class="brand-monogram" aria-hidden="true">BTK</span>
+          <a class="brand-lockup" href="#home" aria-label="Trago Cafe home">
+            <span class="brand-monogram" aria-hidden="true">TC</span>
             <img class="brand-logo-image" data-brand-image alt="" hidden>
-            <span class="brand-copy"><strong data-business-name>BTK Coffee</strong><small data-tagline>Brewed to Brighten Your Day</small></span>
+            <span class="brand-copy"><strong data-business-name>Trago Cafe</strong><small data-tagline>Your Everyday Coffee Ritual</small></span>
           </a>
-          <p class="content-multiline" data-content="footerBrandLine">BTK Coffee — Brewed to Brighten Your Day.</p>
+          <p class="content-multiline" data-content="footerBrandLine">Trago Cafe — Your Everyday Coffee Ritual.</p>
         </div>
         <div class="footer-column">
           <h2 data-content="footerExploreHeading">Explore</h2>
@@ -983,8 +1139,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="copyrightYear"></span> <span id="copyrightBusinessName">BTK Coffee</span>. <span data-content="footerCopyrightText">All rights reserved.</span></span>
-        <span data-content="footerOrderNotice">Orders are requests until confirmed by BTK Coffee.</span>
+        <span>© <span id="copyrightYear"></span> <span id="copyrightBusinessName">Trago Cafe</span>. <span data-content="footerCopyrightText">All rights reserved.</span></span>
+        <span data-content="footerOrderNotice">Orders are requests until confirmed by Trago Cafe.</span>
       </div>
     </div>
   </footer>
@@ -994,7 +1150,7 @@
     <aside class="order-drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" tabindex="-1">
       <header class="drawer-header">
         <div>
-          <p class="eyebrow">BTK Coffee ordering</p>
+          <p class="eyebrow">Trago Cafe ordering</p>
           <h2 id="drawerTitle">Your order</h2>
         </div>
         <button class="icon-button" id="closePanelButton" type="button" aria-label="Close ordering panel">
@@ -1006,7 +1162,7 @@
         <div class="cart-empty-state" id="cartEmptyState" hidden>
           <svg aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11h4l4 22a3 3 0 0 0 3 2.4h18a3 3 0 0 0 3-2.4L44 18H14"/><circle cx="21" cy="41" r="2"/><circle cx="36" cy="41" r="2"/></svg>
           <h3>Your cart is taking a break</h3>
-          <p>Choose a drink or a bite from the BTK menu to get started.</p>
+          <p>Choose a drink or a bite from the Trago menu to get started.</p>
           <button class="button button-primary" type="button" data-continue-shopping>Browse the menu</button>
         </div>
         <div class="drawer-padding" id="cartContent" hidden>
@@ -1015,7 +1171,7 @@
             <div class="summary-row"><span>Menu subtotal</span><strong id="cartSubtotal">₱0</strong></div>
             <div class="summary-row"><span>Optional extras</span><strong id="cartAddOnFee">₱0</strong></div>
             <div class="summary-row"><span>Take-out box fee</span><strong id="cartBoxFee">₱0</strong></div>
-            <div class="summary-row"><span>Delivery fee</span><span>Confirm with BTK</span></div>
+            <div class="summary-row"><span>Delivery fee</span><span>Confirm with Trago</span></div>
             <div class="summary-row total-row"><span>Estimated total</span><strong id="cartTotal">₱0</strong></div>
           <p class="fee-disclaimer">The ₱5 take-out box charge applies per qualifying item for both pickup and delivery, and is included here. Free delivery may be available around Barangay 176-A and nearby barangays; confirm eligibility at checkout. Outside this area, self-book a courier. Courier and service fees are not included.</p>
           </div>
@@ -1035,7 +1191,7 @@
       <section class="drawer-view" id="checkoutView" data-panel-view="checkout" aria-label="Checkout details" hidden>
         <div class="drawer-padding">
           <button class="text-button" id="backToCartButton" type="button" style="justify-self:start;margin:0 0 14px;padding:0">Back to cart</button>
-          <p class="checkout-intro">Add your details, then review the request before preparing it for Messenger.</p>
+          <p class="checkout-intro">Add your details, then review the request before preparing your order summary.</p>
           <form class="checkout-form" id="checkoutForm" novalidate>
             <fieldset class="form-section">
               <legend>Your details</legend>
@@ -1066,10 +1222,10 @@
                 </div>
                 <aside class="field-full delivery-guidance" id="deliveryGuidance" role="note" aria-labelledby="deliveryGuidanceTitle" hidden>
                   <p class="eyebrow" id="deliveryGuidanceTitle">Delivery details</p>
-          <p><strong>Free delivery is available around <span data-delivery-area>Barangay 176-A and nearby barangays</span>.</strong> Please message BTK Coffee to confirm whether your address qualifies.</p>
+          <p><strong>Free delivery is available around <span data-delivery-area>Barangay 176-A and nearby barangays</span>.</strong> Please message Trago Cafe to confirm whether your address qualifies.</p>
                   <p>If your address is outside this area, please self-book delivery through any delivery courier. Use these details for the courier booking:</p>
                   <dl>
-                    <dt>Pin location</dt><dd data-delivery-pin>BTK Coffee or Haidross</dd>
+                    <dt>Pin location</dt><dd data-delivery-pin>Trago Cafe</dd>
                     <dt>Contact name</dt><dd data-delivery-contact-name>Resty or Jezzel</dd>
                     <dt>Contact number</dt><dd><a data-delivery-phone href="tel:09690431840">09690431840</a></dd>
                   </dl>
@@ -1081,7 +1237,7 @@
                 </div>
                 <div class="field field-full">
                   <label for="orderNotes">Order notes <span>(optional)</span></label>
-                  <textarea id="orderNotes" name="orderNotes" maxlength="500" placeholder="Anything else BTK Coffee should know?"></textarea>
+                  <textarea id="orderNotes" name="orderNotes" maxlength="500" placeholder="Anything else Trago Cafe should know?"></textarea>
                 </div>
               </div>
             </fieldset>
@@ -1108,8 +1264,8 @@
               <p class="review-delivery-note" id="reviewDeliveryGuidance" hidden></p>
             </section>
             <p class="form-general-error" id="checkoutGeneralError" role="alert" tabindex="-1" hidden></p>
-            <p class="form-disclaimer">This is an estimate. Ask BTK Coffee to confirm whether your address qualifies for free delivery; any self-booked courier fare is set by the courier and is not included.</p>
-            <button class="button button-primary button-full" type="submit">Prepare Order for Messenger</button>
+            <p class="form-disclaimer">This is an estimate. Ask Trago Cafe to confirm whether your address qualifies for free delivery; any self-booked courier fare is set by the courier and is not included.</p>
+            <button class="button button-primary button-full" id="checkoutSubmitButton" type="submit">Prepare Order Summary</button>
           </form>
         </div>
       </section>
@@ -1122,15 +1278,16 @@
           <h3>Order request prepared</h3>
           <p>Your order summary is ready for you to review and send.</p>
           <span class="order-reference" id="orderReference"></span>
-          <p class="confirmation-warning">This is not a confirmed order. BTK Coffee has not received this request automatically. Your order is only submitted for confirmation after you send the summary in Messenger and the shop acknowledges it.</p>
+          <p class="confirmation-warning">This is not a confirmed order. Trago Cafe has not received this request automatically. Your order is only submitted for confirmation after you send the summary to Trago Cafe and the shop acknowledges it.</p>
           <pre class="summary-pre" id="orderSummaryText"></pre>
           <p class="local-record-note" id="localRecordNote"></p>
           <div class="confirmation-actions">
             <button class="button button-outline" id="copySummaryButton" type="button">Copy Order Summary</button>
-            <a class="button button-primary" data-messenger-link href="https://m.me/btkcoffeeeee" target="_blank" rel="noopener noreferrer" id="messengerOrderLink">Continue to Messenger</a>
+            <a class="button button-primary" data-messenger-link href="#find-us" target="_blank" rel="noopener noreferrer" id="messengerOrderLink" hidden>Continue to Messenger</a>
+            <a class="button button-primary" data-facebook-link href="https://www.facebook.com/profile.php?id=61594437308252" target="_blank" rel="noopener noreferrer" id="facebookOrderLink">Open Trago Cafe on Facebook</a>
             <button class="button button-soft" id="continueFromConfirmation" type="button">Return to the website</button>
           </div>
-          <p class="messenger-help" id="messengerHelpText">Copy the summary, open Messenger, and paste it into your conversation with BTK Coffee. Prefilled messages are not guaranteed.</p>
+          <p class="messenger-help" id="messengerHelpText">Copy the summary and send it to Trago Cafe through the Facebook page. A direct Messenger link has not been configured.</p>
           <p class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
         </div>
       </section>
@@ -1140,21 +1297,21 @@
   <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
 
   <script src="./script.js"></script>
-  <script src="./btk-config.js"></script>
+  <script src="./trago-config.js"></script>
   <script>
     (() => {
       "use strict";
 
-      const configApi = window.BTKCoffeeConfig;
-      const dataDefaults = window.BTKCoffeeData;
+      const configApi = window.TragoCafeConfig;
+      const dataDefaults = window.TragoCafeData;
       const defaultMenuData = configApi.defaultConfig().menu;
       const initialLoad = configApi.load({ preview: new URLSearchParams(window.location.search).has("admin-preview") });
       let siteConfig = initialLoad.config;
       let MENU_DATA = configApi.clone(siteConfig.menu);
       const PRODUCT_IMAGE_PATHS = dataDefaults.productImages;
       const CATEGORY_COPY = dataDefaults.categoryCopy;
-      const STORAGE_CART_KEY = "btk-coffee-cart-v1";
-      const STORAGE_ORDERS_KEY = "btk-coffee-pending-orders-v1";
+      const STORAGE_CART_KEY = "trago-cafe-cart-v1";
+      const STORAGE_ORDERS_KEY = "trago-cafe-pending-orders-v1";
       const MAX_QUANTITY = 99;
       let DELIVERY_DETAILS = Object.assign({}, siteConfig.delivery);
       const MONEY = new Intl.NumberFormat("en-PH", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
@@ -1193,7 +1350,7 @@
       }
 
       function getProductCardDescription(product) {
-        return product.description || CATEGORY_COPY[product.category] || "A BTK menu pick for your next cafe moment.";
+        return product.description || CATEGORY_COPY[product.category] || "A Trago menu pick for your next cafe moment.";
       }
 
       function getTakeoutBoxNote(product, optionId = "") {
@@ -1279,12 +1436,13 @@
           const available = option.label ? escapeAttribute(option.label) : "One listed price";
           optionControl = `<div class="product-option-wrap"><p class="product-fixed-option"><span>${option.label ? "Available option" : "Price"}</span><strong>${available}</strong></p></div>`;
         }
-        const label = featured ? "BTK selection" : product.category;
+        const label = featured ? "Trago selection" : product.category;
         const boxNote = getTakeoutBoxNote(product);
         const unavailable = product.available === false;
         const addOnControl = renderProductAddOns(product, unavailable);
+        const imageFallback = `<span class="product-image-fallback" aria-hidden="true"><span class="fallback-monogram">TC</span><span class="fallback-product-name">${escapeAttribute(product.name)}</span><span class="fallback-brand">Trago Cafe</span></span>`;
         return `<article class="product-card${unavailable ? " is-unavailable" : ""}" data-product-card data-product-id="${escapeAttribute(product.id)}">
-          <figure class="product-photo${image ? "" : " image-failed"}">${image ? `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(product.name)}" loading="lazy" decoding="async">` : "<span class=\"product-image-fallback\" aria-hidden=\"true\">BTK Coffee</span>"}</figure>
+          <figure class="product-photo${image ? "" : " image-failed"}">${imageFallback}${image ? `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(product.name)}" loading="lazy" decoding="async">` : ""}</figure>
           <div class="product-content">
             <span class="product-kicker">${escapeAttribute(label)}</span>
             <h3>${escapeAttribute(product.name)}</h3>
@@ -1352,7 +1510,8 @@
           `<li><a href="#menu" data-category-link="${escapeAttribute(category)}">${escapeAttribute(category)}</a></li>`
         ).join("");
         const contact = siteConfig.contact;
-        const links = [`<li><a data-messenger-link href="${escapeAttribute(contact.messengerUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerMessengerLabel)}</a></li>`];
+        const links = [];
+        if (contact.messengerUrl) links.push(`<li><a data-messenger-link href="${escapeAttribute(contact.messengerUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerMessengerLabel)}</a></li>`);
         if (contact.facebookUrl) links.push(`<li><a data-facebook-link href="${escapeAttribute(contact.facebookUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerFacebookLabel)}</a></li>`);
         if (contact.mapsUrl) links.push(`<li><a data-maps-link href="${escapeAttribute(contact.mapsUrl)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(content.footerMapsLabel)}</a></li>`);
         $("#footerContactLinks").innerHTML = links.join("");
@@ -1589,7 +1748,7 @@
         try {
           const saved = JSON.parse(localStorage.getItem(STORAGE_ORDERS_KEY) || "[]");
           if (!Array.isArray(saved)) return [];
-          return saved.filter((order) => order && typeof order.reference === "string" && /^BTK-\d{8}-[A-Z0-9]{4}$/.test(order.reference) && typeof order.summary === "string").slice(0, 10);
+          return saved.filter((order) => order && typeof order.reference === "string" && /^TRAGO-\d{8}-[A-Z0-9]{4}$/.test(order.reference) && typeof order.summary === "string").slice(0, 10);
         } catch (_error) {
           return [];
         }
@@ -1638,7 +1797,7 @@
           $("#cartLines").innerHTML = "";
           return;
         }
-        $("#cartLines").innerHTML = lines.map(({ product, optionId, optionLabel, addOns, addOnsValid, addOnUnitCents, addOnTotalCents, validSelection, available, priceChanged, previousUnitPriceCents, previousBoxFeeCents, previousAddOnUnitCents, quantity, unitPriceCents, takeoutBoxUnitCents, takeoutBoxTotalCents, lineTotalCents }) => {
+        $("#cartLines").innerHTML = lines.map(({ product, optionId, optionLabel, selectedAddOnIds, addOns, addOnsValid, addOnUnitCents, addOnTotalCents, validSelection, available, priceChanged, previousUnitPriceCents, previousBoxFeeCents, previousAddOnUnitCents, quantity, unitPriceCents, takeoutBoxUnitCents, takeoutBoxTotalCents, lineTotalCents }) => {
           const optionLine = optionLabel ? `<span class="cart-line-option">${escapeAttribute(optionLabel)}</span>` : "";
           const boxLine = takeoutBoxTotalCents
             ? `<div class="cart-line-box-fee">Take-out box: ${quantity} x ${formatMoney(takeoutBoxUnitCents)} = ${formatMoney(takeoutBoxTotalCents)}</div>`
@@ -1654,7 +1813,7 @@
           const unavailableAlert = invalidLine
             ? `<div class="cart-unavailable-alert" role="status">${!validSelection ? "This product or option is no longer on the menu." : (!available ? "This item is currently unavailable." : "One or more selected extras are no longer available.")} Remove the item and add it again to continue checkout.</div>`
             : "";
-          const cartKey = escapeAttribute(`${product.id}::${optionId}`);
+          const cartKey = escapeAttribute(`${product.id}::${optionId}::${selectedAddOnIds.join(",")}`);
           return `<article class="cart-line" data-cart-key="${cartKey}">
             <div>
               <span class="cart-line-category">${escapeAttribute(product.category)}</span>
@@ -1688,7 +1847,7 @@
         const order = state.latestPendingOrder;
         note.hidden = !order;
         if (order) {
-          $("#pendingOrderText").textContent = `${order.reference} is saved in this browser only. It is not confirmed until BTK Coffee acknowledges it.`;
+          $("#pendingOrderText").textContent = `${order.reference} is saved in this browser only. It is not confirmed until Trago Cafe acknowledges it.`;
         }
       }
 
@@ -1939,7 +2098,7 @@
         $("#copyrightBusinessName").textContent = config.contact.businessName;
         document.title = `${config.contact.businessName} | ${config.contact.tagline}`;
         const descriptionMeta = $("meta[name='description']");
-        if (descriptionMeta) descriptionMeta.content = `${config.contact.businessName}. ${config.contact.tagline}. Browse the menu and prepare an order for Messenger.`;
+        if (descriptionMeta) descriptionMeta.content = `${config.contact.businessName}. ${config.contact.tagline}. Browse the menu and prepare an order summary.`;
         const ogTitle = $("meta[property='og:title']");
         if (ogTitle) ogTitle.content = document.title;
         const directions = $("[data-maps-link]");
@@ -1948,7 +2107,7 @@
           link.hidden = !config.contact.mapsUrl;
         });
         $$("[data-messenger-link]").forEach((link) => {
-          link.href = config.contact.messengerUrl;
+          link.href = config.contact.messengerUrl || "#find-us";
           link.hidden = !config.contact.messengerUrl;
         });
         $$("[data-facebook-link]").forEach((link) => {
@@ -1957,9 +2116,16 @@
         });
         if (directions) directions.href = config.contact.mapsUrl || "#find-us";
         $(".contact-actions [data-messenger-link]").textContent = config.content.contactMessageCta.replaceAll("{businessName}", config.contact.businessName);
+        $(".contact-actions [data-facebook-link]").textContent = `Visit ${config.contact.businessName} on Facebook`;
+        $("#facebookOrderLink").textContent = `Open ${config.contact.businessName} on Facebook`;
         $(".contact-actions [data-maps-link]").textContent = config.content.contactDirectionsCta;
         $(".contact-actions [data-maps-link]").hidden = !config.contact.mapsUrl;
-        $("#messengerHelpText").textContent = `Copy the summary, open Messenger, and paste it into your conversation with ${config.contact.businessName}. Prefilled messages are not guaranteed.`;
+        $("#checkoutSubmitButton").textContent = config.contact.messengerUrl ? "Prepare Order for Messenger" : "Prepare Order Summary";
+        $("#messengerHelpText").textContent = config.contact.messengerUrl
+          ? `Copy the summary, open Messenger, and paste it into your conversation with ${config.contact.businessName}. Prefilled messages are not guaranteed.`
+          : (config.contact.facebookUrl
+            ? `Copy the summary and send it to ${config.contact.businessName} through the Facebook page. A direct Messenger link has not been configured.`
+            : `Copy the summary and send it through an available ${config.contact.businessName} contact channel. A direct Messenger link has not been configured.`);
 
         $$("[data-delivery-area]").forEach((element) => { element.textContent = config.delivery.freeArea; });
         $$("[data-delivery-pin]").forEach((element) => { element.textContent = config.delivery.pinLocation; });
@@ -2010,7 +2176,7 @@
           const status = !validSelection || !available
             ? `<span class="review-item-box">${validSelection ? "Currently unavailable" : "No longer on the menu"}</span>`
             : (!addOnsValid ? "<span class=\"review-item-box\">One or more selected extras are no longer available.</span>" : (priceChanged ? "<span class=\"review-item-box\">Price updated; review and accept in your cart before checkout.</span>" : ""));
-          return `<div class="review-item"><div><span class="review-item-name">${escapeHTML(product.name)}</span>${menuLine}${addOnLine}${boxLine}${status}</div><strong class="review-item-total">${formatMoney(lineTotalCents)}</strong></div>`;
+          return `<div class="review-item"><div><span class="review-item-name">${escapeAttribute(product.name)}</span>${menuLine}${addOnLine}${boxLine}${status}</div><strong class="review-item-total">${formatMoney(lineTotalCents)}</strong></div>`;
         }).join("");
         const subtotal = cartSubtotalCents();
         const addOnFee = cartAddOnCents();
@@ -2029,7 +2195,7 @@
         $("#reviewAddressRow").hidden = !delivery;
         $("#reviewDeliveryGuidance").hidden = !delivery;
         if (delivery) {
-          setText("#reviewDeliveryGuidance", `Free delivery is available around ${DELIVERY_DETAILS.freeArea}; please confirm your address with BTK Coffee. If outside this area, self-book a courier using pin location ${DELIVERY_DETAILS.pinLocation}, contact name ${DELIVERY_DETAILS.contactNames}, and number ${DELIVERY_DETAILS.contactNumber}. Courier fare is not included.`);
+          setText("#reviewDeliveryGuidance", `Free delivery is available around ${DELIVERY_DETAILS.freeArea}; please confirm your address with Trago Cafe. If outside this area, self-book a courier using pin location ${DELIVERY_DETAILS.pinLocation}, contact name ${DELIVERY_DETAILS.contactNames}, and number ${DELIVERY_DETAILS.contactNumber}. Courier fare is not included.`);
         }
         setText("#reviewAddress", $("#deliveryAddress").value.trim() || "Not entered");
         setText("#reviewTime", $("#fulfillmentTime").value.trim() || "Not specified");
@@ -2115,10 +2281,10 @@
           } catch (_error) {
             suffix = Array.from({ length: 4 }, () => alphabet[Math.floor(Math.random() * alphabet.length)]).join("");
           }
-          const reference = `BTK-${localDateStamp(date)}-${suffix}`;
+          const reference = `TRAGO-${localDateStamp(date)}-${suffix}`;
           if (!existing.has(reference)) return reference;
         }
-        return `BTK-${localDateStamp(date)}-${Math.random().toString(36).slice(2, 6).toUpperCase().padEnd(4, "0")}`;
+        return `TRAGO-${localDateStamp(date)}-${Math.random().toString(36).slice(2, 6).toUpperCase().padEnd(4, "0")}`;
       }
 
       function createOrderSummary(reference, createdAt) {
@@ -2134,10 +2300,10 @@
         const requestedTime = $("#fulfillmentTime").value.trim();
         const notes = $("#orderNotes").value.trim();
         const lines = [
-          "BTK COFFEE - ORDER REQUEST",
+          "TRAGO CAFE - ORDER REQUEST",
           `Reference: ${reference}`,
           `Prepared: ${createdAt.toLocaleString("en-PH")}`,
-          "Status: Prepared for confirmation; not confirmed by BTK Coffee.",
+          "Status: Prepared for confirmation; not confirmed by Trago Cafe.",
           "",
           `Customer: ${customerName}`,
           `Mobile: ${customerPhone}`,
@@ -2148,7 +2314,7 @@
             `Delivery address: ${address}`,
             "",
             "DELIVERY GUIDANCE:",
-            `Free delivery is available around ${DELIVERY_DETAILS.freeArea}; please confirm with BTK Coffee whether this address qualifies.`,
+            `Free delivery is available around ${DELIVERY_DETAILS.freeArea}; please confirm with Trago Cafe whether this address qualifies.`,
             `If outside this area, please self-book through any delivery courier. Pin location: ${DELIVERY_DETAILS.pinLocation}.`,
             `Courier contact name: ${DELIVERY_DETAILS.contactNames}.`,
             `Courier contact number: ${DELIVERY_DETAILS.contactNumber}.`,
@@ -2179,7 +2345,7 @@
           "Service fee: None configured.",
           `Estimated total (extras and take-out boxes included): ${formatMoney(estimatedTotal)}${delivery ? " (self-booked courier fare not included, if applicable)" : ""}`,
           "",
-          "Please confirm item availability, the final total, and fulfillment details. This request is not confirmed until BTK Coffee acknowledges it."
+          "Please confirm item availability, the final total, and fulfillment details. This request is not confirmed until Trago Cafe acknowledges it."
         );
         return lines.join("\n");
       }
@@ -2231,8 +2397,10 @@
         if (!order || !order.summary) return;
         const copied = await copyText(order.summary);
         $("#copyFeedback").textContent = copied
-          ? "Order summary copied. Paste it into your BTK Coffee Messenger conversation."
-          : "Copy was blocked by this browser. Select the summary above and copy it manually before opening Messenger.";
+          ? (siteConfig.contact.messengerUrl
+            ? `Order summary copied. Paste it into your ${siteConfig.contact.businessName} Messenger conversation.`
+            : `Order summary copied. Send it to ${siteConfig.contact.businessName} through an available contact channel.`)
+          : "Copy was blocked by this browser. Select the summary above and copy it manually before contacting the shop.";
         if (copied) showToast("Order summary copied to your clipboard.");
         else showToast("Clipboard access was unavailable. You can copy the visible summary manually.", "error");
       }
@@ -2347,7 +2515,7 @@
         });
         $("#clearCartButton").addEventListener("click", () => {
           if (!state.cart.length) return;
-          if (!window.confirm("Clear every item from your BTK Coffee cart?")) return;
+          if (!window.confirm("Clear every item from your Trago Cafe cart?")) return;
           state.cart = [];
           persistCart();
           renderCart();
@@ -2392,7 +2560,7 @@
             applySiteConfig(loaded.config);
             if (loaded.warning) showToast(loaded.warning, "error");
             else if (state.cart.some((line) => line.priceChanged)) showToast("The menu changed in another tab. Review updated cart prices before checkout.", "error");
-            else showToast("BTK Coffee website settings were refreshed from this browser's saved configuration.");
+            else showToast("Trago Cafe website settings were refreshed from this browser's saved configuration.");
           }
           if (event.key === STORAGE_CART_KEY) {
             state.cart = loadCart();
@@ -2411,7 +2579,7 @@
           if (published.config) applySiteConfig(published.config);
           if (published.warning) showToast(published.warning, "error");
         }).catch(() => showToast("Published website settings could not be loaded. Built-in defaults are still available.", "error"));
-        if (state.cart.length) showToast("Your saved BTK cart was restored on this device.");
+        if (state.cart.length) showToast("Your saved Trago cart was restored on this device.");
       }
 
       initialize();
