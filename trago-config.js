@@ -1,25 +1,25 @@
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "btk-coffee-site-config-v1";
-  const PREVIEW_KEY = "btk-coffee-admin-preview-v1";
+  const STORAGE_KEY = "trago-cafe-site-config-v1";
+  const PREVIEW_KEY = "trago-cafe-admin-preview-v1";
   const SCHEMA_VERSION = 9;
   const PUBLISHED_CONFIG_PATH = "data/site-config.json";
-  const PRODUCT_IMAGE_PATHS = window.BTKCoffeeProductImages ? window.BTKCoffeeProductImages.byProductId : {};
+  const PRODUCT_IMAGE_PATHS = window.TragoCafeProductImages ? window.TragoCafeProductImages.byProductId : {};
 
   const DEFAULT_THEME = {
-    primary: "#A89F79",
-    secondary: "#817653",
-    background: "#F7F4EC",
-    surface: "#FFFDF7",
-    heading: "#352F28",
-    text: "#352F28",
-    muted: "#777064",
-    buttonBg: "#817653",
-    buttonText: "#FFFDF7",
-    buttonHover: "#6F6548",
-    border: "#E6E0D4",
-    accent: "#B8B49A"
+    primary: "#B47A4A",
+    secondary: "#7A4B32",
+    background: "#F6F0E7",
+    surface: "#FFFBF5",
+    heading: "#2E1D17",
+    text: "#382820",
+    muted: "#74665C",
+    buttonBg: "#6B3E2B",
+    buttonText: "#FFF9F0",
+    buttonHover: "#4E2C1F",
+    border: "#E2D3C3",
+    accent: "#E7D1B6"
   };
 
   const CATEGORY_COPY = {
@@ -102,35 +102,35 @@
   };
 
   const DEFAULT_CONTENT = {
-    announcement: "Your favorite coffee moments start here.",
+    announcement: "A warm cup. A sweet pause. Your Trago moment.",
     navigation: { home: "Home", menu: "Menu", story: "Our Story", findUs: "Find Us", contact: "Contact" },
-    heroHeading: "Good Coffee.\nBetter Moments.",
-    heroDescription: "Crafted with passion, inspired by late-night cafe adventures, and made to brighten your day.",
-    heroPrimaryCta: "Order Your Favorites",
-    heroSecondaryCta: "Discover Our Story",
-    featuredEyebrow: "A little something for your day",
-    featuredHeading: "A few BTK favorites",
-    featuredDescription: "Find a familiar pick, try a new flavor, and make a little room for a good coffee moment.",
-    menuEyebrow: "The BTK menu",
-    menuHeading: "Something for your kind of break",
+    heroHeading: "Sip slowly.\nStay awhile.",
+    heroDescription: "Familiar café favorites, considered little details, and an order made just the way you like it.",
+    heroPrimaryCta: "Explore the Menu",
+    heroSecondaryCta: "The Trago Feeling",
+    featuredEyebrow: "The Trago edit",
+    featuredHeading: "A few favorites for your next pause",
+    featuredDescription: "Find a familiar pick, try a different flavor, and make a little room for a good café moment.",
+    menuEyebrow: "The Trago menu",
+    menuHeading: "Something for every kind of break",
     menuDescription: "Browse the menu, choose an available size or serving, and add your picks to an order request.",
     emptyMenuHeading: "No menu items found",
     emptyMenuDescription: "Try another name or choose a different category.",
-    storyEyebrow: "Our story",
-    storyHeading: "From Late-Night Cafe Adventures to Your Favorite Cup",
-    storyParagraphOne: "BTK Coffee was born out of a shared passion for coffee between two people who simply loved exploring different cafes every night. What began as a nightly adventure to discover new flavors soon turned into a dream of crafting our own unique blend.",
-    storyParagraphTwo: "With countless cups and late-night experiments, we finally created an iced coffee recipe that perfectly matched our palate. After sharing it with friends and receiving overwhelmingly positive feedback, BTK Coffee was officially established.",
+    storyEyebrow: "The Trago feeling",
+    storyHeading: "A café pause, made entirely yours",
+    storyParagraphOne: "Trago Cafe brings together the drinks and bites that make an ordinary break feel a little more considered—from familiar coffee to creamy frappes, waffles, and savory favorites.",
+    storyParagraphTwo: "Choose your listed size or serving, add the extras you love, and prepare an order request in a few simple steps. Every request is reviewed and confirmed directly by Trago Cafe.",
     orderEyebrow: "Ordering, made easy",
-    orderHeading: "From menu to Messenger",
-    orderDescription: "A simple way to prepare your request. BTK Coffee will confirm availability and fulfillment details with you.",
-    orderNote: "Free delivery is available around {freeArea} when BTK Coffee confirms that the address qualifies. Outside this area, customers need to self-book a delivery courier. Confirm availability, operating hours, and other fulfillment details with BTK Coffee in Messenger.",
+    orderHeading: "From your cart to confirmation",
+    orderDescription: "Build your request, review the details, and copy your summary. Trago Cafe will confirm availability and fulfillment details with you.",
+    orderNote: "Free delivery is available around {freeArea} when Trago Cafe confirms that the address qualifies. Outside this area, customers need to self-book a delivery courier. Confirm availability, operating hours, and other fulfillment details through an available Trago Cafe contact channel.",
     orderSteps: [
-      { title: "Browse the BTK Coffee menu.", description: "Explore drinks and food by category or search by name." },
+      { title: "Browse the Trago Cafe menu.", description: "Explore drinks and food by category or search by name." },
       { title: "Choose your drinks and food.", description: "Select a listed size or serving, then add items to your cart." },
       { title: "Select pickup or delivery.", description: "Share your contact details and delivery address when needed." },
       { title: "Review and copy your order summary.", description: "Check every item, option, quantity, and estimated total." },
-      { title: "Continue to Messenger.", description: "Paste the prepared summary into the BTK Coffee conversation." },
-      { title: "Wait for BTK Coffee to confirm.", description: "Availability, final total, and fulfillment details are confirmed by the shop." }
+      { title: "Send your summary to Trago Cafe.", description: "Use an available contact link and paste the prepared summary into your conversation." },
+      { title: "Wait for Trago Cafe to confirm.", description: "Availability, final total, and fulfillment details are confirmed by the shop." }
     ],
     contactEyebrow: "Find us and say hello",
     contactMessageCta: "Message {businessName}",
@@ -190,28 +190,28 @@
       content: clone(DEFAULT_CONTENT),
       storeStatus: clone(DEFAULT_STORE_STATUS),
       images: {
-        hero: "https://images.pexels.com/photos/18189024/pexels-photo-18189024.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1400&w=2200",
+        hero: "./assets/trago-hero.webp",
         logo: "",
-        story: "https://images.pexels.com/photos/33094652/pexels-photo-33094652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1100&w=1000",
-        contact: "https://images.pexels.com/photos/4921567/pexels-photo-4921567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1100",
+        story: "./assets/trago-story.webp",
+        contact: "./assets/trago-contact.webp",
         products: {}
       },
       contact: {
-        businessName: "BTK Coffee",
-        tagline: "Brewed to Brighten Your Day",
-        messengerUrl: "https://m.me/btkcoffeeeee",
-        facebookUrl: "",
-        mapsUrl: "https://maps.app.goo.gl/x8PXrcovtmqqKweg9?g_st=ipc",
+        businessName: "Trago Cafe",
+        tagline: "Your Everyday Coffee Ritual",
+        messengerUrl: "",
+        facebookUrl: "https://www.facebook.com/profile.php?id=61594437308252",
+        mapsUrl: "https://maps.app.goo.gl/CHBrBKNfoLFi73PT9",
         heading: "Your Next Coffee Moment Is Waiting",
-        description: "Questions about the menu, delivery, availability, or hours? Message BTK Coffee to confirm the details and send your prepared order request.",
+        description: "Questions about the menu, delivery, availability, or hours? Get in touch with Trago Cafe to confirm the details and send your prepared order request.",
         phone: "",
         email: "",
         address: "",
-        instructions: "Use Messenger to confirm delivery coverage, fees, operating hours, and current availability."
+        instructions: "Use the available Trago Cafe contact links to confirm delivery coverage, fees, operating hours, and current availability."
       },
       delivery: {
         freeArea: "Barangay 176-A and nearby barangays",
-        pinLocation: "BTK Coffee or Haidross",
+        pinLocation: "Trago Cafe",
         contactNames: "Resty or Jezzel",
         contactNumber: "09690431840"
       },
@@ -366,7 +366,7 @@
       if (!groupIds.length || groupIds.length > 20) errors.push("Configure between 1 and 20 add-on groups.");
       groupIds.forEach((groupId) => {
         const group = rawAddOns.groups[groupId];
-        if (!/^[a-z0-9][a-z0-9-]{0,39}$/.test(groupId) || !group || typeof group !== "object" || Array.isArray(group)) {
+        if (!/^[a-z][A-Za-z0-9-]{0,39}$/.test(groupId) || !group || typeof group !== "object" || Array.isArray(group)) {
           errors.push(`Add-on group "${groupId}" is invalid.`);
           return;
         }
@@ -563,7 +563,7 @@
       });
       ["messengerUrl", "facebookUrl", "mapsUrl"].forEach((key) => {
         const value = typeof rawContact[key] === "string" ? rawContact[key].trim() : "";
-        const optional = key === "facebookUrl";
+        const optional = key === "facebookUrl" || key === "messengerUrl";
         if (!isHttpsUrl(value, optional)) errors.push(`Contact link "${key}" must be a valid HTTPS URL${optional ? " or blank" : ""}.`);
         else config.contact[key] = value;
       });
@@ -623,7 +623,7 @@
     if (window.location.protocol === "file:") return Object.assign({ source: "local" }, fallback);
     try {
       const url = new URL(PUBLISHED_CONFIG_PATH, window.location.href);
-      url.searchParams.set("_btk", String(Date.now()));
+      url.searchParams.set("_trago", String(Date.now()));
       const response = await fetch(url.href, { cache: "no-store", credentials: "same-origin" });
       if (response.status === 404) return Object.assign({ source: "local" }, fallback);
       if (!response.ok) return { config: fallback.config, source: "local", isPreview: false, warning: `The published GitHub configuration could not be loaded (HTTP ${response.status}); the last valid browser/default configuration is in use.` };
@@ -661,13 +661,13 @@
     }
   }
 
-  window.BTKCoffeeData = {
+  window.TragoCafeData = {
     schemaVersion: SCHEMA_VERSION,
     categoryCopy: clone(CATEGORY_COPY),
     productImages: clone(PRODUCT_IMAGE_PATHS),
     featuredIds: Array.from(FEATURED_IDS)
   };
-  window.BTKCoffeeConfig = {
+  window.TragoCafeConfig = {
     storageKey: STORAGE_KEY,
     previewKey: PREVIEW_KEY,
     publishedPath: PUBLISHED_CONFIG_PATH,
